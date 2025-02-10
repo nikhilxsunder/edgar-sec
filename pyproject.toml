@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "edgar-sec"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
 "requests"
 ]
@@ -26,9 +26,9 @@ classifiers = [
     "Topic :: Office/Business :: Financial :: Investment"
 ]
 license = {file = "LICENSE"}
-keywords = ["usbl", "bureau of labor", "api", "economics", "labor"]
+keywords = ["edgar", "sec", "api", "finance", "reporting"]
 
 [project.urls]
 Repository = "https://github.com/nikhilxsunder/edgar-sec"
 Issues = "https://github.com/nikhilxsunder/edgar-sec/issues"
-Documentation = "https://fred.stlouisfed.org/docs/api/fred/"
+Documentation = "https://www.sec.gov/search-filings/edgar-application-programming-interfaces"
