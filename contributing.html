@@ -1,0 +1,845 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM6ZC88602"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HM6ZC88602');
+    </script>
+    <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Changelog" href="changelog.html" /><link rel="prev" title="Data Classes" href="api/data_classes.html" />
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+        <title>Contributing - edgar-sec</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #4B6EAF;
+  --color-brand-content: #4B6EAF;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #7A97D0;
+  --color-brand-content: #7A97D0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #7A97D0;
+  --color-brand-content: #7A97D0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">edgar-sec</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">edgar-sec</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start Guide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples/index.html">Usage Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Usage Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/basic_usage.html">Basic Usage Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/advanced_usage.html">Advanced Usage Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/edgarapi.html">EdgarAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/asyncapi.html">AsyncAPI Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/data_classes.html">Data Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/contributing.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="contributing">
+<h1>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">¶</a></h1>
+<section id="contributing-to-edgar-sec">
+<h2>Contributing to Edgar-SEC<a class="headerlink" href="#contributing-to-edgar-sec" title="Link to this heading">¶</a></h2>
+<p>Thank you for your interest in contributing to Edgar-SEC! We welcome contributions of all kinds, including bug reports, feature requests, documentation improvements, and code contributions. This document provides guidelines and instructions to help you get started.</p>
+<section id="table-of-contents">
+<h3>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="#how-to-contribute">How to Contribute</a></p>
+<ul>
+<li><p><a class="reference internal" href="#reporting-issues">Reporting Issues</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#static-analysis">Static Analysis</a></p></li>
+<li><p><a class="reference internal" href="#submitting-code-changes">Submitting Code Changes</a></p></li>
+<li><p><a class="reference internal" href="#coding-standards">Coding Standards</a></p></li>
+<li><p><a class="reference internal" href="#code-quality-and-warnings">Code Quality and Warnings</a></p></li>
+<li><p><a class="reference internal" href="#testing">Testing</a></p>
+<ul>
+<li><p><a class="reference internal" href="#testing-with-assertions">Testing with Assertions</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#documentation">Documentation</a></p></li>
+<li><p><a class="reference internal" href="#license">License</a></p></li>
+<li><p><a class="reference internal" href="#contact">Contact</a></p></li>
+<li><p><a class="reference internal" href="#security-vulnerability-reporting">Security Vulnerability Reporting</a></p></li>
+<li><p><a class="reference internal" href="#code-of-conduct">Code of Conduct</a></p></li>
+<li><p><a class="reference internal" href="#development-setup">Development Setup</a></p></li>
+<li><p><a class="reference internal" href="#pull-request-process">Pull Request Process</a></p></li>
+<li><p><a class="reference internal" href="#continuous-integration">Continuous Integration</a></p></li>
+<li><p><a class="reference internal" href="#dynamic-analysis">Dynamic Analysis</a></p>
+<ul>
+<li><p><a class="reference internal" href="#property-based-testing-with-hypothesis">Property-Based Testing with Hypothesis</a></p></li>
+<li><p><a class="reference internal" href="#running-dynamic-analysis-tests">Running Dynamic Analysis Tests</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#release-process">Release Process</a></p></li>
+</ul>
+</section>
+<section id="how-to-contribute">
+<h3>How to Contribute<a class="headerlink" href="#how-to-contribute" title="Link to this heading">¶</a></h3>
+<section id="reporting-issues">
+<h4>Reporting Issues<a class="headerlink" href="#reporting-issues" title="Link to this heading">¶</a></h4>
+<p>Before opening a new issue:</p>
+<ul class="simple">
+<li><p>Search the issue tracker to verify the issue hasn’t already been reported</p></li>
+<li><p>Use our issue templates where available for bugs, features, or documentation</p></li>
+<li><p>Provide a clear and descriptive title</p></li>
+<li><p>Include detailed information:</p>
+<ul>
+<li><p>Steps to reproduce the issue</p></li>
+<li><p>Expected behavior vs. actual behavior</p></li>
+<li><p>Environment details (OS, Python version, etc.)</p></li>
+<li><p>Relevant logs, screenshots, or error messages</p></li>
+</ul>
+</li>
+<li><p>Tag the issue appropriately (bug, enhancement, documentation, etc.)</p></li>
+</ul>
+</section>
+</section>
+<section id="static-analysis">
+<h3>Static Analysis<a class="headerlink" href="#static-analysis" title="Link to this heading">¶</a></h3>
+<p>Before major releases, all code undergoes static analysis using multiple tools:</p>
+<ul class="simple">
+<li><p><strong>pylint</strong>: General code quality and adherence to PEP 8</p>
+<ul>
+<li><p>Configured with strict settings (9.0+ score required)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span> <span class="pre">pylint</span> <span class="pre">src/edgar_sec/</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>mypy</strong>: Static type checking</p>
+<ul>
+<li><p>Configured with strict type checking rules</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span> <span class="pre">mypy</span> <span class="pre">src/edgar_sec/</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>bandit</strong>: Security-focused static analysis</p>
+<ul>
+<li><p>Identifies common security issues in Python code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span> <span class="pre">bandit</span> <span class="pre">-r</span> <span class="pre">src/edgar_sec/</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>These checks are automated through:</p>
+<ul class="simple">
+<li><p>Pre-commit hooks (for developers)</p></li>
+<li><p>GitHub Actions workflows (for all PRs and releases)</p></li>
+<li><p>Required status checks (PRs cannot be merged if static analysis fails)</p></li>
+</ul>
+<p>All identified issues must be addressed before release, either by fixing the code or documenting exceptions with clear justifications.</p>
+<section id="submitting-code-changes">
+<h4>Submitting Code Changes<a class="headerlink" href="#submitting-code-changes" title="Link to this heading">¶</a></h4>
+<p>Follow these steps when contributing code:</p>
+<ol class="arabic simple">
+<li><p><strong>Fork the Repository</strong></p>
+<ul class="simple">
+<li><p>Create your own fork of the repository on GitHub</p></li>
+<li><p>Clone your fork locally</p></li>
+</ul>
+</li>
+<li><p><strong>Create a Branch</strong></p>
+<ul class="simple">
+<li><p>Create a new branch from <code class="docutils literal notranslate"><span class="pre">main</span></code> with a descriptive name</p></li>
+<li><p>Use a prefix like <code class="docutils literal notranslate"><span class="pre">feature/</span></code>, <code class="docutils literal notranslate"><span class="pre">fix/</span></code>, or <code class="docutils literal notranslate"><span class="pre">docs/</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">feature/add-logging</span></code>)</p></li>
+</ul>
+</li>
+<li><p><strong>Make Your Changes</strong></p>
+<ul class="simple">
+<li><p>Follow the coding standards outlined below</p></li>
+<li><p>Write clear commit messages explaining your changes</p></li>
+<li><p>Keep commits focused and logical</p></li>
+</ul>
+</li>
+<li><p><strong>Submit a Pull Request</strong></p>
+<ul class="simple">
+<li><p>Ensure all tests pass locally</p></li>
+<li><p>Create a PR against the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch</p></li>
+<li><p>Use the PR template to describe your changes</p></li>
+<li><p>Reference related issues (e.g., “Fixes #42”)</p></li>
+<li><p>Keep PRs focused on a single objective</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="coding-standards">
+<h4>Coding Standards<a class="headerlink" href="#coding-standards" title="Link to this heading">¶</a></h4>
+<p>All code must adhere to these standards:</p>
+<ul class="simple">
+<li><p>Follow <a class="reference external" href="https://peps.python.org/pep-0008/">PEP 8</a> coding style guidelines</p></li>
+<li><p>Use <a class="reference external" href="https://peps.python.org/pep-0484/">type hints</a> for all function parameters and return values</p></li>
+<li><p>Write <a class="reference external" href="https://peps.python.org/pep-0257/">PEP 257</a> compliant docstrings</p>
+<ul>
+<li><p>Include parameter descriptions, return values, and examples</p></li>
+<li><p>Document exceptions raised</p></li>
+</ul>
+</li>
+<li><p>Use meaningful variable and function names that describe their purpose</p></li>
+<li><p>Keep functions focused and concise (aim for &lt; 50 lines per function)</p></li>
+<li><p>Avoid unnecessary complexity and nested code blocks</p></li>
+<li><p>Include comments for complex logic or non-obvious behavior</p></li>
+</ul>
+</section>
+<section id="code-quality-and-warnings">
+<h4>Code Quality and Warnings<a class="headerlink" href="#code-quality-and-warnings" title="Link to this heading">¶</a></h4>
+<p>We strive to maintain a codebase with minimal linting warnings:</p>
+<ul class="simple">
+<li><p>All new code should pass pylint, mypy, and bandit checks without warnings</p></li>
+<li><p>Existing warnings are being addressed incrementally</p></li>
+<li><p>False positive warnings must be explicitly suppressed with a comment explaining why</p></li>
+<li><p>We use the strict settings for all linters:</p>
+<ul>
+<li><p>Pylint: 9.0+ score required</p></li>
+<li><p>Mypy: Strict type checking with most error flags enabled</p></li>
+<li><p>Bandit: All security checks enabled</p></li>
+</ul>
+</li>
+</ul>
+<p>Run the following to check for warnings before submitting a PR:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>run<span class="w"> </span>pylint<span class="w"> </span>src/edgar_sec/
+poetry<span class="w"> </span>run<span class="w"> </span>mypy<span class="w"> </span>src/edgar_sec/
+poetry<span class="w"> </span>run<span class="w"> </span>bandit<span class="w"> </span>-r<span class="w"> </span>src/edgar_sec/
+</pre></div>
+</div>
+</section>
+<section id="testing">
+<h4>Testing<a class="headerlink" href="#testing" title="Link to this heading">¶</a></h4>
+<p>We take testing seriously to maintain code quality:</p>
+<ul>
+<li><p><strong>Test Policy</strong>: All new functionality must be accompanied by appropriate tests in the automated test suite</p></li>
+<li><p>Write tests for all new functionality and bug fixes</p></li>
+<li><p>Aim for high test coverage (minimum 80%)</p></li>
+<li><p>Test structure:</p>
+<ul class="simple">
+<li><p>Unit tests for individual functions</p></li>
+<li><p>Integration tests for component interactions</p></li>
+<li><p>End-to-end tests for complete workflows</p></li>
+</ul>
+</li>
+<li><p>Run the full test suite before submitting:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>tests/
+</pre></div>
+</div>
+</li>
+<li><p>Include edge cases and error conditions in your tests</p></li>
+<li><p>PRs without adequate test coverage will not be merged</p></li>
+</ul>
+<p>When adding tests:</p>
+<ul class="simple">
+<li><p>Place tests in the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory</p></li>
+<li><p>Name test files with a <code class="docutils literal notranslate"><span class="pre">test_</span></code> prefix</p></li>
+<li><p>Follow the existing test patterns</p></li>
+<li><p>Test both success and error conditions</p></li>
+<li><p>Include comments explaining complex test scenarios</p></li>
+</ul>
+<section id="testing-with-assertions">
+<h5>Testing with Assertions<a class="headerlink" href="#testing-with-assertions" title="Link to this heading">¶</a></h5>
+<p>We use Python assertions extensively in our testing suite to verify assumptions and catch edge cases:</p>
+<ul class="simple">
+<li><p><strong>Development and testing</strong>: Assertions are enabled by default</p></li>
+<li><p><strong>Production</strong>: Users may run with the <code class="docutils literal notranslate"><span class="pre">-O</span></code> flag to disable assertions for performance</p></li>
+</ul>
+<p>When writing tests, include assertions to validate:</p>
+<ul class="simple">
+<li><p>Input validation logic</p></li>
+<li><p>Expected data transformations</p></li>
+<li><p>Error handling</p></li>
+<li><p>Edge case behavior</p></li>
+</ul>
+<p>Run tests with assertions explicitly enabled:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run with assertions explicitly enabled (default)</span>
+python<span class="w"> </span>-B<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/
+
+<span class="c1"># To simulate production environment (assertions disabled)</span>
+python<span class="w"> </span>-O<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/
+</pre></div>
+</div>
+</section>
+</section>
+<section id="documentation">
+<h4>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h4>
+<p>Good documentation is essential:</p>
+<ul class="simple">
+<li><p>Update relevant documentation when modifying code</p></li>
+<li><p>Document all public APIs, classes, and functions</p></li>
+<li><p>Include examples for non-trivial functionality</p></li>
+<li><p>Use clear and concise language</p></li>
+<li><p>For README and other markdown files:</p>
+<ul>
+<li><p>Follow consistent heading hierarchy</p></li>
+<li><p>Include appropriate links and references</p></li>
+<li><p>Use code blocks with language specification</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="license">
+<h4>License<a class="headerlink" href="#license" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>By contributing to Edgar-SEC, you agree that your contributions will be licensed under the same license as the project (GNU Affero General Public License v3.0).</p></li>
+</ul>
+</section>
+<section id="contact">
+<h4>Contact<a class="headerlink" href="#contact" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>If you have any questions, feel free to open a discussion or reach out via GitHub Issues.</p></li>
+</ul>
+</section>
+<section id="security-vulnerability-reporting">
+<h4>Security Vulnerability Reporting<a class="headerlink" href="#security-vulnerability-reporting" title="Link to this heading">¶</a></h4>
+<p>We take security vulnerabilities seriously. Please do not report security vulnerabilities through public GitHub issues.</p>
+<p>Instead:</p>
+<ul class="simple">
+<li><p>Email <a class="reference external" href="mailto:nsunder724&#37;&#52;&#48;gmail&#46;com">nsunder724<span>&#64;</span>gmail<span>&#46;</span>com</a> directly</p></li>
+<li><p>Provide a detailed description of the vulnerability</p></li>
+<li><p>Include steps to reproduce if possible</p></li>
+<li><p>Allow time for us to address the vulnerability before public disclosure</p></li>
+</ul>
+<p>We will acknowledge receipt within 48 hours and provide a more detailed response within 72 hours, including next steps and timeline for resolution.</p>
+</section>
+<section id="code-of-conduct">
+<h4>Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Link to this heading">¶</a></h4>
+<p>This project adheres to our <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/CODE_OF_CONDUCT.md">CODE_OF_CONDUCT</a>. By participating, you are expected to uphold this code. Please report unacceptable behavior to <a class="reference external" href="mailto:nsunder724&#37;&#52;&#48;gmail&#46;com">nsunder724<span>&#64;</span>gmail<span>&#46;</span>com</a>.</p>
+</section>
+<section id="development-setup">
+<h4>Development Setup<a class="headerlink" href="#development-setup" title="Link to this heading">¶</a></h4>
+<p>To set up your development environment:</p>
+<ol class="arabic">
+<li><p><strong>Prerequisites</strong></p>
+<ul class="simple">
+<li><p>Python 3.9+</p></li>
+<li><p>Poetry (for dependency management)</p></li>
+<li><p>Git</p></li>
+</ul>
+</li>
+<li><p><strong>Installation</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/nikhilxsunder/edgar-sec.git
+<span class="nb">cd</span><span class="w"> </span>edgar_sec
+
+<span class="c1"># Install dependencies</span>
+poetry<span class="w"> </span>install
+
+<span class="c1"># Set up pre-commit hooks</span>
+poetry<span class="w"> </span>run<span class="w"> </span>pre-commit<span class="w"> </span>install
+</pre></div>
+</div>
+</li>
+<li><p><strong>Environment Configuration</strong></p>
+<ul class="simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">.env</span></code> file based on <code class="docutils literal notranslate"><span class="pre">.env.example</span></code> if needed</p></li>
+<li><p>Configure any necessary environment variables</p></li>
+</ul>
+</li>
+</ol>
+<section id="conda-development">
+<h5>Conda Development<a class="headerlink" href="#conda-development" title="Link to this heading">¶</a></h5>
+<p>To work with the conda package:</p>
+<ol class="arabic">
+<li><p><strong>Conda Environment Setup</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a conda environment</span>
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>edgar-sec-dev<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+conda<span class="w"> </span>activate<span class="w"> </span>edgar-sec-dev
+
+<span class="c1"># Install build dependencies</span>
+conda<span class="w"> </span>install<span class="w"> </span>conda-build<span class="w"> </span>anaconda-client
+</pre></div>
+</div>
+</li>
+<li><p><strong>Building the Conda Package Locally</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository if you haven&#39;t already</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/nikhilxsunder/edgar-sec.git
+<span class="nb">cd</span><span class="w"> </span>edgar-sec
+
+<span class="c1"># Build the conda package</span>
+conda<span class="w"> </span>build<span class="w"> </span>conda-recipe/
+</pre></div>
+</div>
+</li>
+<li><p><strong>Testing the Conda Package Locally</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install the locally built package</span>
+conda<span class="w"> </span>install<span class="w"> </span>--use-local<span class="w"> </span>edgar-sec
+
+<span class="c1"># Run tests</span>
+python<span class="w"> </span>-m<span class="w"> </span>pytest
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="pull-request-process">
+<h4>Pull Request Process<a class="headerlink" href="#pull-request-process" title="Link to this heading">¶</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Submission</strong></p>
+<ul class="simple">
+<li><p>Create a PR against the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch</p></li>
+<li><p>Fill out the PR template completely</p></li>
+<li><p>Link any related issues</p></li>
+</ul>
+</li>
+<li><p><strong>Review Process</strong></p>
+<ul class="simple">
+<li><p>At least one maintainer will review your PR</p></li>
+<li><p>Expect initial feedback within 1-2 weeks</p></li>
+<li><p>Address any requested changes and push updates</p></li>
+<li><p>Once approved, a maintainer will merge your PR</p></li>
+</ul>
+</li>
+<li><p><strong>After Merging</strong></p>
+<ul class="simple">
+<li><p>Your contribution will be included in the next release</p></li>
+<li><p>You’ll be added to the contributors list (if not already there)</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="continuous-integration">
+<h4>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Link to this heading">¶</a></h4>
+<p>Static code analysis is performed automatically:</p>
+<ul class="simple">
+<li><p><strong>On every commit</strong>: Pre-commit hooks run locally for developers</p></li>
+<li><p><strong>On every push and PR</strong>: GitHub Actions workflows run all static analysis tools</p></li>
+<li><p><strong>Daily scheduled runs</strong>: Automated analysis runs daily to catch issues with dependencies</p></li>
+<li><p><strong>Before releases</strong>: Full comprehensive analysis with stricter settings</p></li>
+</ul>
+<p>This ensures code quality issues are caught early and consistently throughout the development process.</p>
+<p>All PRs are automatically tested with:</p>
+<ul class="simple">
+<li><p>Unit and integration tests (pytest)</p></li>
+<li><p>Code style checks (pylint)</p></li>
+<li><p>Type checking (mypy)</p></li>
+<li><p>Test coverage (<a class="reference external" href="http://coverage.py">coverage.py</a>)</p></li>
+</ul>
+<p>CI checks must pass before a PR can be merged. You can run these checks locally:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lint code</span>
+poetry<span class="w"> </span>run<span class="w"> </span>pylint
+
+<span class="c1"># Type check</span>
+poetry<span class="w"> </span>run<span class="w"> </span>mypy<span class="w"> </span>.
+
+<span class="c1"># Run tests with coverage</span>
+poetry<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>--cov<span class="o">=</span>edgar_sec<span class="w"> </span>tests/
+</pre></div>
+</div>
+</section>
+<section id="dynamic-analysis">
+<h4>Dynamic Analysis<a class="headerlink" href="#dynamic-analysis" title="Link to this heading">¶</a></h4>
+<p>Before major releases, we perform dynamic analysis to verify robustness:</p>
+<section id="property-based-testing-with-hypothesis">
+<h5>Property-Based Testing with Hypothesis<a class="headerlink" href="#property-based-testing-with-hypothesis" title="Link to this heading">¶</a></h5>
+<p>Edgar-SEC uses <a class="reference external" href="https://hypothesis.readthedocs.io/">Hypothesis</a>, a powerful property-based testing tool that automatically generates test cases to find edge cases in our code.</p>
+<p>Property-based testing differs from traditional unit testing:</p>
+<ul class="simple">
+<li><p><strong>Unit tests</strong>: Test specific inputs and expected outputs</p></li>
+<li><p><strong>Property-based tests</strong>: Define properties that should always hold true regardless of input</p></li>
+</ul>
+<p>Our property-based tests:</p>
+<ul class="simple">
+<li><p>Generate thousands of diverse inputs automatically</p></li>
+<li><p>Test boundary conditions and edge cases</p></li>
+<li><p>Explore combinations of parameters that manual tests might miss</p></li>
+<li><p>Automatically shrink failing examples to minimal reproducible cases</p></li>
+</ul>
+</section>
+<section id="running-dynamic-analysis-tests">
+<h5>Running Dynamic Analysis Tests<a class="headerlink" href="#running-dynamic-analysis-tests" title="Link to this heading">¶</a></h5>
+<p>To run property-based tests locally:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install hypothesis</span>
+poetry<span class="w"> </span>add<span class="w"> </span>--group<span class="w"> </span>dev<span class="w"> </span>hypothesis
+
+<span class="c1"># Run property-based tests with assertions enabled (default)</span>
+python<span class="w"> </span>-B<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/test_property_based.py<span class="w"> </span>-v
+
+<span class="c1"># Show detailed statistics from hypothesis tests</span>
+python<span class="w"> </span>-B<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/test_property_based.py<span class="w"> </span>-v<span class="w"> </span>--hypothesis-show-statistics
+
+<span class="c1"># Run with coverage measurement</span>
+python<span class="w"> </span>-B<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/test_property_based.py<span class="w"> </span>--cov<span class="o">=</span>edgar_sec
+</pre></div>
+</div>
+</section>
+</section>
+<section id="release-process">
+<h4>Release Process<a class="headerlink" href="#release-process" title="Link to this heading">¶</a></h4>
+<p>Edgar-SEC follows <a class="reference external" href="https://semver.org/">Semantic Versioning</a>:</p>
+<ul class="simple">
+<li><p><strong>MAJOR</strong> version for incompatible API changes</p></li>
+<li><p><strong>MINOR</strong> version for new functionality in a backward-compatible manner</p></li>
+<li><p><strong>PATCH</strong> version for backward-compatible bug fixes</p></li>
+<li><p><strong>MAJOR.MINOR.PATCH</strong></p></li>
+</ul>
+<p>Release Procedure:</p>
+<ol class="arabic simple">
+<li><p>Create a PR with version bump and CHANGELOG updates</p></li>
+<li><p>Label the PR as “release-candidate” to trigger dynamic analysis</p></li>
+<li><p>Review test results including property-based tests</p></li>
+<li><p>After merging, tag the release and publish to PyPI</p></li>
+</ol>
+<p>Conda Release Process:</p>
+<ol class="arabic simple">
+<li><p>The GitHub Actions workflow automatically builds and uploads conda packages to Anaconda Cloud when a new version is tagged</p></li>
+<li><p>Verify the package is available on the nikhilxsunder channel: <a class="reference external" href="https://anaconda.org/nikhilxsunder/edgar-sec">https://anaconda.org/nikhilxsunder/edgar-sec</a></p></li>
+<li><p>Test installation from the channel: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">nikhilxsunder</span> <span class="pre">edgar-sec</span></code></p></li>
+<li><p>Future releases will also be submitted to conda-forge for broader distribution</p></li>
+</ol>
+</section>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="changelog.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Changelog</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="api/data_classes.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Data Classes</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Nikhil Sunder
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/nikhilxsunder/edgar-sec" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              <a class="muted-link " href="https://pypi.org/project/edgar-sec/" aria-label="PyPI">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Contributing</a><ul>
+<li><a class="reference internal" href="#contributing-to-edgar-sec">Contributing to Edgar-SEC</a><ul>
+<li><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
+<li><a class="reference internal" href="#how-to-contribute">How to Contribute</a><ul>
+<li><a class="reference internal" href="#reporting-issues">Reporting Issues</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#static-analysis">Static Analysis</a><ul>
+<li><a class="reference internal" href="#submitting-code-changes">Submitting Code Changes</a></li>
+<li><a class="reference internal" href="#coding-standards">Coding Standards</a></li>
+<li><a class="reference internal" href="#code-quality-and-warnings">Code Quality and Warnings</a></li>
+<li><a class="reference internal" href="#testing">Testing</a><ul>
+<li><a class="reference internal" href="#testing-with-assertions">Testing with Assertions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+<li><a class="reference internal" href="#contact">Contact</a></li>
+<li><a class="reference internal" href="#security-vulnerability-reporting">Security Vulnerability Reporting</a></li>
+<li><a class="reference internal" href="#code-of-conduct">Code of Conduct</a></li>
+<li><a class="reference internal" href="#development-setup">Development Setup</a><ul>
+<li><a class="reference internal" href="#conda-development">Conda Development</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pull-request-process">Pull Request Process</a></li>
+<li><a class="reference internal" href="#continuous-integration">Continuous Integration</a></li>
+<li><a class="reference internal" href="#dynamic-analysis">Dynamic Analysis</a><ul>
+<li><a class="reference internal" href="#property-based-testing-with-hypothesis">Property-Based Testing with Hypothesis</a></li>
+<li><a class="reference internal" href="#running-dynamic-analysis-tests">Running Dynamic Analysis Tests</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#release-process">Release Process</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    </body>
+</html>

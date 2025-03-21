@@ -1,0 +1,2478 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM6ZC88602"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HM6ZC88602');
+    </script>
+    <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Contributing" href="../contributing.html" /><link rel="prev" title="AsyncAPI Class" href="asyncapi.html" />
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+        <title>Data Classes - edgar-sec</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #4B6EAF;
+  --color-brand-content: #4B6EAF;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #7A97D0;
+  --color-brand-content: #7A97D0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #7A97D0;
+  --color-brand-content: #7A97D0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">edgar-sec</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">edgar-sec</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start Guide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../examples/index.html">Usage Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Usage Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/basic_usage.html">Basic Usage Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/advanced_usage.html">Advanced Usage Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="edgarapi.html">EdgarAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asyncapi.html">AsyncAPI Class</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Data Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/api/data_classes.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="module-edgar_sec.edgar_data">
+<span id="data-classes"></span><h1>Data Classes<a class="headerlink" href="#module-edgar_sec.edgar_data" title="Link to this heading">¶</a></h1>
+<p>Type stub file for edgar_data module.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Address">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">edgar_sec.edgar_data.</span></span><span class="sig-name descname"><span class="pre">Address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">street1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">street2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">city</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_or_country</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zipcode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_or_country_description</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#Address"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.Address" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing an address from SEC filing data.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Address.address_type">
+<span class="sig-name descname"><span class="pre">address_type</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Address.address_type" title="Link to this definition">¶</a></dt>
+<dd><p>The type of address (e.g., ‘mailing’, ‘business’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Address.street1">
+<span class="sig-name descname"><span class="pre">street1</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Address.street1" title="Link to this definition">¶</a></dt>
+<dd><p>The primary street address line.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Address.street2">
+<span class="sig-name descname"><span class="pre">street2</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Address.street2" title="Link to this definition">¶</a></dt>
+<dd><p>The secondary street address line, if any.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Address.city">
+<span class="sig-name descname"><span class="pre">city</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Address.city" title="Link to this definition">¶</a></dt>
+<dd><p>The city name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Address.state_or_country">
+<span class="sig-name descname"><span class="pre">state_or_country</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Address.state_or_country" title="Link to this definition">¶</a></dt>
+<dd><p>The state or country code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Address.zipcode">
+<span class="sig-name descname"><span class="pre">zipcode</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Address.zipcode" title="Link to this definition">¶</a></dt>
+<dd><p>The postal code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Address.state_or_country_description">
+<span class="sig-name descname"><span class="pre">state_or_country_description</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Address.state_or_country_description" title="Link to this definition">¶</a></dt>
+<dd><p>The full name of the state or country.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An object containing formatted address information.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#edgar_sec.edgar_data.Address" title="edgar_sec.edgar_data.Address">Address</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The address_type is typically provided by the key name in the SEC API
+response and is passed separately to the from_dict method.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">address_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">city</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id1" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Address.from_dict">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#Address.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.Address.from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Parses a dictionary and returns an Address object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#edgar_sec.edgar_data.Address" title="edgar_sec.edgar_data.Address"><code class="xref py py-class docutils literal notranslate"><span class="pre">Address</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">state_or_country</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id2" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">state_or_country_description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id3" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">street1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id4" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">street2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id5" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">zipcode</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id6" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.CompanyConcept">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">edgar_sec.edgar_data.</span></span><span class="sig-name descname"><span class="pre">CompanyConcept</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cik</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taxonomy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#CompanyConcept"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.CompanyConcept" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing a specific financial concept for a company from SEC filings.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.CompanyConcept.cik">
+<span class="sig-name descname"><span class="pre">cik</span></span><a class="headerlink" href="#edgar_sec.edgar_data.CompanyConcept.cik" title="Link to this definition">¶</a></dt>
+<dd><p>Central Index Key (CIK) of the entity, a unique identifier assigned by the SEC.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.CompanyConcept.taxonomy">
+<span class="sig-name descname"><span class="pre">taxonomy</span></span><a class="headerlink" href="#edgar_sec.edgar_data.CompanyConcept.taxonomy" title="Link to this definition">¶</a></dt>
+<dd><p>The reporting taxonomy used (e.g., ‘us-gaap’, ‘dei’, ‘srt’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.CompanyConcept.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><a class="headerlink" href="#edgar_sec.edgar_data.CompanyConcept.tag" title="Link to this definition">¶</a></dt>
+<dd><p>The specific concept tag or account name (e.g., ‘Assets’, ‘Revenue’, ‘EarningsPerShare’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.CompanyConcept.label">
+<span class="sig-name descname"><span class="pre">label</span></span><a class="headerlink" href="#edgar_sec.edgar_data.CompanyConcept.label" title="Link to this definition">¶</a></dt>
+<dd><p>Human-readable label describing the financial concept.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.CompanyConcept.description">
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#edgar_sec.edgar_data.CompanyConcept.description" title="Link to this definition">¶</a></dt>
+<dd><p>Detailed explanation of what the financial concept represents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.CompanyConcept.entity_name">
+<span class="sig-name descname"><span class="pre">entity_name</span></span><a class="headerlink" href="#edgar_sec.edgar_data.CompanyConcept.entity_name" title="Link to this definition">¶</a></dt>
+<dd><p>Legal name of the reporting entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.CompanyConcept.units">
+<span class="sig-name descname"><span class="pre">units</span></span><a class="headerlink" href="#edgar_sec.edgar_data.CompanyConcept.units" title="Link to this definition">¶</a></dt>
+<dd><p>Individual disclosure values across different time periods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure" title="edgar_sec.edgar_data.UnitDisclosure">UnitDisclosure</a>, List[<a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure" title="edgar_sec.edgar_data.UnitDisclosure">UnitDisclosure</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An object containing all instances of a specific financial concept reported by a company.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#edgar_sec.edgar_data.CompanyConcept" title="edgar_sec.edgar_data.CompanyConcept">CompanyConcept</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This class provides time-series data for a single financial concept across
+multiple reporting periods. The taxonomy and tag parameters define which
+specific financial data point is being represented. Common taxonomies include
+‘us-gaap’ (US GAAP accounting standards), ‘ifrs’ (International standards),
+and ‘dei’ (Document and Entity Information).</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">cik</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id7" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id8" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">entity_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id9" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.CompanyConcept.from_api_response">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_api_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#CompanyConcept.from_api_response"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.CompanyConcept.from_api_response" title="Link to this definition">¶</a></dt>
+<dd><p>Parses EDGAR API response and returns a single CompanyConcept.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#edgar_sec.edgar_data.CompanyConcept" title="edgar_sec.edgar_data.CompanyConcept"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompanyConcept</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">label</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id10" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id11">
+<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id11" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id12">
+<span class="sig-name descname"><span class="pre">taxonomy</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id12" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id13">
+<span class="sig-name descname"><span class="pre">units</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code><span class="pre">[</span><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure" title="edgar_sec.edgar_data.UnitDisclosure"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnitDisclosure</span></code></a><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code><span class="pre">[</span><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure" title="edgar_sec.edgar_data.UnitDisclosure"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnitDisclosure</span></code></a><span class="pre">]]</span></em><a class="headerlink" href="#id13" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.CompanyFact">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">edgar_sec.edgar_data.</span></span><span class="sig-name descname"><span class="pre">CompanyFact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cik</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">facts</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#CompanyFact"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.CompanyFact" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing the complete collection of financial facts for a company from SEC filings.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.CompanyFact.cik">
+<span class="sig-name descname"><span class="pre">cik</span></span><a class="headerlink" href="#edgar_sec.edgar_data.CompanyFact.cik" title="Link to this definition">¶</a></dt>
+<dd><p>Central Index Key (CIK) of the entity, a unique identifier assigned by the SEC.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.CompanyFact.entity_name">
+<span class="sig-name descname"><span class="pre">entity_name</span></span><a class="headerlink" href="#edgar_sec.edgar_data.CompanyFact.entity_name" title="Link to this definition">¶</a></dt>
+<dd><p>Legal name of the reporting entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.CompanyFact.facts">
+<span class="sig-name descname"><span class="pre">facts</span></span><a class="headerlink" href="#edgar_sec.edgar_data.CompanyFact.facts" title="Link to this definition">¶</a></dt>
+<dd><p>A dictionary mapping taxonomy identifiers to their corresponding Fact objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[str, <a class="reference internal" href="#edgar_sec.edgar_data.Fact" title="edgar_sec.edgar_data.Fact">Fact</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An object containing all financial facts reported by a company across all taxonomies.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#edgar_sec.edgar_data.CompanyFact" title="edgar_sec.edgar_data.CompanyFact">CompanyFact</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This class represents the highest level container for all financial data for a company,
+organized hierarchically by taxonomy, concept, and unit. It provides access to the
+complete set of financial disclosures that an entity has filed with the SEC in
+machine-readable XBRL format, enabling time-series analysis of financial metrics.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id14">
+<span class="sig-name descname"><span class="pre">cik</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id14" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id15">
+<span class="sig-name descname"><span class="pre">entity_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id16">
+<span class="sig-name descname"><span class="pre">facts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <a class="reference internal" href="#edgar_sec.edgar_data.Fact" title="edgar_sec.edgar_data.Fact"><code class="xref py py-class docutils literal notranslate"><span class="pre">Fact</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#id16" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.CompanyFact.from_api_response">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_api_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#CompanyFact.from_api_response"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.CompanyFact.from_api_response" title="Link to this definition">¶</a></dt>
+<dd><p>Parses EDGAR API response and returns a single CompanyFacts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#edgar_sec.edgar_data.CompanyFact" title="edgar_sec.edgar_data.CompanyFact"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompanyFact</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.EntityDisclosure">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">edgar_sec.edgar_data.</span></span><span class="sig-name descname"><span class="pre">EntityDisclosure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#EntityDisclosure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.EntityDisclosure" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing a specific financial concept disclosure for an entity.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.EntityDisclosure.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#edgar_sec.edgar_data.EntityDisclosure.name" title="Link to this definition">¶</a></dt>
+<dd><p>The name of the concept tag (e.g., ‘Assets’, ‘Revenue’, ‘CommonStockSharesOutstanding’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.EntityDisclosure.label">
+<span class="sig-name descname"><span class="pre">label</span></span><a class="headerlink" href="#edgar_sec.edgar_data.EntityDisclosure.label" title="Link to this definition">¶</a></dt>
+<dd><p>Human-readable label describing the financial concept.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.EntityDisclosure.description">
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#edgar_sec.edgar_data.EntityDisclosure.description" title="Link to this definition">¶</a></dt>
+<dd><p>Detailed explanation of what the financial concept represents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.EntityDisclosure.units">
+<span class="sig-name descname"><span class="pre">units</span></span><a class="headerlink" href="#edgar_sec.edgar_data.EntityDisclosure.units" title="Link to this definition">¶</a></dt>
+<dd><p>A dictionary mapping unit types to lists of disclosure values across different reporting periods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[str, List[<a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure" title="edgar_sec.edgar_data.UnitDisclosure">UnitDisclosure</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An object containing all disclosures of a specific financial concept, organized by unit type.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#edgar_sec.edgar_data.EntityDisclosure" title="edgar_sec.edgar_data.EntityDisclosure">EntityDisclosure</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This class organizes financial concept data by unit of measurement (like USD, shares, etc.)
+to accommodate concepts that might be reported in multiple units across different periods.
+The name parameter represents the specific XBRL tag or concept identifier.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id17">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id17" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.EntityDisclosure.from_dict">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#EntityDisclosure.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.EntityDisclosure.from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Parses an entity disclosure from the API response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#edgar_sec.edgar_data.EntityDisclosure" title="edgar_sec.edgar_data.EntityDisclosure"><code class="xref py py-class docutils literal notranslate"><span class="pre">EntityDisclosure</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id18">
+<span class="sig-name descname"><span class="pre">label</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id18" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id19">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id19" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id20">
+<span class="sig-name descname"><span class="pre">units</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code><span class="pre">[</span><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure" title="edgar_sec.edgar_data.UnitDisclosure"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnitDisclosure</span></code></a><span class="pre">]]</span></em><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Fact">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">edgar_sec.edgar_data.</span></span><span class="sig-name descname"><span class="pre">Fact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taxonomy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disclosures</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#Fact"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.Fact" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing a collection of financial disclosures for a specific taxonomy.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Fact.taxonomy">
+<span class="sig-name descname"><span class="pre">taxonomy</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Fact.taxonomy" title="Link to this definition">¶</a></dt>
+<dd><p>The reporting taxonomy identifier (e.g., ‘us-gaap’, ‘dei’, ‘ifrs’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Fact.disclosures">
+<span class="sig-name descname"><span class="pre">disclosures</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Fact.disclosures" title="Link to this definition">¶</a></dt>
+<dd><p>A dictionary mapping concept tag names to their corresponding disclosure objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[str, <a class="reference internal" href="#edgar_sec.edgar_data.EntityDisclosure" title="edgar_sec.edgar_data.EntityDisclosure">EntityDisclosure</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An object containing all disclosures within a specific taxonomy for an entity.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#edgar_sec.edgar_data.Fact" title="edgar_sec.edgar_data.Fact">Fact</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This class organizes financial data hierarchically by taxonomy, representing
+a collection of related financial concepts under a specific accounting standard
+or reporting framework. Common taxonomies include ‘us-gaap’ (US GAAP accounting
+standards), ‘ifrs’ (International standards), and ‘dei’ (Document and Entity
+Information).</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id21">
+<span class="sig-name descname"><span class="pre">disclosures</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <a class="reference internal" href="#edgar_sec.edgar_data.EntityDisclosure" title="edgar_sec.edgar_data.EntityDisclosure"><code class="xref py py-class docutils literal notranslate"><span class="pre">EntityDisclosure</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Fact.from_dict">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taxonomy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#Fact.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.Fact.from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Parses a taxonomy fact from the API response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#edgar_sec.edgar_data.Fact" title="edgar_sec.edgar_data.Fact"><code class="xref py py-class docutils literal notranslate"><span class="pre">Fact</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id22">
+<span class="sig-name descname"><span class="pre">taxonomy</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id22" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.File">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">edgar_sec.edgar_data.</span></span><span class="sig-name descname"><span class="pre">File</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filing_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filing_from</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filing_to</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#File"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.File" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing a file reference in SEC EDGAR submission history.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.File.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#edgar_sec.edgar_data.File.name" title="Link to this definition">¶</a></dt>
+<dd><p>The filename of the additional submission history file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.File.filing_count">
+<span class="sig-name descname"><span class="pre">filing_count</span></span><a class="headerlink" href="#edgar_sec.edgar_data.File.filing_count" title="Link to this definition">¶</a></dt>
+<dd><p>The number of filings contained in the referenced file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.File.filing_from">
+<span class="sig-name descname"><span class="pre">filing_from</span></span><a class="headerlink" href="#edgar_sec.edgar_data.File.filing_from" title="Link to this definition">¶</a></dt>
+<dd><p>The earliest filing date covered in this file, in YYYY-MM-DD format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.File.filing_to">
+<span class="sig-name descname"><span class="pre">filing_to</span></span><a class="headerlink" href="#edgar_sec.edgar_data.File.filing_to" title="Link to this definition">¶</a></dt>
+<dd><p>The latest filing date covered in this file, in YYYY-MM-DD format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An object containing information about a submission history file reference.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#edgar_sec.edgar_data.File" title="edgar_sec.edgar_data.File">File</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The SEC EDGAR API typically returns the most recent submissions directly
+in the response, with references to additional JSON files for older
+submissions. These file references can be used to retrieve the complete
+filing history for entities with extensive submissions.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id23">
+<span class="sig-name descname"><span class="pre">filing_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></em><a class="headerlink" href="#id23" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id24">
+<span class="sig-name descname"><span class="pre">filing_from</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id24" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id25">
+<span class="sig-name descname"><span class="pre">filing_to</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id25" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.File.from_dict">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#File.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.File.from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Parses a dictionary and returns a File object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#edgar_sec.edgar_data.File" title="edgar_sec.edgar_data.File"><code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id26">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id26" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">edgar_sec.edgar_data.</span></span><span class="sig-name descname"><span class="pre">Filing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">accession_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filing_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceptance_date_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">act</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">form</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">film_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">items</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">core_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_xbrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_inline_xbrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary_document</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary_doc_description</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#Filing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.Filing" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing an SEC filing document.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.accession_number">
+<span class="sig-name descname"><span class="pre">accession_number</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Filing.accession_number" title="Link to this definition">¶</a></dt>
+<dd><p>Unique identifier for the filing in the format XXXXXXXXXX-XX-XXXXXX.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.filing_date">
+<span class="sig-name descname"><span class="pre">filing_date</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Filing.filing_date" title="Link to this definition">¶</a></dt>
+<dd><p>The date when the filing was submitted to the SEC, in YYYY-MM-DD format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.report_date">
+<span class="sig-name descname"><span class="pre">report_date</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Filing.report_date" title="Link to this definition">¶</a></dt>
+<dd><p>The date of the reporting period covered by the filing, in YYYY-MM-DD format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.acceptance_date_time">
+<span class="sig-name descname"><span class="pre">acceptance_date_time</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Filing.acceptance_date_time" title="Link to this definition">¶</a></dt>
+<dd><p>The date and time when the filing was accepted by the SEC.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.act">
+<span class="sig-name descname"><span class="pre">act</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Filing.act" title="Link to this definition">¶</a></dt>
+<dd><p>The securities act (e.g., ‘33’, ‘34’) under which the filing was submitted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.form">
+<span class="sig-name descname"><span class="pre">form</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Filing.form" title="Link to this definition">¶</a></dt>
+<dd><p>The form type (e.g., ‘10-K’, ‘10-Q’, ‘8-K’) of the filing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.file_number">
+<span class="sig-name descname"><span class="pre">file_number</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Filing.file_number" title="Link to this definition">¶</a></dt>
+<dd><p>SEC file number assigned to the registrant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.film_number">
+<span class="sig-name descname"><span class="pre">film_number</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Filing.film_number" title="Link to this definition">¶</a></dt>
+<dd><p>Film number assigned to the submission.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.items">
+<span class="sig-name descname"><span class="pre">items</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Filing.items" title="Link to this definition">¶</a></dt>
+<dd><p>The specific items being reported in the filing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[str, List[str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.core_type">
+<span class="sig-name descname"><span class="pre">core_type</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Filing.core_type" title="Link to this definition">¶</a></dt>
+<dd><p>The core financial statement disclosure type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.size">
+<span class="sig-name descname"><span class="pre">size</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Filing.size" title="Link to this definition">¶</a></dt>
+<dd><p>The size of the filing document in bytes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.is_xbrl">
+<span class="sig-name descname"><span class="pre">is_xbrl</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Filing.is_xbrl" title="Link to this definition">¶</a></dt>
+<dd><p>Whether the filing includes XBRL data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.is_inline_xbrl">
+<span class="sig-name descname"><span class="pre">is_inline_xbrl</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Filing.is_inline_xbrl" title="Link to this definition">¶</a></dt>
+<dd><p>Whether the filing uses inline XBRL format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.primary_document">
+<span class="sig-name descname"><span class="pre">primary_document</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Filing.primary_document" title="Link to this definition">¶</a></dt>
+<dd><p>The filename of the primary document in the submission.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.primary_doc_description">
+<span class="sig-name descname"><span class="pre">primary_doc_description</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Filing.primary_doc_description" title="Link to this definition">¶</a></dt>
+<dd><p>Description of the primary document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An object containing information about an SEC filing document.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#edgar_sec.edgar_data.Filing" title="edgar_sec.edgar_data.Filing">Filing</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Form types include annual reports (10-K), quarterly reports (10-Q),
+current reports (8-K), and various other registration and disclosure forms.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id27">
+<span class="sig-name descname"><span class="pre">acceptance_date_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id27" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id28">
+<span class="sig-name descname"><span class="pre">accession_number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id29">
+<span class="sig-name descname"><span class="pre">act</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id30">
+<span class="sig-name descname"><span class="pre">core_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id31">
+<span class="sig-name descname"><span class="pre">file_number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id32">
+<span class="sig-name descname"><span class="pre">filing_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id33">
+<span class="sig-name descname"><span class="pre">film_number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id34">
+<span class="sig-name descname"><span class="pre">form</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Filing.from_dict">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#Filing.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.Filing.from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Parses a dictionary and returns a Filing object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#edgar_sec.edgar_data.Filing" title="edgar_sec.edgar_data.Filing"><code class="xref py py-class docutils literal notranslate"><span class="pre">Filing</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id35">
+<span class="sig-name descname"><span class="pre">is_inline_xbrl</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></em><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id36">
+<span class="sig-name descname"><span class="pre">is_xbrl</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></em><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id37">
+<span class="sig-name descname"><span class="pre">items</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id38">
+<span class="sig-name descname"><span class="pre">primary_doc_description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id39">
+<span class="sig-name descname"><span class="pre">primary_document</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id40">
+<span class="sig-name descname"><span class="pre">report_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id41">
+<span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></em><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.FormerName">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">edgar_sec.edgar_data.</span></span><span class="sig-name descname"><span class="pre">FormerName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_date</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#FormerName"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.FormerName" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing a former name of an SEC filing entity.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.FormerName.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#edgar_sec.edgar_data.FormerName.name" title="Link to this definition">¶</a></dt>
+<dd><p>The previous company name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.FormerName.from_date">
+<span class="sig-name descname"><span class="pre">from_date</span></span><a class="headerlink" href="#edgar_sec.edgar_data.FormerName.from_date" title="Link to this definition">¶</a></dt>
+<dd><p>The date when the company began using this name, in YYYY-MM-DD format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.FormerName.to_date">
+<span class="sig-name descname"><span class="pre">to_date</span></span><a class="headerlink" href="#edgar_sec.edgar_data.FormerName.to_date" title="Link to this definition">¶</a></dt>
+<dd><p>The date when the company stopped using this name, in YYYY-MM-DD format. May be empty if still in use.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An object containing information about a company’s previous name.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#edgar_sec.edgar_data.FormerName" title="edgar_sec.edgar_data.FormerName">FormerName</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This class is typically used when parsing company submission history
+where entities may have changed their names over time. The from_dict method
+handles the API’s naming convention where the start date is called ‘from’.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id42">
+<span class="sig-name descname"><span class="pre">from_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id42" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.FormerName.from_dict">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#FormerName.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.FormerName.from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Parses a dictionary and returns a FormerName object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#edgar_sec.edgar_data.FormerName" title="edgar_sec.edgar_data.FormerName"><code class="xref py py-class docutils literal notranslate"><span class="pre">FormerName</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id43">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id43" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id44">
+<span class="sig-name descname"><span class="pre">to_date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Frame">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">edgar_sec.edgar_data.</span></span><span class="sig-name descname"><span class="pre">Frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taxonomy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ccp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frames</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#Frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.Frame" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing a collection of financial disclosures across multiple companies for a specific concept and time period.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Frame.taxonomy">
+<span class="sig-name descname"><span class="pre">taxonomy</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Frame.taxonomy" title="Link to this definition">¶</a></dt>
+<dd><p>The reporting taxonomy identifier (e.g., ‘us-gaap’, ‘dei’, ‘ifrs’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Frame.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Frame.tag" title="Link to this definition">¶</a></dt>
+<dd><p>The specific concept tag or account name (e.g., ‘Assets’, ‘Revenue’, ‘EarningsPerShare’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Frame.ccp">
+<span class="sig-name descname"><span class="pre">ccp</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Frame.ccp" title="Link to this definition">¶</a></dt>
+<dd><p>The calculation context parameter defining the reporting context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Frame.uom">
+<span class="sig-name descname"><span class="pre">uom</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Frame.uom" title="Link to this definition">¶</a></dt>
+<dd><p>The unit of measurement (e.g., ‘USD’, ‘shares’, ‘USD/shares’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Frame.label">
+<span class="sig-name descname"><span class="pre">label</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Frame.label" title="Link to this definition">¶</a></dt>
+<dd><p>Human-readable label describing the financial concept.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Frame.description">
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Frame.description" title="Link to this definition">¶</a></dt>
+<dd><p>Detailed explanation of what the financial concept represents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Frame.pts">
+<span class="sig-name descname"><span class="pre">pts</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Frame.pts" title="Link to this definition">¶</a></dt>
+<dd><p>The number of reporting entities (points) included in the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Frame.frames">
+<span class="sig-name descname"><span class="pre">frames</span></span><a class="headerlink" href="#edgar_sec.edgar_data.Frame.frames" title="Link to this definition">¶</a></dt>
+<dd><p>A list of individual company disclosures for the concept and time period.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="#edgar_sec.edgar_data.FrameDisclosure" title="edgar_sec.edgar_data.FrameDisclosure">FrameDisclosure</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An object containing comparable financial disclosures across multiple companies.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#edgar_sec.edgar_data.Frame" title="edgar_sec.edgar_data.Frame">Frame</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Frames are particularly useful for cross-sectional analysis, benchmarking, and
+comparative studies as they provide standardized financial data for multiple companies
+at the same point in time. The frame identifier (ccp) typically includes the calendar
+year, quarter, and whether the value is instantaneous (I) or for a duration (D).</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id45">
+<span class="sig-name descname"><span class="pre">ccp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id46">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id46" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id47">
+<span class="sig-name descname"><span class="pre">frames</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code><span class="pre">[</span><a class="reference internal" href="#edgar_sec.edgar_data.FrameDisclosure" title="edgar_sec.edgar_data.FrameDisclosure"><code class="xref py py-class docutils literal notranslate"><span class="pre">FrameDisclosure</span></code></a><span class="pre">]</span></em><a class="headerlink" href="#id47" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.Frame.from_api_response">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_api_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#Frame.from_api_response"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.Frame.from_api_response" title="Link to this definition">¶</a></dt>
+<dd><p>Parses a dictionary and returns a Frame object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#edgar_sec.edgar_data.Frame" title="edgar_sec.edgar_data.Frame"><code class="xref py py-class docutils literal notranslate"><span class="pre">Frame</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id48">
+<span class="sig-name descname"><span class="pre">label</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id48" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id49">
+<span class="sig-name descname"><span class="pre">pts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></em><a class="headerlink" href="#id49" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id50">
+<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id50" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id51">
+<span class="sig-name descname"><span class="pre">taxonomy</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id51" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id52">
+<span class="sig-name descname"><span class="pre">uom</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id52" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.FrameDisclosure">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">edgar_sec.edgar_data.</span></span><span class="sig-name descname"><span class="pre">FrameDisclosure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">accn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cik</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#FrameDisclosure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.FrameDisclosure" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing a single financial disclosure from an SEC reporting frame.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.FrameDisclosure.accn">
+<span class="sig-name descname"><span class="pre">accn</span></span><a class="headerlink" href="#edgar_sec.edgar_data.FrameDisclosure.accn" title="Link to this definition">¶</a></dt>
+<dd><p>Accession number of the filing containing this disclosure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.FrameDisclosure.cik">
+<span class="sig-name descname"><span class="pre">cik</span></span><a class="headerlink" href="#edgar_sec.edgar_data.FrameDisclosure.cik" title="Link to this definition">¶</a></dt>
+<dd><p>Central Index Key (CIK) of the entity making the disclosure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.FrameDisclosure.entity_name">
+<span class="sig-name descname"><span class="pre">entity_name</span></span><a class="headerlink" href="#edgar_sec.edgar_data.FrameDisclosure.entity_name" title="Link to this definition">¶</a></dt>
+<dd><p>Legal name of the reporting entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.FrameDisclosure.loc">
+<span class="sig-name descname"><span class="pre">loc</span></span><a class="headerlink" href="#edgar_sec.edgar_data.FrameDisclosure.loc" title="Link to this definition">¶</a></dt>
+<dd><p>Location identifier for the disclosure within the filing document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.FrameDisclosure.end">
+<span class="sig-name descname"><span class="pre">end</span></span><a class="headerlink" href="#edgar_sec.edgar_data.FrameDisclosure.end" title="Link to this definition">¶</a></dt>
+<dd><p>The end date of the reporting period, in YYYY-MM-DD format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.FrameDisclosure.val">
+<span class="sig-name descname"><span class="pre">val</span></span><a class="headerlink" href="#edgar_sec.edgar_data.FrameDisclosure.val" title="Link to this definition">¶</a></dt>
+<dd><p>The numerical value of the disclosure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An object containing a single financial disclosure value and its metadata.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#edgar_sec.edgar_data.FrameDisclosure" title="edgar_sec.edgar_data.FrameDisclosure">FrameDisclosure</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Frame disclosures represent point-in-time snapshots of financial data that allow for
+comparison across multiple companies for the same time period and concept. Unlike
+CompanyConcept objects which show time-series data for a single company, frames provide
+cross-sectional data across multiple companies at a specific point in time.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id53">
+<span class="sig-name descname"><span class="pre">accn</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id53" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id54">
+<span class="sig-name descname"><span class="pre">cik</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id54" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id55">
+<span class="sig-name descname"><span class="pre">end</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id55" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id56">
+<span class="sig-name descname"><span class="pre">entity_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id56" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.FrameDisclosure.from_dict">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#FrameDisclosure.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.FrameDisclosure.from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Parses a frame disclosure from the API response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#edgar_sec.edgar_data.FrameDisclosure" title="edgar_sec.edgar_data.FrameDisclosure"><code class="xref py py-class docutils literal notranslate"><span class="pre">FrameDisclosure</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id57">
+<span class="sig-name descname"><span class="pre">loc</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id57" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id58">
+<span class="sig-name descname"><span class="pre">val</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></em><a class="headerlink" href="#id58" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">edgar_sec.edgar_data.</span></span><span class="sig-name descname"><span class="pre">SubmissionHistory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cik</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sic_description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">owner_org</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">insider_transaction_for_owner_exists</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">insider_transaction_for_issuer_exists</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tickers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exchanges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ein</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">website</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">investor_website</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fiscal_year_end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_of_incorporation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_of_incorporation_description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addresses</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">former_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#SubmissionHistory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing the complete submission history of an SEC filing entity.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.cik">
+<span class="sig-name descname"><span class="pre">cik</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.cik" title="Link to this definition">¶</a></dt>
+<dd><p>Central Index Key (CIK) of the entity, a unique identifier assigned by the SEC.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.entity_type">
+<span class="sig-name descname"><span class="pre">entity_type</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.entity_type" title="Link to this definition">¶</a></dt>
+<dd><p>The type of entity (e.g., ‘operating’, ‘investment-company’, ‘private’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.sic">
+<span class="sig-name descname"><span class="pre">sic</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.sic" title="Link to this definition">¶</a></dt>
+<dd><p>Standard Industrial Classification (SIC) code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.sic_description">
+<span class="sig-name descname"><span class="pre">sic_description</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.sic_description" title="Link to this definition">¶</a></dt>
+<dd><p>Text description of the SIC code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.owner_org">
+<span class="sig-name descname"><span class="pre">owner_org</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.owner_org" title="Link to this definition">¶</a></dt>
+<dd><p>Name of the organization if this entity is an owner.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.insider_transaction_for_owner_exists">
+<span class="sig-name descname"><span class="pre">insider_transaction_for_owner_exists</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.insider_transaction_for_owner_exists" title="Link to this definition">¶</a></dt>
+<dd><p>Whether insider transactions exist for this entity as an owner.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.insider_transaction_for_issuer_exists">
+<span class="sig-name descname"><span class="pre">insider_transaction_for_issuer_exists</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.insider_transaction_for_issuer_exists" title="Link to this definition">¶</a></dt>
+<dd><p>Whether insider transactions exist for this entity as an issuer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.name" title="Link to this definition">¶</a></dt>
+<dd><p>Legal name of the entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.tickers">
+<span class="sig-name descname"><span class="pre">tickers</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.tickers" title="Link to this definition">¶</a></dt>
+<dd><p>Stock ticker symbol(s) for the entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[str, List[str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.exchanges">
+<span class="sig-name descname"><span class="pre">exchanges</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.exchanges" title="Link to this definition">¶</a></dt>
+<dd><p>Stock exchange(s) where the entity is listed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[str, List[str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.ein">
+<span class="sig-name descname"><span class="pre">ein</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.ein" title="Link to this definition">¶</a></dt>
+<dd><p>Employer Identification Number, a tax ID number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.description">
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.description" title="Link to this definition">¶</a></dt>
+<dd><p>Business description of the entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.website">
+<span class="sig-name descname"><span class="pre">website</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.website" title="Link to this definition">¶</a></dt>
+<dd><p>The entity’s primary website.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.investor_website">
+<span class="sig-name descname"><span class="pre">investor_website</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.investor_website" title="Link to this definition">¶</a></dt>
+<dd><p>The entity’s investor relations website.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.category">
+<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.category" title="Link to this definition">¶</a></dt>
+<dd><p>SEC category classification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.fiscal_year_end">
+<span class="sig-name descname"><span class="pre">fiscal_year_end</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.fiscal_year_end" title="Link to this definition">¶</a></dt>
+<dd><p>Month and day of the entity’s fiscal year end (MM-DD format).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.state_of_incorporation">
+<span class="sig-name descname"><span class="pre">state_of_incorporation</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.state_of_incorporation" title="Link to this definition">¶</a></dt>
+<dd><p>State or country code where the entity is incorporated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.state_of_incorporation_description">
+<span class="sig-name descname"><span class="pre">state_of_incorporation_description</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.state_of_incorporation_description" title="Link to this definition">¶</a></dt>
+<dd><p>Full name of the state or country of incorporation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.addresses">
+<span class="sig-name descname"><span class="pre">addresses</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.addresses" title="Link to this definition">¶</a></dt>
+<dd><p>Mailing and business addresses for the entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="#edgar_sec.edgar_data.Address" title="edgar_sec.edgar_data.Address">Address</a>, List[<a class="reference internal" href="#edgar_sec.edgar_data.Address" title="edgar_sec.edgar_data.Address">Address</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.phone">
+<span class="sig-name descname"><span class="pre">phone</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.phone" title="Link to this definition">¶</a></dt>
+<dd><p>Contact phone number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.flags">
+<span class="sig-name descname"><span class="pre">flags</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.flags" title="Link to this definition">¶</a></dt>
+<dd><p>Special flags or indicators about the entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[str, List[str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.former_names">
+<span class="sig-name descname"><span class="pre">former_names</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.former_names" title="Link to this definition">¶</a></dt>
+<dd><p>Previous names of the entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="#edgar_sec.edgar_data.FormerName" title="edgar_sec.edgar_data.FormerName">FormerName</a>, List[<a class="reference internal" href="#edgar_sec.edgar_data.FormerName" title="edgar_sec.edgar_data.FormerName">FormerName</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.filings">
+<span class="sig-name descname"><span class="pre">filings</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.filings" title="Link to this definition">¶</a></dt>
+<dd><p>Recent SEC filings by the entity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="#edgar_sec.edgar_data.Filing" title="edgar_sec.edgar_data.Filing">Filing</a>, List[<a class="reference internal" href="#edgar_sec.edgar_data.Filing" title="edgar_sec.edgar_data.Filing">Filing</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.files">
+<span class="sig-name descname"><span class="pre">files</span></span><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.files" title="Link to this definition">¶</a></dt>
+<dd><p>References to additional files containing older filings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[<a class="reference internal" href="#edgar_sec.edgar_data.File" title="edgar_sec.edgar_data.File">File</a>, List[<a class="reference internal" href="#edgar_sec.edgar_data.File" title="edgar_sec.edgar_data.File">File</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An object containing comprehensive information about an entity’s filing history and profile.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory" title="edgar_sec.edgar_data.SubmissionHistory">SubmissionHistory</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This class provides a comprehensive view of an entity’s profile and filing
+history as maintained by the SEC. It includes both the entity’s current
+information and a record of its historical filings and name changes.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id59">
+<span class="sig-name descname"><span class="pre">addresses</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code><span class="pre">[</span><a class="reference internal" href="#edgar_sec.edgar_data.Address" title="edgar_sec.edgar_data.Address"><code class="xref py py-class docutils literal notranslate"><span class="pre">Address</span></code></a><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code><span class="pre">[</span><a class="reference internal" href="#edgar_sec.edgar_data.Address" title="edgar_sec.edgar_data.Address"><code class="xref py py-class docutils literal notranslate"><span class="pre">Address</span></code></a><span class="pre">]]</span></em><a class="headerlink" href="#id59" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id60">
+<span class="sig-name descname"><span class="pre">category</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id60" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id61">
+<span class="sig-name descname"><span class="pre">cik</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id61" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id62">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id62" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id63">
+<span class="sig-name descname"><span class="pre">ein</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id63" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id64">
+<span class="sig-name descname"><span class="pre">entity_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id64" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id65">
+<span class="sig-name descname"><span class="pre">exchanges</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id65" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id66">
+<span class="sig-name descname"><span class="pre">files</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code><span class="pre">[</span><a class="reference internal" href="#edgar_sec.edgar_data.File" title="edgar_sec.edgar_data.File"><code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code></a><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code><span class="pre">[</span><a class="reference internal" href="#edgar_sec.edgar_data.File" title="edgar_sec.edgar_data.File"><code class="xref py py-class docutils literal notranslate"><span class="pre">File</span></code></a><span class="pre">]]</span></em><a class="headerlink" href="#id66" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id67">
+<span class="sig-name descname"><span class="pre">filings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code><span class="pre">[</span><a class="reference internal" href="#edgar_sec.edgar_data.Filing" title="edgar_sec.edgar_data.Filing"><code class="xref py py-class docutils literal notranslate"><span class="pre">Filing</span></code></a><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code><span class="pre">[</span><a class="reference internal" href="#edgar_sec.edgar_data.Filing" title="edgar_sec.edgar_data.Filing"><code class="xref py py-class docutils literal notranslate"><span class="pre">Filing</span></code></a><span class="pre">]]</span></em><a class="headerlink" href="#id67" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id68">
+<span class="sig-name descname"><span class="pre">fiscal_year_end</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id68" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id69">
+<span class="sig-name descname"><span class="pre">flags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id69" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id70">
+<span class="sig-name descname"><span class="pre">former_names</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code><span class="pre">[</span><a class="reference internal" href="#edgar_sec.edgar_data.FormerName" title="edgar_sec.edgar_data.FormerName"><code class="xref py py-class docutils literal notranslate"><span class="pre">FormerName</span></code></a><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code><span class="pre">[</span><a class="reference internal" href="#edgar_sec.edgar_data.FormerName" title="edgar_sec.edgar_data.FormerName"><code class="xref py py-class docutils literal notranslate"><span class="pre">FormerName</span></code></a><span class="pre">]]</span></em><a class="headerlink" href="#id70" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.SubmissionHistory.from_api_response">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_api_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#SubmissionHistory.from_api_response"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.SubmissionHistory.from_api_response" title="Link to this definition">¶</a></dt>
+<dd><p>Parses EDGAR API response and returns a single SubmissionHistory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory" title="edgar_sec.edgar_data.SubmissionHistory"><code class="xref py py-class docutils literal notranslate"><span class="pre">SubmissionHistory</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id71">
+<span class="sig-name descname"><span class="pre">insider_transaction_for_issuer_exists</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></em><a class="headerlink" href="#id71" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id72">
+<span class="sig-name descname"><span class="pre">insider_transaction_for_owner_exists</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></em><a class="headerlink" href="#id72" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id73">
+<span class="sig-name descname"><span class="pre">investor_website</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id73" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id74">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id74" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id75">
+<span class="sig-name descname"><span class="pre">owner_org</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id75" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id76">
+<span class="sig-name descname"><span class="pre">phone</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id76" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id77">
+<span class="sig-name descname"><span class="pre">sic</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id77" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id78">
+<span class="sig-name descname"><span class="pre">sic_description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id78" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id79">
+<span class="sig-name descname"><span class="pre">state_of_incorporation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id79" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id80">
+<span class="sig-name descname"><span class="pre">state_of_incorporation_description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id80" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id81">
+<span class="sig-name descname"><span class="pre">tickers</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">,</span> <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code><span class="pre">[</span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code><span class="pre">]]</span></em><a class="headerlink" href="#id81" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id82">
+<span class="sig-name descname"><span class="pre">website</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id82" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.UnitDisclosure">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">edgar_sec.edgar_data.</span></span><span class="sig-name descname"><span class="pre">UnitDisclosure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">form</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#UnitDisclosure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.UnitDisclosure" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing a specific financial disclosure for a single unit of measurement.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.UnitDisclosure.unit">
+<span class="sig-name descname"><span class="pre">unit</span></span><a class="headerlink" href="#edgar_sec.edgar_data.UnitDisclosure.unit" title="Link to this definition">¶</a></dt>
+<dd><p>The unit of measurement for the disclosed value (e.g., ‘USD’, ‘shares’, ‘USD-per-shares’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.UnitDisclosure.end">
+<span class="sig-name descname"><span class="pre">end</span></span><a class="headerlink" href="#edgar_sec.edgar_data.UnitDisclosure.end" title="Link to this definition">¶</a></dt>
+<dd><p>The end date of the reporting period, in YYYY-MM-DD format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.UnitDisclosure.val">
+<span class="sig-name descname"><span class="pre">val</span></span><a class="headerlink" href="#edgar_sec.edgar_data.UnitDisclosure.val" title="Link to this definition">¶</a></dt>
+<dd><p>The numerical value of the disclosure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.UnitDisclosure.accn">
+<span class="sig-name descname"><span class="pre">accn</span></span><a class="headerlink" href="#edgar_sec.edgar_data.UnitDisclosure.accn" title="Link to this definition">¶</a></dt>
+<dd><p>The accession number of the filing containing this disclosure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.UnitDisclosure.fy">
+<span class="sig-name descname"><span class="pre">fy</span></span><a class="headerlink" href="#edgar_sec.edgar_data.UnitDisclosure.fy" title="Link to this definition">¶</a></dt>
+<dd><p>The fiscal year of the disclosure in the format YYYY.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.UnitDisclosure.fp">
+<span class="sig-name descname"><span class="pre">fp</span></span><a class="headerlink" href="#edgar_sec.edgar_data.UnitDisclosure.fp" title="Link to this definition">¶</a></dt>
+<dd><p>The fiscal period code (e.g., ‘Q1’, ‘Q2’, ‘Q3’, ‘FY’ for annual).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.UnitDisclosure.form">
+<span class="sig-name descname"><span class="pre">form</span></span><a class="headerlink" href="#edgar_sec.edgar_data.UnitDisclosure.form" title="Link to this definition">¶</a></dt>
+<dd><p>The SEC form type containing this disclosure (e.g., ‘10-K’, ‘10-Q’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.UnitDisclosure.filed">
+<span class="sig-name descname"><span class="pre">filed</span></span><a class="headerlink" href="#edgar_sec.edgar_data.UnitDisclosure.filed" title="Link to this definition">¶</a></dt>
+<dd><p>The date the filing was submitted to the SEC, in YYYY-MM-DD format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.UnitDisclosure.frame">
+<span class="sig-name descname"><span class="pre">frame</span></span><a class="headerlink" href="#edgar_sec.edgar_data.UnitDisclosure.frame" title="Link to this definition">¶</a></dt>
+<dd><p>The financial reporting framework reference (e.g., ‘CY2022Q1I’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.UnitDisclosure.start">
+<span class="sig-name descname"><span class="pre">start</span></span><a class="headerlink" href="#edgar_sec.edgar_data.UnitDisclosure.start" title="Link to this definition">¶</a></dt>
+<dd><p>The start date of the reporting period, in YYYY-MM-DD format. Empty for point-in-time disclosures.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An object containing a single financial disclosure value and its metadata.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure" title="edgar_sec.edgar_data.UnitDisclosure">UnitDisclosure</a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>SEC data often includes both instantaneous values (like assets at a point in time)
+and period values (like revenue for a quarter). When the disclosure represents a
+period, both start and end dates will be populated. For point-in-time disclosures,
+start will be empty.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id83">
+<span class="sig-name descname"><span class="pre">accn</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id83" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id84">
+<span class="sig-name descname"><span class="pre">end</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id84" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id85">
+<span class="sig-name descname"><span class="pre">filed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id85" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id86">
+<span class="sig-name descname"><span class="pre">form</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id86" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id87">
+<span class="sig-name descname"><span class="pre">fp</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id87" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id88">
+<span class="sig-name descname"><span class="pre">frame</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id88" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.edgar_data.UnitDisclosure.from_dict">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/edgar_sec/edgar_data.html#UnitDisclosure.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#edgar_sec.edgar_data.UnitDisclosure.from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Parses a dictionary and returns a UnitDisclosure object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure" title="edgar_sec.edgar_data.UnitDisclosure"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnitDisclosure</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id89">
+<span class="sig-name descname"><span class="pre">fy</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id89" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id90">
+<span class="sig-name descname"><span class="pre">start</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#id90" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id91">
+<span class="sig-name descname"><span class="pre">unit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></em><a class="headerlink" href="#id91" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id92">
+<span class="sig-name descname"><span class="pre">val</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></em><a class="headerlink" href="#id92" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../contributing.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Contributing</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="asyncapi.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">AsyncAPI Class</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Nikhil Sunder
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/nikhilxsunder/edgar-sec" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              <a class="muted-link " href="https://pypi.org/project/edgar-sec/" aria-label="PyPI">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Data Classes</a><ul>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Address"><code class="docutils literal notranslate"><span class="pre">Address</span></code></a><ul>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Address.address_type"><code class="docutils literal notranslate"><span class="pre">Address.address_type</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Address.street1"><code class="docutils literal notranslate"><span class="pre">Address.street1</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Address.street2"><code class="docutils literal notranslate"><span class="pre">Address.street2</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Address.city"><code class="docutils literal notranslate"><span class="pre">Address.city</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Address.state_or_country"><code class="docutils literal notranslate"><span class="pre">Address.state_or_country</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Address.zipcode"><code class="docutils literal notranslate"><span class="pre">Address.zipcode</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Address.state_or_country_description"><code class="docutils literal notranslate"><span class="pre">Address.state_or_country_description</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">Address.address_type</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">Address.city</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Address.from_dict"><code class="docutils literal notranslate"><span class="pre">Address.from_dict()</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">Address.state_or_country</span></code></a></li>
+<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">Address.state_or_country_description</span></code></a></li>
+<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">Address.street1</span></code></a></li>
+<li><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">Address.street2</span></code></a></li>
+<li><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">Address.zipcode</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.CompanyConcept"><code class="docutils literal notranslate"><span class="pre">CompanyConcept</span></code></a><ul>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.CompanyConcept.cik"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.cik</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.CompanyConcept.taxonomy"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.taxonomy</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.CompanyConcept.tag"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.tag</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.CompanyConcept.label"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.label</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.CompanyConcept.description"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.description</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.CompanyConcept.entity_name"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.entity_name</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.CompanyConcept.units"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.units</span></code></a></li>
+<li><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.cik</span></code></a></li>
+<li><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.description</span></code></a></li>
+<li><a class="reference internal" href="#id9"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.entity_name</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.CompanyConcept.from_api_response"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.from_api_response()</span></code></a></li>
+<li><a class="reference internal" href="#id10"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.label</span></code></a></li>
+<li><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.tag</span></code></a></li>
+<li><a class="reference internal" href="#id12"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.taxonomy</span></code></a></li>
+<li><a class="reference internal" href="#id13"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.units</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.CompanyFact"><code class="docutils literal notranslate"><span class="pre">CompanyFact</span></code></a><ul>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.CompanyFact.cik"><code class="docutils literal notranslate"><span class="pre">CompanyFact.cik</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.CompanyFact.entity_name"><code class="docutils literal notranslate"><span class="pre">CompanyFact.entity_name</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.CompanyFact.facts"><code class="docutils literal notranslate"><span class="pre">CompanyFact.facts</span></code></a></li>
+<li><a class="reference internal" href="#id14"><code class="docutils literal notranslate"><span class="pre">CompanyFact.cik</span></code></a></li>
+<li><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">CompanyFact.entity_name</span></code></a></li>
+<li><a class="reference internal" href="#id16"><code class="docutils literal notranslate"><span class="pre">CompanyFact.facts</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.CompanyFact.from_api_response"><code class="docutils literal notranslate"><span class="pre">CompanyFact.from_api_response()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.EntityDisclosure"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure</span></code></a><ul>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.EntityDisclosure.name"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.name</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.EntityDisclosure.label"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.label</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.EntityDisclosure.description"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.description</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.EntityDisclosure.units"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.units</span></code></a></li>
+<li><a class="reference internal" href="#id17"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.description</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.EntityDisclosure.from_dict"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.from_dict()</span></code></a></li>
+<li><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.label</span></code></a></li>
+<li><a class="reference internal" href="#id19"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.name</span></code></a></li>
+<li><a class="reference internal" href="#id20"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.units</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Fact"><code class="docutils literal notranslate"><span class="pre">Fact</span></code></a><ul>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Fact.taxonomy"><code class="docutils literal notranslate"><span class="pre">Fact.taxonomy</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Fact.disclosures"><code class="docutils literal notranslate"><span class="pre">Fact.disclosures</span></code></a></li>
+<li><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">Fact.disclosures</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Fact.from_dict"><code class="docutils literal notranslate"><span class="pre">Fact.from_dict()</span></code></a></li>
+<li><a class="reference internal" href="#id22"><code class="docutils literal notranslate"><span class="pre">Fact.taxonomy</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.File"><code class="docutils literal notranslate"><span class="pre">File</span></code></a><ul>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.File.name"><code class="docutils literal notranslate"><span class="pre">File.name</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.File.filing_count"><code class="docutils literal notranslate"><span class="pre">File.filing_count</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.File.filing_from"><code class="docutils literal notranslate"><span class="pre">File.filing_from</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.File.filing_to"><code class="docutils literal notranslate"><span class="pre">File.filing_to</span></code></a></li>
+<li><a class="reference internal" href="#id23"><code class="docutils literal notranslate"><span class="pre">File.filing_count</span></code></a></li>
+<li><a class="reference internal" href="#id24"><code class="docutils literal notranslate"><span class="pre">File.filing_from</span></code></a></li>
+<li><a class="reference internal" href="#id25"><code class="docutils literal notranslate"><span class="pre">File.filing_to</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.File.from_dict"><code class="docutils literal notranslate"><span class="pre">File.from_dict()</span></code></a></li>
+<li><a class="reference internal" href="#id26"><code class="docutils literal notranslate"><span class="pre">File.name</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing"><code class="docutils literal notranslate"><span class="pre">Filing</span></code></a><ul>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.accession_number"><code class="docutils literal notranslate"><span class="pre">Filing.accession_number</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.filing_date"><code class="docutils literal notranslate"><span class="pre">Filing.filing_date</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.report_date"><code class="docutils literal notranslate"><span class="pre">Filing.report_date</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.acceptance_date_time"><code class="docutils literal notranslate"><span class="pre">Filing.acceptance_date_time</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.act"><code class="docutils literal notranslate"><span class="pre">Filing.act</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.form"><code class="docutils literal notranslate"><span class="pre">Filing.form</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.file_number"><code class="docutils literal notranslate"><span class="pre">Filing.file_number</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.film_number"><code class="docutils literal notranslate"><span class="pre">Filing.film_number</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.items"><code class="docutils literal notranslate"><span class="pre">Filing.items</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.core_type"><code class="docutils literal notranslate"><span class="pre">Filing.core_type</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.size"><code class="docutils literal notranslate"><span class="pre">Filing.size</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.is_xbrl"><code class="docutils literal notranslate"><span class="pre">Filing.is_xbrl</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.is_inline_xbrl"><code class="docutils literal notranslate"><span class="pre">Filing.is_inline_xbrl</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.primary_document"><code class="docutils literal notranslate"><span class="pre">Filing.primary_document</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.primary_doc_description"><code class="docutils literal notranslate"><span class="pre">Filing.primary_doc_description</span></code></a></li>
+<li><a class="reference internal" href="#id27"><code class="docutils literal notranslate"><span class="pre">Filing.acceptance_date_time</span></code></a></li>
+<li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">Filing.accession_number</span></code></a></li>
+<li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">Filing.act</span></code></a></li>
+<li><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">Filing.core_type</span></code></a></li>
+<li><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">Filing.file_number</span></code></a></li>
+<li><a class="reference internal" href="#id32"><code class="docutils literal notranslate"><span class="pre">Filing.filing_date</span></code></a></li>
+<li><a class="reference internal" href="#id33"><code class="docutils literal notranslate"><span class="pre">Filing.film_number</span></code></a></li>
+<li><a class="reference internal" href="#id34"><code class="docutils literal notranslate"><span class="pre">Filing.form</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Filing.from_dict"><code class="docutils literal notranslate"><span class="pre">Filing.from_dict()</span></code></a></li>
+<li><a class="reference internal" href="#id35"><code class="docutils literal notranslate"><span class="pre">Filing.is_inline_xbrl</span></code></a></li>
+<li><a class="reference internal" href="#id36"><code class="docutils literal notranslate"><span class="pre">Filing.is_xbrl</span></code></a></li>
+<li><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">Filing.items</span></code></a></li>
+<li><a class="reference internal" href="#id38"><code class="docutils literal notranslate"><span class="pre">Filing.primary_doc_description</span></code></a></li>
+<li><a class="reference internal" href="#id39"><code class="docutils literal notranslate"><span class="pre">Filing.primary_document</span></code></a></li>
+<li><a class="reference internal" href="#id40"><code class="docutils literal notranslate"><span class="pre">Filing.report_date</span></code></a></li>
+<li><a class="reference internal" href="#id41"><code class="docutils literal notranslate"><span class="pre">Filing.size</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.FormerName"><code class="docutils literal notranslate"><span class="pre">FormerName</span></code></a><ul>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.FormerName.name"><code class="docutils literal notranslate"><span class="pre">FormerName.name</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.FormerName.from_date"><code class="docutils literal notranslate"><span class="pre">FormerName.from_date</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.FormerName.to_date"><code class="docutils literal notranslate"><span class="pre">FormerName.to_date</span></code></a></li>
+<li><a class="reference internal" href="#id42"><code class="docutils literal notranslate"><span class="pre">FormerName.from_date</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.FormerName.from_dict"><code class="docutils literal notranslate"><span class="pre">FormerName.from_dict()</span></code></a></li>
+<li><a class="reference internal" href="#id43"><code class="docutils literal notranslate"><span class="pre">FormerName.name</span></code></a></li>
+<li><a class="reference internal" href="#id44"><code class="docutils literal notranslate"><span class="pre">FormerName.to_date</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Frame"><code class="docutils literal notranslate"><span class="pre">Frame</span></code></a><ul>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Frame.taxonomy"><code class="docutils literal notranslate"><span class="pre">Frame.taxonomy</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Frame.tag"><code class="docutils literal notranslate"><span class="pre">Frame.tag</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Frame.ccp"><code class="docutils literal notranslate"><span class="pre">Frame.ccp</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Frame.uom"><code class="docutils literal notranslate"><span class="pre">Frame.uom</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Frame.label"><code class="docutils literal notranslate"><span class="pre">Frame.label</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Frame.description"><code class="docutils literal notranslate"><span class="pre">Frame.description</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Frame.pts"><code class="docutils literal notranslate"><span class="pre">Frame.pts</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Frame.frames"><code class="docutils literal notranslate"><span class="pre">Frame.frames</span></code></a></li>
+<li><a class="reference internal" href="#id45"><code class="docutils literal notranslate"><span class="pre">Frame.ccp</span></code></a></li>
+<li><a class="reference internal" href="#id46"><code class="docutils literal notranslate"><span class="pre">Frame.description</span></code></a></li>
+<li><a class="reference internal" href="#id47"><code class="docutils literal notranslate"><span class="pre">Frame.frames</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.Frame.from_api_response"><code class="docutils literal notranslate"><span class="pre">Frame.from_api_response()</span></code></a></li>
+<li><a class="reference internal" href="#id48"><code class="docutils literal notranslate"><span class="pre">Frame.label</span></code></a></li>
+<li><a class="reference internal" href="#id49"><code class="docutils literal notranslate"><span class="pre">Frame.pts</span></code></a></li>
+<li><a class="reference internal" href="#id50"><code class="docutils literal notranslate"><span class="pre">Frame.tag</span></code></a></li>
+<li><a class="reference internal" href="#id51"><code class="docutils literal notranslate"><span class="pre">Frame.taxonomy</span></code></a></li>
+<li><a class="reference internal" href="#id52"><code class="docutils literal notranslate"><span class="pre">Frame.uom</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.FrameDisclosure"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure</span></code></a><ul>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.FrameDisclosure.accn"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.accn</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.FrameDisclosure.cik"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.cik</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.FrameDisclosure.entity_name"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.entity_name</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.FrameDisclosure.loc"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.loc</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.FrameDisclosure.end"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.end</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.FrameDisclosure.val"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.val</span></code></a></li>
+<li><a class="reference internal" href="#id53"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.accn</span></code></a></li>
+<li><a class="reference internal" href="#id54"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.cik</span></code></a></li>
+<li><a class="reference internal" href="#id55"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.end</span></code></a></li>
+<li><a class="reference internal" href="#id56"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.entity_name</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.FrameDisclosure.from_dict"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.from_dict()</span></code></a></li>
+<li><a class="reference internal" href="#id57"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.loc</span></code></a></li>
+<li><a class="reference internal" href="#id58"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.val</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory</span></code></a><ul>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.cik"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.cik</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.entity_type"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.entity_type</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.sic"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.sic</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.sic_description"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.sic_description</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.owner_org"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.owner_org</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.insider_transaction_for_owner_exists"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.insider_transaction_for_owner_exists</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.insider_transaction_for_issuer_exists"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.insider_transaction_for_issuer_exists</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.name"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.name</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.tickers"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.tickers</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.exchanges"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.exchanges</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.ein"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.ein</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.description"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.description</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.website"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.website</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.investor_website"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.investor_website</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.category"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.category</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.fiscal_year_end"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.fiscal_year_end</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.state_of_incorporation"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.state_of_incorporation</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.state_of_incorporation_description"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.state_of_incorporation_description</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.addresses"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.addresses</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.phone"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.phone</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.flags"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.flags</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.former_names"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.former_names</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.filings"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.filings</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.files"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.files</span></code></a></li>
+<li><a class="reference internal" href="#id59"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.addresses</span></code></a></li>
+<li><a class="reference internal" href="#id60"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.category</span></code></a></li>
+<li><a class="reference internal" href="#id61"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.cik</span></code></a></li>
+<li><a class="reference internal" href="#id62"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.description</span></code></a></li>
+<li><a class="reference internal" href="#id63"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.ein</span></code></a></li>
+<li><a class="reference internal" href="#id64"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.entity_type</span></code></a></li>
+<li><a class="reference internal" href="#id65"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.exchanges</span></code></a></li>
+<li><a class="reference internal" href="#id66"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.files</span></code></a></li>
+<li><a class="reference internal" href="#id67"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.filings</span></code></a></li>
+<li><a class="reference internal" href="#id68"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.fiscal_year_end</span></code></a></li>
+<li><a class="reference internal" href="#id69"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.flags</span></code></a></li>
+<li><a class="reference internal" href="#id70"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.former_names</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.SubmissionHistory.from_api_response"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.from_api_response()</span></code></a></li>
+<li><a class="reference internal" href="#id71"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.insider_transaction_for_issuer_exists</span></code></a></li>
+<li><a class="reference internal" href="#id72"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.insider_transaction_for_owner_exists</span></code></a></li>
+<li><a class="reference internal" href="#id73"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.investor_website</span></code></a></li>
+<li><a class="reference internal" href="#id74"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.name</span></code></a></li>
+<li><a class="reference internal" href="#id75"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.owner_org</span></code></a></li>
+<li><a class="reference internal" href="#id76"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.phone</span></code></a></li>
+<li><a class="reference internal" href="#id77"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.sic</span></code></a></li>
+<li><a class="reference internal" href="#id78"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.sic_description</span></code></a></li>
+<li><a class="reference internal" href="#id79"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.state_of_incorporation</span></code></a></li>
+<li><a class="reference internal" href="#id80"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.state_of_incorporation_description</span></code></a></li>
+<li><a class="reference internal" href="#id81"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.tickers</span></code></a></li>
+<li><a class="reference internal" href="#id82"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.website</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure</span></code></a><ul>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure.unit"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.unit</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure.end"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.end</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure.val"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.val</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure.accn"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.accn</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure.fy"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.fy</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure.fp"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.fp</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure.form"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.form</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure.filed"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.filed</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure.frame"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.frame</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure.start"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.start</span></code></a></li>
+<li><a class="reference internal" href="#id83"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.accn</span></code></a></li>
+<li><a class="reference internal" href="#id84"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.end</span></code></a></li>
+<li><a class="reference internal" href="#id85"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.filed</span></code></a></li>
+<li><a class="reference internal" href="#id86"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.form</span></code></a></li>
+<li><a class="reference internal" href="#id87"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.fp</span></code></a></li>
+<li><a class="reference internal" href="#id88"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.frame</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.edgar_data.UnitDisclosure.from_dict"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.from_dict()</span></code></a></li>
+<li><a class="reference internal" href="#id89"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.fy</span></code></a></li>
+<li><a class="reference internal" href="#id90"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.start</span></code></a></li>
+<li><a class="reference internal" href="#id91"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.unit</span></code></a></li>
+<li><a class="reference internal" href="#id92"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.val</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
+    </body>
+</html>

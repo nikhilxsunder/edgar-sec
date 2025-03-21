@@ -1,0 +1,1047 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM6ZC88602"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HM6ZC88602');
+    </script>
+    <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+        <title>edgar_sec.edgar_data - edgar-sec</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #4B6EAF;
+  --color-brand-content: #4B6EAF;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #7A97D0;
+  --color-brand-content: #7A97D0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #7A97D0;
+  --color-brand-content: #7A97D0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">edgar-sec</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">edgar-sec</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quick Start Guide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../examples/index.html">Usage Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Usage Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/basic_usage.html">Basic Usage Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/advanced_usage.html">Advanced Usage Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/edgarapi.html">EdgarAPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/asyncapi.html">AsyncAPI Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/data_classes.html">Data Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../code_of_conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <h1>Source code for edgar_sec.edgar_data</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Type stub file for edgar_data module.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Dict</span>
+
+<div class="viewcode-block" id="Address">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.Address">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Address</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representing an address from SEC filing data.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        address_type (str): The type of address (e.g., &#39;mailing&#39;, &#39;business&#39;).</span>
+<span class="sd">        street1 (str): The primary street address line.</span>
+<span class="sd">        street2 (str): The secondary street address line, if any.</span>
+<span class="sd">        city (str): The city name.</span>
+<span class="sd">        state_or_country (str): The state or country code.</span>
+<span class="sd">        zipcode (str): The postal code.</span>
+<span class="sd">        state_or_country_description (str): The full name of the state or country.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Address: An object containing formatted address information.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        The address_type is typically provided by the key name in the SEC API</span>
+<span class="sd">        response and is passed separately to the from_dict method.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">address_type</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">street1</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">street2</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">city</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">state_or_country</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">zipcode</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">state_or_country_description</span><span class="p">:</span> <span class="nb">str</span>
+
+<div class="viewcode-block" id="Address.from_dict">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.Address.from_dict">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">address_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Address&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parses a dictionary and returns an Address object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">address_type</span><span class="o">=</span><span class="n">address_type</span><span class="p">,</span>
+            <span class="n">street1</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;street1&#39;</span><span class="p">],</span>
+            <span class="n">street2</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;street2&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;street2&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+            <span class="n">city</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">],</span>
+            <span class="n">state_or_country</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;stateOrCountry&#39;</span><span class="p">],</span>
+            <span class="n">zipcode</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;zipCode&#39;</span><span class="p">],</span>
+            <span class="n">state_or_country_description</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;stateOrCountryDescription&#39;</span><span class="p">]</span>
+        <span class="p">)</span></div>
+</div>
+
+
+<div class="viewcode-block" id="FormerName">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.FormerName">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FormerName</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representing a former name of an SEC filing entity.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        name (str): The previous company name.</span>
+<span class="sd">        from_date (str): The date when the company began using this name, in YYYY-MM-DD format.</span>
+<span class="sd">        to_date (str): The date when the company stopped using this name, in YYYY-MM-DD format. May be empty if still in use.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        FormerName: An object containing information about a company&#39;s previous name.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        This class is typically used when parsing company submission history</span>
+<span class="sd">        where entities may have changed their names over time. The from_dict method</span>
+<span class="sd">        handles the API&#39;s naming convention where the start date is called &#39;from&#39;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">from_date</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">to_date</span><span class="p">:</span> <span class="nb">str</span>
+
+<div class="viewcode-block" id="FormerName.from_dict">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.FormerName.from_dict">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;FormerName&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parses a dictionary and returns a FormerName object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+            <span class="n">from_date</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;from&#39;</span><span class="p">],</span>
+            <span class="n">to_date</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="p">)</span></div>
+</div>
+
+
+<div class="viewcode-block" id="Filing">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.Filing">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Filing</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representing an SEC filing document.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        accession_number (str): Unique identifier for the filing in the format XXXXXXXXXX-XX-XXXXXX.</span>
+<span class="sd">        filing_date (str): The date when the filing was submitted to the SEC, in YYYY-MM-DD format.</span>
+<span class="sd">        report_date (str): The date of the reporting period covered by the filing, in YYYY-MM-DD format.</span>
+<span class="sd">        acceptance_date_time (str): The date and time when the filing was accepted by the SEC.</span>
+<span class="sd">        act (str): The securities act (e.g., &#39;33&#39;, &#39;34&#39;) under which the filing was submitted.</span>
+<span class="sd">        form (str): The form type (e.g., &#39;10-K&#39;, &#39;10-Q&#39;, &#39;8-K&#39;) of the filing.</span>
+<span class="sd">        file_number (str): SEC file number assigned to the registrant.</span>
+<span class="sd">        film_number (str): Film number assigned to the submission.</span>
+<span class="sd">        items (Union[str, List[str]]): The specific items being reported in the filing.</span>
+<span class="sd">        core_type (str): The core financial statement disclosure type.</span>
+<span class="sd">        size (int): The size of the filing document in bytes.</span>
+<span class="sd">        is_xbrl (bool): Whether the filing includes XBRL data.</span>
+<span class="sd">        is_inline_xbrl (bool): Whether the filing uses inline XBRL format.</span>
+<span class="sd">        primary_document (str): The filename of the primary document in the submission.</span>
+<span class="sd">        primary_doc_description (str): Description of the primary document.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Filing: An object containing information about an SEC filing document.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        Form types include annual reports (10-K), quarterly reports (10-Q),</span>
+<span class="sd">        current reports (8-K), and various other registration and disclosure forms.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">accession_number</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">filing_date</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">report_date</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">acceptance_date_time</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">act</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">form</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">file_number</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">film_number</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">items</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>
+    <span class="n">core_type</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">size</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">is_xbrl</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">is_inline_xbrl</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">primary_document</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">primary_doc_description</span><span class="p">:</span> <span class="nb">str</span>
+
+<div class="viewcode-block" id="Filing.from_dict">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.Filing.from_dict">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Filing&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parses a dictionary and returns a Filing object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">accession_number</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;accessionNumber&#39;</span><span class="p">],</span>
+            <span class="n">filing_date</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;filingDate&#39;</span><span class="p">],</span>
+            <span class="n">report_date</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;reportDate&#39;</span><span class="p">],</span>
+            <span class="n">acceptance_date_time</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;acceptanceDateTime&#39;</span><span class="p">],</span>
+            <span class="n">act</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;act&#39;</span><span class="p">],</span>
+            <span class="n">form</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;form&#39;</span><span class="p">],</span>
+            <span class="n">file_number</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;fileNumber&#39;</span><span class="p">],</span>
+            <span class="n">film_number</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;filmNumber&#39;</span><span class="p">],</span>
+            <span class="n">items</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;items&#39;</span><span class="p">],</span>
+            <span class="n">core_type</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;core_type&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+            <span class="n">is_xbrl</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;isXBRL&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)),</span>
+            <span class="n">is_inline_xbrl</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;isInlineXBRL&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)),</span>
+            <span class="n">primary_document</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;primaryDocument&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">primary_doc_description</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;primaryDocDescription&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="p">)</span></div>
+</div>
+
+
+<div class="viewcode-block" id="File">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.File">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">File</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representing a file reference in SEC EDGAR submission history.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        name (str): The filename of the additional submission history file.</span>
+<span class="sd">        filing_count (int): The number of filings contained in the referenced file.</span>
+<span class="sd">        filing_from (str): The earliest filing date covered in this file, in YYYY-MM-DD format.</span>
+<span class="sd">        filing_to (str): The latest filing date covered in this file, in YYYY-MM-DD format.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        File: An object containing information about a submission history file reference.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        The SEC EDGAR API typically returns the most recent submissions directly</span>
+<span class="sd">        in the response, with references to additional JSON files for older</span>
+<span class="sd">        submissions. These file references can be used to retrieve the complete</span>
+<span class="sd">        filing history for entities with extensive submissions.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">filing_count</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">filing_from</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">filing_to</span><span class="p">:</span> <span class="nb">str</span>
+
+<div class="viewcode-block" id="File.from_dict">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.File.from_dict">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;File&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parses a dictionary and returns a File object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+            <span class="n">filing_count</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;filingCount&#39;</span><span class="p">]),</span>
+            <span class="n">filing_from</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;filingFrom&#39;</span><span class="p">],</span>
+            <span class="n">filing_to</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;filingTo&#39;</span><span class="p">]</span>
+        <span class="p">)</span></div>
+</div>
+
+
+<div class="viewcode-block" id="SubmissionHistory">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.SubmissionHistory">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SubmissionHistory</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representing the complete submission history of an SEC filing entity.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        cik (str): Central Index Key (CIK) of the entity, a unique identifier assigned by the SEC.</span>
+<span class="sd">        entity_type (str): The type of entity (e.g., &#39;operating&#39;, &#39;investment-company&#39;, &#39;private&#39;).</span>
+<span class="sd">        sic (str): Standard Industrial Classification (SIC) code.</span>
+<span class="sd">        sic_description (str): Text description of the SIC code.</span>
+<span class="sd">        owner_org (str): Name of the organization if this entity is an owner.</span>
+<span class="sd">        insider_transaction_for_owner_exists (bool): Whether insider transactions exist for this entity as an owner.</span>
+<span class="sd">        insider_transaction_for_issuer_exists (bool): Whether insider transactions exist for this entity as an issuer.</span>
+<span class="sd">        name (str): Legal name of the entity.</span>
+<span class="sd">        tickers (Union[str, List[str]]): Stock ticker symbol(s) for the entity.</span>
+<span class="sd">        exchanges (Union[str, List[str]]): Stock exchange(s) where the entity is listed.</span>
+<span class="sd">        ein (str): Employer Identification Number, a tax ID number.</span>
+<span class="sd">        description (str): Business description of the entity.</span>
+<span class="sd">        website (str): The entity&#39;s primary website.</span>
+<span class="sd">        investor_website (str): The entity&#39;s investor relations website.</span>
+<span class="sd">        category (str): SEC category classification.</span>
+<span class="sd">        fiscal_year_end (str): Month and day of the entity&#39;s fiscal year end (MM-DD format).</span>
+<span class="sd">        state_of_incorporation (str): State or country code where the entity is incorporated.</span>
+<span class="sd">        state_of_incorporation_description (str): Full name of the state or country of incorporation.</span>
+<span class="sd">        addresses (Union[Address, List[Address]]): Mailing and business addresses for the entity.</span>
+<span class="sd">        phone (str): Contact phone number.</span>
+<span class="sd">        flags (Union[str, List[str]]): Special flags or indicators about the entity.</span>
+<span class="sd">        former_names (Union[FormerName, List[FormerName]]): Previous names of the entity.</span>
+<span class="sd">        filings (Union[Filing, List[Filing]]): Recent SEC filings by the entity.</span>
+<span class="sd">        files (Union[File, List[File]]): References to additional files containing older filings.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        SubmissionHistory: An object containing comprehensive information about an entity&#39;s filing history and profile.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        This class provides a comprehensive view of an entity&#39;s profile and filing</span>
+<span class="sd">        history as maintained by the SEC. It includes both the entity&#39;s current</span>
+<span class="sd">        information and a record of its historical filings and name changes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cik</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">entity_type</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">sic</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">sic_description</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">owner_org</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">insider_transaction_for_owner_exists</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">insider_transaction_for_issuer_exists</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">tickers</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>
+    <span class="n">exchanges</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>
+    <span class="n">ein</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">website</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">investor_website</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">category</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">fiscal_year_end</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">state_of_incorporation</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">state_of_incorporation_description</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">addresses</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Address</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Address</span><span class="p">]]</span>
+    <span class="n">phone</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">flags</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>
+    <span class="n">former_names</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">FormerName</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">FormerName</span><span class="p">]]</span>
+    <span class="n">filings</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Filing</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Filing</span><span class="p">]]</span>
+    <span class="n">files</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">File</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">File</span><span class="p">]]</span>
+
+<div class="viewcode-block" id="SubmissionHistory.from_api_response">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.SubmissionHistory.from_api_response">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_api_response</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;SubmissionHistory&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parses EDGAR API response and returns a single SubmissionHistory.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">tickers</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;tickers&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tickers</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">tickers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">tickers</span> <span class="o">=</span> <span class="n">tickers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">exchanges</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;exchanges&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">exchanges</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">exchanges</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">exchanges</span> <span class="o">=</span> <span class="n">exchanges</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">flags</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;flags&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">flags</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">flags</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">flags</span> <span class="o">=</span> <span class="n">flags</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">raw_addresses</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;addresses&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">Address</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">address_type</span><span class="p">,</span> <span class="n">address_data</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">address_type</span><span class="p">,</span> <span class="n">address_data</span> <span class="ow">in</span> <span class="n">raw_addresses</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">addresses</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="n">addresses</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="n">raw_former_names</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;formerNames&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">former_names</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">FormerName</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">former_name_data</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">former_name_data</span> <span class="ow">in</span> <span class="n">raw_former_names</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">former_names</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">former_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">former_names</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">raw_former_names</span><span class="p">:</span>
+            <span class="n">former_names</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">filings</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">raw_filings</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;filings&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;recent&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">if</span> <span class="n">raw_filings</span><span class="p">:</span>
+            <span class="n">num_filings</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;accessionNumber&#39;</span><span class="p">,</span> <span class="p">[]))</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_filings</span><span class="p">):</span>
+                <span class="n">filing</span> <span class="o">=</span> <span class="n">Filing</span><span class="p">(</span>
+                    <span class="n">accession_number</span><span class="o">=</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;accessionNumber&#39;</span><span class="p">,</span> <span class="p">[])[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;accessionNumber&#39;</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                    <span class="n">filing_date</span><span class="o">=</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;filingDate&#39;</span><span class="p">,</span> <span class="p">[])[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;filingDate&#39;</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                    <span class="n">report_date</span><span class="o">=</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;reportDate&#39;</span><span class="p">,</span> <span class="p">[])[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;reportDate&#39;</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                    <span class="n">acceptance_date_time</span><span class="o">=</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acceptanceDateTime&#39;</span><span class="p">,</span> <span class="p">[])[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acceptanceDateTime&#39;</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                    <span class="n">act</span><span class="o">=</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;act&#39;</span><span class="p">,</span> <span class="p">[])[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;act&#39;</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                    <span class="n">form</span><span class="o">=</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="p">[])[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                    <span class="n">file_number</span><span class="o">=</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;fileNumber&#39;</span><span class="p">,</span> <span class="p">[])[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;fileNumber&#39;</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                    <span class="n">film_number</span><span class="o">=</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;filmNumber&#39;</span><span class="p">,</span> <span class="p">[])[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;filmNumber&#39;</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                    <span class="n">items</span><span class="o">=</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;items&#39;</span><span class="p">,</span> <span class="p">[])[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;items&#39;</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                    <span class="n">core_type</span><span class="o">=</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;core_type&#39;</span><span class="p">,</span> <span class="p">[])[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;core_type&#39;</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                    <span class="n">size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="p">[])[</span><span class="n">i</span><span class="p">])</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">is_xbrl</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;isXBRL&#39;</span><span class="p">,</span> <span class="p">[])[</span><span class="n">i</span><span class="p">])</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;isXBRL&#39;</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">else</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="n">is_inline_xbrl</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;isInlineXBRL&#39;</span><span class="p">,</span> <span class="p">[])[</span><span class="n">i</span><span class="p">])</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;isInlineXBRL&#39;</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">else</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="n">primary_document</span><span class="o">=</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;primaryDocument&#39;</span><span class="p">,</span> <span class="p">[])[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;primaryDocument&#39;</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                    <span class="n">primary_doc_description</span><span class="o">=</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;primaryDocDescription&#39;</span><span class="p">,</span> <span class="p">[])[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_filings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;primaryDocDescription&#39;</span><span class="p">,</span> <span class="p">[]))</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+                <span class="p">)</span>
+                <span class="n">filings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filing</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">filings</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">filings</span> <span class="o">=</span> <span class="p">[</span><span class="n">filings</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="n">raw_files</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;files&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">File</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">file_data</span><span class="p">)</span> <span class="k">for</span> <span class="n">file_data</span> <span class="ow">in</span> <span class="n">raw_files</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">raw_files</span><span class="p">:</span>
+            <span class="n">files</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">cik</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cik&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">entity_type</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;entityType&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">sic</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sic&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">sic_description</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sicDescription&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">owner_org</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ownerOrg&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">insider_transaction_for_owner_exists</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;insiderTransactionForOwnerExists&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)),</span>
+            <span class="n">insider_transaction_for_issuer_exists</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;insiderTransactionForIssuerExists&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)),</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">tickers</span><span class="o">=</span><span class="n">tickers</span><span class="p">,</span>
+            <span class="n">exchanges</span><span class="o">=</span><span class="n">exchanges</span><span class="p">,</span>
+            <span class="n">ein</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ein&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">website</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;website&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">investor_website</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;investorWebsite&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">category</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">fiscal_year_end</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;fiscalYearEnd&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">state_of_incorporation</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;stateOfIncorporation&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">state_of_incorporation_description</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;stateOfIncorporationDescription&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">addresses</span><span class="o">=</span><span class="n">addresses</span><span class="p">,</span>
+            <span class="n">phone</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;phone&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">flags</span><span class="o">=</span><span class="n">flags</span><span class="p">,</span>
+            <span class="n">former_names</span><span class="o">=</span><span class="n">former_names</span><span class="p">,</span>
+            <span class="n">filings</span><span class="o">=</span><span class="n">filings</span><span class="p">,</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">files</span>
+        <span class="p">)</span></div>
+</div>
+
+
+<div class="viewcode-block" id="UnitDisclosure">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.UnitDisclosure">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">UnitDisclosure</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representing a specific financial disclosure for a single unit of measurement.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        unit (str): The unit of measurement for the disclosed value (e.g., &#39;USD&#39;, &#39;shares&#39;, &#39;USD-per-shares&#39;).</span>
+<span class="sd">        end (str): The end date of the reporting period, in YYYY-MM-DD format.</span>
+<span class="sd">        val (int): The numerical value of the disclosure.</span>
+<span class="sd">        accn (str): The accession number of the filing containing this disclosure.</span>
+<span class="sd">        fy (str): The fiscal year of the disclosure in the format YYYY.</span>
+<span class="sd">        fp (str): The fiscal period code (e.g., &#39;Q1&#39;, &#39;Q2&#39;, &#39;Q3&#39;, &#39;FY&#39; for annual).</span>
+<span class="sd">        form (str): The SEC form type containing this disclosure (e.g., &#39;10-K&#39;, &#39;10-Q&#39;).</span>
+<span class="sd">        filed (str): The date the filing was submitted to the SEC, in YYYY-MM-DD format.</span>
+<span class="sd">        frame (str): The financial reporting framework reference (e.g., &#39;CY2022Q1I&#39;).</span>
+<span class="sd">        start (str): The start date of the reporting period, in YYYY-MM-DD format. Empty for point-in-time disclosures.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        UnitDisclosure: An object containing a single financial disclosure value and its metadata.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        SEC data often includes both instantaneous values (like assets at a point in time)</span>
+<span class="sd">        and period values (like revenue for a quarter). When the disclosure represents a</span>
+<span class="sd">        period, both start and end dates will be populated. For point-in-time disclosures,</span>
+<span class="sd">        start will be empty.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">unit</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">end</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">val</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">accn</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">fy</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">fp</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">form</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">filed</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">frame</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">start</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<div class="viewcode-block" id="UnitDisclosure.from_dict">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.UnitDisclosure.from_dict">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;UnitDisclosure&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parses a dictionary and returns a UnitDisclosure object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;unit&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">end</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">val</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;val&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)),</span>
+            <span class="n">accn</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;accn&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">fy</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;fy&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">fp</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;fp&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">form</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">filed</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;filed&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">frame</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;frame&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">start</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="p">)</span></div>
+</div>
+
+
+<div class="viewcode-block" id="CompanyConcept">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.CompanyConcept">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CompanyConcept</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representing a specific financial concept for a company from SEC filings.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        cik (str): Central Index Key (CIK) of the entity, a unique identifier assigned by the SEC.</span>
+<span class="sd">        taxonomy (str): The reporting taxonomy used (e.g., &#39;us-gaap&#39;, &#39;dei&#39;, &#39;srt&#39;).</span>
+<span class="sd">        tag (str): The specific concept tag or account name (e.g., &#39;Assets&#39;, &#39;Revenue&#39;, &#39;EarningsPerShare&#39;).</span>
+<span class="sd">        label (str): Human-readable label describing the financial concept.</span>
+<span class="sd">        description (str): Detailed explanation of what the financial concept represents.</span>
+<span class="sd">        entity_name (str): Legal name of the reporting entity.</span>
+<span class="sd">        units (Union[UnitDisclosure, List[UnitDisclosure]]): Individual disclosure values across different time periods.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        CompanyConcept: An object containing all instances of a specific financial concept reported by a company.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        This class provides time-series data for a single financial concept across</span>
+<span class="sd">        multiple reporting periods. The taxonomy and tag parameters define which</span>
+<span class="sd">        specific financial data point is being represented. Common taxonomies include</span>
+<span class="sd">        &#39;us-gaap&#39; (US GAAP accounting standards), &#39;ifrs&#39; (International standards),</span>
+<span class="sd">        and &#39;dei&#39; (Document and Entity Information).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cik</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">taxonomy</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">tag</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">entity_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">units</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">UnitDisclosure</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">UnitDisclosure</span><span class="p">]]</span>
+
+<div class="viewcode-block" id="CompanyConcept.from_api_response">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.CompanyConcept.from_api_response">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_api_response</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;CompanyConcept&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parses EDGAR API response and returns a single CompanyConcept.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">units_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">raw_units</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">for</span> <span class="n">unit_type</span><span class="p">,</span> <span class="n">disclosures</span> <span class="ow">in</span> <span class="n">raw_units</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">disclosure</span> <span class="ow">in</span> <span class="n">disclosures</span><span class="p">:</span>
+                <span class="n">disclosure_with_unit</span> <span class="o">=</span> <span class="n">disclosure</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">disclosure_with_unit</span><span class="p">[</span><span class="s1">&#39;unit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">unit_type</span>
+                <span class="n">units_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">UnitDisclosure</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">disclosure_with_unit</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">units_list</span><span class="p">:</span>
+            <span class="n">units</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">UnitDisclosure</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">units_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">units</span> <span class="o">=</span> <span class="p">[</span><span class="n">units_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">units</span> <span class="o">=</span> <span class="n">units_list</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">cik</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cik&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)),</span>
+            <span class="n">taxonomy</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;taxonomy&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">tag</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;tag&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">label</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">entity_name</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;entityName&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">units</span><span class="o">=</span><span class="n">units</span>
+        <span class="p">)</span></div>
+</div>
+
+
+<div class="viewcode-block" id="EntityDisclosure">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.EntityDisclosure">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">EntityDisclosure</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representing a specific financial concept disclosure for an entity.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        name (str): The name of the concept tag (e.g., &#39;Assets&#39;, &#39;Revenue&#39;, &#39;CommonStockSharesOutstanding&#39;).</span>
+<span class="sd">        label (str): Human-readable label describing the financial concept.</span>
+<span class="sd">        description (str): Detailed explanation of what the financial concept represents.</span>
+<span class="sd">        units (Dict[str, List[UnitDisclosure]]): A dictionary mapping unit types to lists of disclosure values across different reporting periods.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        EntityDisclosure: An object containing all disclosures of a specific financial concept, organized by unit type.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        This class organizes financial concept data by unit of measurement (like USD, shares, etc.)</span>
+<span class="sd">        to accommodate concepts that might be reported in multiple units across different periods.</span>
+<span class="sd">        The name parameter represents the specific XBRL tag or concept identifier.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">units</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">UnitDisclosure</span><span class="p">]]</span>
+
+<div class="viewcode-block" id="EntityDisclosure.from_dict">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.EntityDisclosure.from_dict">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;EntityDisclosure&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parses an entity disclosure from the API response.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">units_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">raw_units</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;units&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">for</span> <span class="n">unit_type</span><span class="p">,</span> <span class="n">disclosures</span> <span class="ow">in</span> <span class="n">raw_units</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">units_list</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">disclosure</span> <span class="ow">in</span> <span class="n">disclosures</span><span class="p">:</span>
+                <span class="n">disclosure_with_unit</span> <span class="o">=</span> <span class="n">disclosure</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="n">disclosure_with_unit</span><span class="p">[</span><span class="s1">&#39;unit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">unit_type</span>
+                <span class="n">units_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">UnitDisclosure</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">disclosure_with_unit</span><span class="p">))</span>
+            <span class="n">units_dict</span><span class="p">[</span><span class="n">unit_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">units_list</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">units</span><span class="o">=</span><span class="n">units_dict</span>
+        <span class="p">)</span></div>
+</div>
+
+
+<div class="viewcode-block" id="Fact">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.Fact">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Fact</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representing a collection of financial disclosures for a specific taxonomy.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        taxonomy (str): The reporting taxonomy identifier (e.g., &#39;us-gaap&#39;, &#39;dei&#39;, &#39;ifrs&#39;).</span>
+<span class="sd">        disclosures (Dict[str, EntityDisclosure]): A dictionary mapping concept tag names to their corresponding disclosure objects.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Fact: An object containing all disclosures within a specific taxonomy for an entity.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        This class organizes financial data hierarchically by taxonomy, representing</span>
+<span class="sd">        a collection of related financial concepts under a specific accounting standard</span>
+<span class="sd">        or reporting framework. Common taxonomies include &#39;us-gaap&#39; (US GAAP accounting</span>
+<span class="sd">        standards), &#39;ifrs&#39; (International standards), and &#39;dei&#39; (Document and Entity</span>
+<span class="sd">        Information).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">taxonomy</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">disclosures</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">EntityDisclosure</span><span class="p">]</span>
+
+<div class="viewcode-block" id="Fact.from_dict">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.Fact.from_dict">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">taxonomy</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Fact&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parses a taxonomy fact from the API response.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">disclosures</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">tag_name</span><span class="p">,</span> <span class="n">tag_data</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">disclosures</span><span class="p">[</span><span class="n">tag_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">EntityDisclosure</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">tag_name</span><span class="p">,</span> <span class="n">tag_data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">taxonomy</span><span class="o">=</span><span class="n">taxonomy</span><span class="p">,</span>
+            <span class="n">disclosures</span><span class="o">=</span><span class="n">disclosures</span>
+        <span class="p">)</span></div>
+</div>
+
+
+<div class="viewcode-block" id="CompanyFact">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.CompanyFact">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CompanyFact</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representing the complete collection of financial facts for a company from SEC filings.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        cik (str): Central Index Key (CIK) of the entity, a unique identifier assigned by the SEC.</span>
+<span class="sd">        entity_name (str): Legal name of the reporting entity.</span>
+<span class="sd">        facts (Dict[str, Fact]): A dictionary mapping taxonomy identifiers to their corresponding Fact objects.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        CompanyFact: An object containing all financial facts reported by a company across all taxonomies.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        This class represents the highest level container for all financial data for a company,</span>
+<span class="sd">        organized hierarchically by taxonomy, concept, and unit. It provides access to the</span>
+<span class="sd">        complete set of financial disclosures that an entity has filed with the SEC in</span>
+<span class="sd">        machine-readable XBRL format, enabling time-series analysis of financial metrics.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cik</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">entity_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">facts</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Fact</span><span class="p">]</span>
+<div class="viewcode-block" id="CompanyFact.from_api_response">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.CompanyFact.from_api_response">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_api_response</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;CompanyFact&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parses EDGAR API response and returns a single CompanyFacts.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">facts_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">facts_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;facts&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">for</span> <span class="n">taxonomy</span><span class="p">,</span> <span class="n">taxonomy_data</span> <span class="ow">in</span> <span class="n">facts_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">facts_dict</span><span class="p">[</span><span class="n">taxonomy</span><span class="p">]</span> <span class="o">=</span> <span class="n">Fact</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">taxonomy</span><span class="p">,</span> <span class="n">taxonomy_data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">cik</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cik&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)),</span>
+            <span class="n">entity_name</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;entityName&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">facts</span><span class="o">=</span><span class="n">facts_dict</span>
+        <span class="p">)</span></div>
+</div>
+
+
+<div class="viewcode-block" id="FrameDisclosure">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.FrameDisclosure">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FrameDisclosure</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representing a single financial disclosure from an SEC reporting frame.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        accn (str): Accession number of the filing containing this disclosure.</span>
+<span class="sd">        cik (str): Central Index Key (CIK) of the entity making the disclosure.</span>
+<span class="sd">        entity_name (str): Legal name of the reporting entity.</span>
+<span class="sd">        loc (str): Location identifier for the disclosure within the filing document.</span>
+<span class="sd">        end (str): The end date of the reporting period, in YYYY-MM-DD format.</span>
+<span class="sd">        val (int): The numerical value of the disclosure.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        FrameDisclosure: An object containing a single financial disclosure value and its metadata.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        Frame disclosures represent point-in-time snapshots of financial data that allow for</span>
+<span class="sd">        comparison across multiple companies for the same time period and concept. Unlike</span>
+<span class="sd">        CompanyConcept objects which show time-series data for a single company, frames provide</span>
+<span class="sd">        cross-sectional data across multiple companies at a specific point in time.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">accn</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">cik</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">entity_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">loc</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">end</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">val</span><span class="p">:</span> <span class="nb">int</span>
+
+<div class="viewcode-block" id="FrameDisclosure.from_dict">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.FrameDisclosure.from_dict">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;FrameDisclosure&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parses a frame disclosure from the API response.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">accn</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;accn&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">cik</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cik&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)),</span>
+            <span class="n">entity_name</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;entityName&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">loc</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;loc&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">end</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">val</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;val&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="p">)</span></div>
+</div>
+
+
+<div class="viewcode-block" id="Frame">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.Frame">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Frame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class representing a collection of financial disclosures across multiple companies for a specific concept and time period.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        taxonomy (str): The reporting taxonomy identifier (e.g., &#39;us-gaap&#39;, &#39;dei&#39;, &#39;ifrs&#39;).</span>
+<span class="sd">        tag (str): The specific concept tag or account name (e.g., &#39;Assets&#39;, &#39;Revenue&#39;, &#39;EarningsPerShare&#39;).</span>
+<span class="sd">        ccp (str): The calculation context parameter defining the reporting context.</span>
+<span class="sd">        uom (str): The unit of measurement (e.g., &#39;USD&#39;, &#39;shares&#39;, &#39;USD/shares&#39;).</span>
+<span class="sd">        label (str): Human-readable label describing the financial concept.</span>
+<span class="sd">        description (str): Detailed explanation of what the financial concept represents.</span>
+<span class="sd">        pts (int): The number of reporting entities (points) included in the frame.</span>
+<span class="sd">        frames (List[FrameDisclosure]): A list of individual company disclosures for the concept and time period.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Frame: An object containing comparable financial disclosures across multiple companies.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        Frames are particularly useful for cross-sectional analysis, benchmarking, and</span>
+<span class="sd">        comparative studies as they provide standardized financial data for multiple companies</span>
+<span class="sd">        at the same point in time. The frame identifier (ccp) typically includes the calendar</span>
+<span class="sd">        year, quarter, and whether the value is instantaneous (I) or for a duration (D).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">taxonomy</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">tag</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">ccp</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">uom</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">pts</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">frames</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">FrameDisclosure</span><span class="p">]</span>
+
+<div class="viewcode-block" id="Frame.from_api_response">
+<a class="viewcode-back" href="../../api/data_classes.html#edgar_sec.edgar_data.Frame.from_api_response">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_api_response</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Frame&#39;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parses a dictionary and returns a Frame object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">frame_disclosures</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">raw_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">for</span> <span class="n">disclosure_data</span> <span class="ow">in</span> <span class="n">raw_data</span><span class="p">:</span>
+            <span class="n">frame_disclosures</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">FrameDisclosure</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">disclosure_data</span><span class="p">))</span>
+        <span class="n">frames</span> <span class="o">=</span> <span class="n">frame_disclosures</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">taxonomy</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;taxonomy&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">tag</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;tag&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">ccp</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ccp&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">uom</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;uom&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">label</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="n">pts</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pts&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span>
+            <span class="n">frames</span><span class="o">=</span><span class="n">frames</span>
+        <span class="p">)</span></div>
+</div>
+
+</pre></div>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Nikhil Sunder
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/nikhilxsunder/edgar-sec" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              <a class="muted-link " href="https://pypi.org/project/edgar-sec/" aria-label="PyPI">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
+    </body>
+</html>
