@@ -1,0 +1,71 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
+
+  - repo: https://github.com/pycqa/pylint
+    rev: v3.3.5
+    hooks:
+      - id: pylint
+        exclude: |
+          (?x)^(
+              docs/.*|
+              tests/.*|
+              scripts/.*|
+              examples/.*|
+              .*\.md|
+              .*\.rst
+          )$
+        args:
+          [
+            "--disable=E0401,R0902,R0913,R0917,R0914,R0912,R0904,R1705,C0103,R1710,C2801",
+          ]
+
+  - repo: local
+    hooks:
+      - id: sync-conda-recipe
+        name: Sync conda recipe from pyproject.toml
+        entry: python scripts/sync_conda_recipe.py
+        language: python
+        additional_dependencies: ["tomli>=2.0.1"]
+        files: ^(pyproject\.toml|conda-recipe/meta\.yaml)$
+        pass_filenames: false
+        description: "Synchronizes conda-recipe/meta.yaml with pyproject.toml"
+
+      - id: mypy-local
+        name: mypy
+        entry: mypy
+        language: system
+        types: [python]
+        exclude: |
+          (?x)^(
+              docs/.*|
+              tests/.*|
+              scripts/.*|
+              examples/.*|
+              .*\.md|
+              .*\.rst|
+              src/edgar_sec/__init__.pyi
+          )$
+        args:
+          [
+            "--ignore-missing-imports",
+            "--namespace-packages",
+            "--explicit-package-bases",
+          ]
+
+      - id: tox
+        name: Run tox
+        entry: tox
+        language: system
+        pass_filenames: false
+        always_run: true

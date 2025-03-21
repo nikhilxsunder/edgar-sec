@@ -1,0 +1,53 @@
+package:
+  name: edgar-sec
+  version: 1.0.0
+
+source:
+  url: "https://pypi.io/packages/source/e/edgar-sec/edgar-sec-1.0.0.tar.gz"
+  sha256: "352687f53cc87ff43044ce20196aba7a90a26aaaac5404e6e5e668a7a9d16d92"
+
+build:
+  noarch: python
+  number: 0
+  script: |
+    python -m pip install . -vv
+
+requirements:
+  host:
+    - python >=3.9,<4.0
+    - pip
+    - poetry-core >=1.0.0
+  run:
+    - python >=3.9,<4.0
+    - httpx
+    - tenacity
+    - conda-forge::cachetools
+
+test:
+  imports:
+    - edgar_sec
+  requires:
+    - pip
+  commands:
+    - pip check
+
+about:
+  home: "https://github.com/nikhilxsunder/edgar-sec"
+  doc_url: "https://nikhilxsunder.github.io/edgar-sec/"
+  dev_url: "https://github.com/nikhilxsunder/edgar-sec"
+  license: AGPL-3.0-or-later
+  license_family: AGPL
+  license_file: LICENSE
+  summary: "A feature-rich python package for interacting with the US Securities and Exchange Commission API: EDGAR"
+  description: |
+    edgar-sec is a Python package for interacting with the US Securities and Exchange Commission EDGAR API.
+    It provides a feature-rich interface with:
+    - Native support for asynchronous requests (async)
+    - All method outputs are mapped to dataclasses for better usability
+    - Local caching for easier data access and faster execution times
+    - Built-in rate limiter that doesn't exceed 10 calls per second
+    - MyPy compatible type stubs
+
+extra:
+  recipe-maintainers:
+    - nikhilxsunder
