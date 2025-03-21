@@ -10,7 +10,7 @@
 project = 'edgar-sec'
 copyright = '2025, Nikhil Sunder'
 author = 'Nikhil Sunder'
-release = '1.0.0'
+release = '1.0.1'
 
 # -- General configuration ---------------------------------------------------
 extensions = [

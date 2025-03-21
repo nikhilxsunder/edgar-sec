@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Property-based testing framework
 
+## [1.0.1] - 2025-03-21
+
+### Fixed
+
+- Minor patch for publishing error (Anaconda)
+
 ## [1.0.0] - 2025-03-21
 
 ### Added

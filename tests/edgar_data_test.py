@@ -139,7 +139,7 @@ class TestEdgarAPI:
         mock_response.json.return_value = SUBMISSIONS_RESPONSE
 
         # Set the cache to ensure we use our mock response
-        api.cache.set('/submissions/CIK0000320193.json', SUBMISSIONS_RESPONSE)
+        api.cache.__setitem__('/submissions/CIK0000320193.json', SUBMISSIONS_RESPONSE)
 
         result = api.get_submissions('0000320193')
         assert isinstance(result, SubmissionHistory)
@@ -154,7 +154,7 @@ class TestEdgarAPI:
         mock_response.json.return_value = COMPANY_CONCEPT_RESPONSE
 
         # Set the cache to ensure we use our mock response
-        api.cache.set('/api/xbrl/companyconcept/CIK0000320193/us-gaap/AccountsPayableCurrent.json', COMPANY_CONCEPT_RESPONSE)
+        api.cache.__setitem__('/api/xbrl/companyconcept/CIK0000320193/us-gaap/AccountsPayableCurrent.json', COMPANY_CONCEPT_RESPONSE)
 
         result = api.get_company_concept('0000320193', 'us-gaap', 'AccountsPayableCurrent')
         assert isinstance(result, CompanyConcept)
@@ -169,7 +169,7 @@ class TestEdgarAPI:
         mock_response.json.return_value = COMPANY_FACTS_RESPONSE
 
         # Set the cache to ensure we use our mock response
-        api.cache.set('/api/xbrl/companyfacts/CIK0000320193.json', COMPANY_FACTS_RESPONSE)
+        api.cache.__setitem__('/api/xbrl/companyfacts/CIK0000320193.json', COMPANY_FACTS_RESPONSE)
 
         result = api.get_company_facts('0000320193')
         assert isinstance(result, CompanyFact)
@@ -184,7 +184,7 @@ class TestEdgarAPI:
         mock_response.json.return_value = FRAMES_RESPONSE
 
         # Set the cache to ensure we use our mock response
-        api.cache.set('/api/xbrl/frames/us-gaap/AccountsPayableCurrent/USD/CY2021Q4I.json', FRAMES_RESPONSE)
+        api.cache.__setitem__('/api/xbrl/frames/us-gaap/AccountsPayableCurrent/USD/CY2021Q4I.json', FRAMES_RESPONSE)
 
         result = api.get_frames('us-gaap', 'AccountsPayableCurrent', 'USD', 'CY2021Q4I')
         assert isinstance(result, Frame)
@@ -200,7 +200,7 @@ class TestEdgarAPI:
         mock_response.json.return_value = SUBMISSIONS_RESPONSE
 
         # Set the cache to ensure we use our mock response
-        api.cache.set('/submissions/CIK0000320193.json', SUBMISSIONS_RESPONSE)
+        api.cache.__setitem__('/submissions/CIK0000320193.json', SUBMISSIONS_RESPONSE)
 
         result = await api.Async.get_submissions('0000320193')
         assert isinstance(result, SubmissionHistory)
@@ -214,7 +214,7 @@ class TestEdgarAPI:
         mock_response.json.return_value = COMPANY_CONCEPT_RESPONSE
 
         # Set the cache to ensure we use our mock response
-        api.cache.set('/api/xbrl/companyconcept/CIK0000320193/us-gaap/AccountsPayableCurrent', COMPANY_CONCEPT_RESPONSE)
+        api.cache.__setitem__('/api/xbrl/companyconcept/CIK0000320193/us-gaap/AccountsPayableCurrent', COMPANY_CONCEPT_RESPONSE)
 
         result = await api.Async.get_company_concept('0000320193', 'us-gaap', 'AccountsPayableCurrent')
         assert isinstance(result, CompanyConcept)
@@ -228,7 +228,7 @@ class TestEdgarAPI:
         mock_response.json.return_value = COMPANY_FACTS_RESPONSE
 
         # Set the cache to ensure we use our mock response
-        api.cache.set('api/xbrl//companyfacts/CIK0000320193.json', COMPANY_FACTS_RESPONSE)
+        api.cache.__setitem__('api/xbrl//companyfacts/CIK0000320193.json', COMPANY_FACTS_RESPONSE)
 
         result = await api.Async.get_company_facts('0000320193')
         assert result == COMPANY_FACTS_RESPONSE

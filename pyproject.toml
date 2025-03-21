@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "edgar-sec"
-version = "1.0.0"
+version = "1.0.1"
 description = "A feature-rich python package for interacting with the US Securities and Exchange Commission API: EDGAR"
 authors = ["Nikhil Sunder <nsunder724@gmail.com>"]
 license = "AGPL-3.0-or-later"
