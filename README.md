@@ -11,8 +11,8 @@
     <a href="https://pepy.tech/projects/edgar-sec"><img src="https://static.pepy.tech/badge/edgar-sec" alt="PyPI Downloads"></a>
     <a href="https://www.bestpractices.dev/projects/10210"><img src="https://www.bestpractices.dev/projects/10210/badge"></a>
     <a href="https://codecov.io/gh/nikhilxsunder/edgar-sec"><img src="https://codecov.io/gh/nikhilxsunder/edgar-sec/graph/badge.svg?token=RDI3Q99UJB" alt="codecov"></a>
-    <a href="https://anaconda.org/nikhilxsunder/edgar-sec"><img src="https://img.shields.io/conda/vn/nikhilxsunder/edgar-sec.svg" alt="Conda Version"></a>
-    <a href="https://anaconda.org/nikhilxsunder/edgar-sec"><img src="https://img.shields.io/conda/dn/nikhilxsunder/edgar-sec.svg" alt="Conda Downloads"></a>
+    <a href="https://anaconda.org/nikhil.sunder/edgar-sec"><img src="https://img.shields.io/conda/vn/nikhil.sunder/edgar-sec.svg" alt="Conda Version"></a>
+    <a href="https://anaconda.org/nikhil.sunder/edgar-sec"><img src="https://img.shields.io/conda/dn/nikhil.sunder/edgar-sec.svg" alt="Conda Downloads"></a>
 </div>
 
 ### Features
