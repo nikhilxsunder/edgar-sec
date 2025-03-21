@@ -16,7 +16,7 @@ To use the `edgar-sec` library, you first need to initialize the API client. No 
     edgar = ed.EdgarAPI(cache_mode=True)
 
 Fetching Company Submission History
-----------------------------------
+-----------------------------------
 
 You can fetch a company's submission history using the `get_submissions` method with the company's Central Index Key (CIK).
 
@@ -36,7 +36,7 @@ You can fetch a company's submission history using the `get_submissions` method 
         print(f"Form: {filing.form}, Filed: {filing.filing_date}")
 
 Getting Company Concept Disclosures
-----------------------------------
+-----------------------------------
 
 You can fetch specific financial concept disclosures using the `get_company_concept` method.
 
@@ -58,7 +58,7 @@ You can fetch specific financial concept disclosures using the `get_company_conc
         print(f"Value: {unit.val}, Period: {unit.end}, Form: {unit.form}")
 
 Working with Company Facts
--------------------------
+--------------------------
 
 You can fetch all financial facts for a company using the `get_company_facts` method.
 
@@ -87,7 +87,7 @@ You can fetch all financial facts for a company using the `get_company_facts` me
                     print(f"FY{fact.fy} {fact.fp}: ${fact.val:,}")
 
 Exploring Frames
----------------
+----------------
 
 You can explore financial data across multiple companies for the same concept and time period using the `get_frames` method.
 
@@ -111,7 +111,7 @@ You can explore financial data across multiple companies for the same concept an
         print(f"{disclosure.entity_name}: ${disclosure.val:,}")
 
 Using Async Methods
------------------
+-------------------
 
 The library provides async versions of all methods for use in asynchronous contexts.
 
