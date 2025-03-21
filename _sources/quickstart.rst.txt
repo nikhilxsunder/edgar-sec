@@ -154,7 +154,7 @@ edgar-sec includes built-in caching and rate limiting:
     # Rate limiting is handled automatically to comply with SEC's 10 requests/second limit
 
 Common CIKs for Examples
------------------------
+------------------------
 
 Some common Central Index Keys (CIKs) for examples:
 

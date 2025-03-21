@@ -30,7 +30,7 @@ We recommend creating a dedicated environment for your project:
 Note: edgar-sec will be submitted to conda-forge in the future for broader distribution.
 
 Optional Type Stubs
-------------------
+-------------------
 
 If you need type stubs for development (e.g., for `cachetools`), you can install the optional dependencies:
 
@@ -71,7 +71,7 @@ Using pip:
     pre-commit install
 
 Requirements
------------
+------------
 
 edgar-sec has the following dependencies:
 

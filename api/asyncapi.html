@@ -13,6 +13,7 @@
         gtag('config', 'G-HM6ZC88602');
     </script>
     <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Data Classes" href="data_classes.html" /><link rel="prev" title="EdgarAPI" href="edgarapi.html" />
+        <link rel="canonical" href="https://nikhilxsunder.github.io/edgar-sec/api/asyncapi.html" />
 
     <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>AsyncAPI Class - edgar-sec</title>
@@ -193,7 +194,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -267,7 +268,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -275,6 +276,204 @@
         <article role="main" id="furo-main-content">
           <section id="asyncapi-class">
 <h1>AsyncAPI Class<a class="headerlink" href="#asyncapi-class" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="edgar_sec.EdgarAPI.AsyncAPI">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">edgar_sec.EdgarAPI.</span></span><span class="sig-name descname"><span class="pre">AsyncAPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#edgar_sec.EdgarAPI.AsyncAPI" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Asynchronous version of the EdgarAPI methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parent</strong> – The parent EdgarAPI instance that created this AsyncAPI instance.
+This provides access to configuration and resources of the parent.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>An instance of the AsyncAPI class that provides async methods</dt><dd><p>for all EdgarAPI functionality.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="edgarapi.html#edgar_sec.EdgarAPI.AsyncAPI" title="edgar_sec.EdgarAPI.AsyncAPI">AsyncAPI</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">edgar_sec</span><span class="w"> </span><span class="kn">import</span> <span class="n">EdgarAPI</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_apple_data</span><span class="p">():</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">api</span> <span class="o">=</span> <span class="n">EdgarAPI</span><span class="p">(</span><span class="n">cache_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="c1"># Get Apple Inc&#39;s submission history asynchronously</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">apple_history</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api</span><span class="o">.</span><span class="n">Async</span><span class="o">.</span><span class="n">get_submissions</span><span class="p">(</span><span class="s2">&quot;0000320193&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">apple_history</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">get_apple_data</span><span class="p">())</span>
+<span class="go">&#39;Apple Inc.&#39;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All methods in this class are coroutines that must be awaited. They follow
+the same rate limiting as the synchronous methods but are more efficient
+when making multiple concurrent requests.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.EdgarAPI.AsyncAPI.get_company_concept">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_company_concept</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">central_index_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taxonomy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#edgar_sec.EdgarAPI.AsyncAPI.get_company_concept" title="Link to this definition">¶</a></dt>
+<dd><p>Asynchronously retrieve XBRL disclosures for a specific concept from a company.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>central_index_key</strong> (<em>str</em>) – 10-digit Central Index Key (CIK) of the entity, including leading zeros. A CIK may be obtained at the SEC’s CIK lookup: <a class="reference external" href="https://www.sec.gov/search-filings/cik-lookup">https://www.sec.gov/search-filings/cik-lookup</a></p></li>
+<li><p><strong>taxonomy</strong> (<em>str</em>) – A non-custom taxonomy identifier (e.g. ‘us-gaap’, ‘ifrs-full’, ‘dei’, or ‘srt’).</p></li>
+<li><p><strong>tag</strong> (<em>str</em>) – The specific disclosure concept tag to retrieve, such as ‘AccountsPayableCurrent’ or ‘Assets’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An object containing all disclosures related to the specified concept, organized by units of measure.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyConcept" title="edgar_sec.edgar_data.CompanyConcept">CompanyConcept</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">edgar_sec</span><span class="w"> </span><span class="kn">import</span> <span class="n">EdgarAPI</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">api</span> <span class="o">=</span> <span class="n">EdgarAPI</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="c1"># Get Apple Inc&#39;s Accounts Payable disclosure asynchronously</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">concept</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api</span><span class="o">.</span><span class="n">Async</span><span class="o">.</span><span class="n">get_company_concept</span><span class="p">(</span><span class="s2">&quot;0000320193&quot;</span><span class="p">,</span> <span class="s2">&quot;us-gaap&quot;</span><span class="p">,</span> <span class="s2">&quot;AccountsPayableCurrent&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">for</span> <span class="n">unit</span> <span class="ow">in</span> <span class="n">concept</span><span class="o">.</span><span class="n">units</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Value: </span><span class="si">{</span><span class="n">unit</span><span class="o">.</span><span class="n">val</span><span class="si">}</span><span class="s2">, Period: </span><span class="si">{</span><span class="n">unit</span><span class="o">.</span><span class="n">end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This endpoint returns separate arrays of facts for each unit of measure that
+the company has disclosed (e.g., values reported in both USD and EUR).</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.EdgarAPI.AsyncAPI.get_company_facts">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_company_facts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">central_index_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#edgar_sec.EdgarAPI.AsyncAPI.get_company_facts" title="Link to this definition">¶</a></dt>
+<dd><p>Asynchronously retrieve all XBRL disclosures for a company in a single request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>central_index_key</strong> (<em>str</em>) – 10-digit Central Index Key (CIK) of the entity, including leading zeros. A CIK may be obtained at the SEC’s CIK lookup: <a class="reference external" href="https://www.sec.gov/search-filings/cik-lookup">https://www.sec.gov/search-filings/cik-lookup</a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An object containing all facts and disclosures for the company, organized by taxonomy and concept.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyFact" title="edgar_sec.edgar_data.CompanyFact">CompanyFact</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">edgar_sec</span><span class="w"> </span><span class="kn">import</span> <span class="n">EdgarAPI</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">api</span> <span class="o">=</span> <span class="n">EdgarAPI</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="c1"># Get all Apple Inc&#39;s financial disclosures asynchronously</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">facts</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api</span><span class="o">.</span><span class="n">Async</span><span class="o">.</span><span class="n">get_company_facts</span><span class="p">(</span><span class="s2">&quot;0000320193&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="c1"># Access a specific concept in the US GAAP taxonomy</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">revenue</span> <span class="o">=</span> <span class="n">facts</span><span class="o">.</span><span class="n">facts</span><span class="p">[</span><span class="s2">&quot;us-gaap&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">disclosures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;RevenueFromContractWithCustomerExcludingAssessedTax&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">if</span> <span class="n">revenue</span> <span class="ow">and</span> <span class="s2">&quot;USD&quot;</span> <span class="ow">in</span> <span class="n">revenue</span><span class="o">.</span><span class="n">units</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Latest revenue: $</span><span class="si">{</span><span class="n">revenue</span><span class="o">.</span><span class="n">units</span><span class="p">[</span><span class="s1">&#39;USD&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">val</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the most comprehensive endpoint, returning all concepts across all
+taxonomies for a company. The response can be quite large for companies
+with extensive filing histories.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.EdgarAPI.AsyncAPI.get_frames">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taxonomy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#edgar_sec.EdgarAPI.AsyncAPI.get_frames" title="Link to this definition">¶</a></dt>
+<dd><p>Asynchronously retrieve aggregated XBRL facts across multiple companies for a specific period.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>taxonomy</strong> (<em>str</em>) – A non-custom taxonomy identifier (e.g. ‘us-gaap’, ‘ifrs-full’, ‘dei’, or ‘srt’).</p></li>
+<li><p><strong>tag</strong> (<em>str</em>) – The specific disclosure concept tag to retrieve (e.g. ‘AccountsPayableCurrent’, ‘Assets’).</p></li>
+<li><p><strong>unit</strong> (<em>str</em>) – Unit of measurement for the requested data. Default is ‘pure’. Denominated units are separated by ‘-per-’ (e.g. ‘USD-per-shares’), non-denominated units are specified directly (e.g. ‘USD’).</p></li>
+<li><p><strong>period</strong> (<em>str</em>) – The reporting period in the format: Annual (365 days ±30 days): CY#### (e.g. ‘CY2019’), Quarterly (91 days ±30 days): CY####Q# (e.g. ‘CY2019Q1’), Instantaneous: CY####Q#I (e.g. ‘CY2019Q1I’)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An object containing facts from multiple companies for the specified concept and period.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Frame" title="edgar_sec.edgar_data.Frame">Frame</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">edgar_sec</span><span class="w"> </span><span class="kn">import</span> <span class="n">EdgarAPI</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">api</span> <span class="o">=</span> <span class="n">EdgarAPI</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="c1"># Get all companies&#39; Q1 2019 Accounts Payable data in USD asynchronously</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">frame</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api</span><span class="o">.</span><span class="n">Async</span><span class="o">.</span><span class="n">get_frames</span><span class="p">(</span><span class="s2">&quot;us-gaap&quot;</span><span class="p">,</span> <span class="s2">&quot;AccountsPayableCurrent&quot;</span><span class="p">,</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span> <span class="s2">&quot;CY2019Q1I&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="c1"># Print the first few results</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">disclosure</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">data</span><span class="p">[:</span><span class="mi">3</span><span class="p">]):</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">disclosure</span><span class="o">.</span><span class="n">entity_name</span><span class="si">}</span><span class="s2">: $</span><span class="si">{</span><span class="n">disclosure</span><span class="o">.</span><span class="n">val</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Due to varying company fiscal calendars, the frame data is assembled using
+the dates that best align with calendar periods. Be mindful that facts in a
+frame may have different exact reporting start and end dates.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="edgar_sec.EdgarAPI.AsyncAPI.get_submissions">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_submissions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">central_index_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#edgar_sec.EdgarAPI.AsyncAPI.get_submissions" title="Link to this definition">¶</a></dt>
+<dd><p>Asynchronously retrieve a company’s submission history from the SEC EDGAR database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>central_index_key</strong> (<em>str</em>) – 10-digit Central Index Key (CIK) of the entity,
+including leading zeros. A CIK may be obtained at the SEC’s CIK lookup:
+<a class="reference external" href="https://www.sec.gov/search-filings/cik-lookup">https://www.sec.gov/search-filings/cik-lookup</a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>An object containing the entity’s filing history,</dt><dd><p>including company information and recent filings.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory" title="edgar_sec.edgar_data.SubmissionHistory">SubmissionHistory</a></p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">edgar_sec</span><span class="w"> </span><span class="kn">import</span> <span class="n">EdgarAPI</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">api</span> <span class="o">=</span> <span class="n">EdgarAPI</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="c1"># Get Apple Inc&#39;s submission history asynchronously</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">apple_history</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api</span><span class="o">.</span><span class="n">Async</span><span class="o">.</span><span class="n">get_submissions</span><span class="p">(</span><span class="s2">&quot;0000320193&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">apple_history</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<span class="go">&#39;Apple Inc.&#39;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This endpoint returns the most recent 1,000 filings or at least one year’s
+worth, whichever is more. For entities with additional filings, the response
+includes references to additional JSON files and their date ranges.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
         </article>
@@ -332,8 +531,33 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">AsyncAPI Class</a><ul>
+<li><a class="reference internal" href="#edgar_sec.EdgarAPI.AsyncAPI"><code class="docutils literal notranslate"><span class="pre">AsyncAPI</span></code></a><ul>
+<li><a class="reference internal" href="#edgar_sec.EdgarAPI.AsyncAPI.get_company_concept"><code class="docutils literal notranslate"><span class="pre">AsyncAPI.get_company_concept()</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.EdgarAPI.AsyncAPI.get_company_facts"><code class="docutils literal notranslate"><span class="pre">AsyncAPI.get_company_facts()</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.EdgarAPI.AsyncAPI.get_frames"><code class="docutils literal notranslate"><span class="pre">AsyncAPI.get_frames()</span></code></a></li>
+<li><a class="reference internal" href="#edgar_sec.EdgarAPI.AsyncAPI.get_submissions"><code class="docutils literal notranslate"><span class="pre">AsyncAPI.get_submissions()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
