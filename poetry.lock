@@ -1816,6 +1816,24 @@ sphinx = ">=4.0"
 docs = ["furo", "ipython", "myst-parser", "sphinx-copybutton", "sphinx-inline-tabs"]
 
 [[package]]
+name = "sphinx-sitemap"
+version = "2.6.0"
+description = "Sitemap generator for Sphinx"
+optional = false
+python-versions = "*"
+groups = ["dev"]
+files = [
+    {file = "sphinx_sitemap-2.6.0-py3-none-any.whl", hash = "sha256:7478e417d141f99c9af27ccd635f44c03a471a08b20e778a0f9daef7ace1d30b"},
+    {file = "sphinx_sitemap-2.6.0.tar.gz", hash = "sha256:5e0c66b9f2e371ede80c659866a9eaad337d46ab02802f9c7e5f7bc5893c28d2"},
+]
+
+[package.dependencies]
+sphinx = ">=1.2"
+
+[package.extras]
+dev = ["build", "flake8", "pre-commit", "pytest", "sphinx", "tox"]
+
+[[package]]
 name = "sphinxcontrib-applehelp"
 version = "2.0.0"
 description = "sphinxcontrib-applehelp is a Sphinx extension which outputs Apple help books"
@@ -2161,4 +2179,4 @@ types = []
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.9, <4.0"
-content-hash = "ee0d06a9a357491577284dcce492a66deff4bca9d299c111368df3cba8914aea"
+content-hash = "95d7a4f2ef1eac0416c649d3edb0fc7b9dc1a7322a8ec9f93ee3226a68f73b07"

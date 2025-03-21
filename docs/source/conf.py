@@ -20,6 +20,7 @@ extensions = [
     'sphinx_autodoc_typehints',
     'myst_parser',
     'sphinxcontrib.googleanalytics',
+    'sphinx_sitemap',
 ]
 
 # myst
@@ -43,7 +44,12 @@ sys.path.insert(0, os.path.abspath('../..'))
 googleanalytics_id = 'G-HM6ZC88602'
 googleanalytics_enabled = True
 
-# theme
+# sitemap
+sitemap_filename = "sitemap.xml"
+sitemap_url_scheme = "{link}"
+
+# html
+html_baseurl = 'https://nikhilxsunder.github.io/edgar-sec/'
 html_theme = 'furo'
 html_theme_options = {
     "sidebar_hide_name": False,
