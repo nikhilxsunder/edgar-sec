@@ -468,6 +468,28 @@ poetry<span class="w"> </span>run<span class="w"> </span>bandit<span class="w"> 
 <li><p>Test both success and error conditions</p></li>
 <li><p>Include comments explaining complex test scenarios</p></li>
 </ul>
+<section id="testing-the-conda-forge-package-locally">
+<h5>Testing the Conda-Forge Package Locally<a class="headerlink" href="#testing-the-conda-forge-package-locally" title="Link to this heading">¶</a></h5>
+<p>To test the Conda-Forge package locally:</p>
+<ol class="arabic">
+<li><p>Create a new environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>edgar-sec-test<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+conda<span class="w"> </span>activate<span class="w"> </span>edgar-sec-test
+</pre></div>
+</div>
+</li>
+<li><p>Install the package from Conda-Forge:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>edgar-sec
+</pre></div>
+</div>
+</li>
+<li><p>Run the test suite</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pytest
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
 <section id="testing-with-assertions">
 <h5>Testing with Assertions<a class="headerlink" href="#testing-with-assertions" title="Link to this heading">¶</a></h5>
 <p>We use Python assertions extensively in our testing suite to verify assumptions and catch edge cases:</p>
@@ -803,6 +825,7 @@ python<span class="w"> </span>-B<span class="w"> </span>-m<span class="w"> </spa
 <li><a class="reference internal" href="#coding-standards">Coding Standards</a></li>
 <li><a class="reference internal" href="#code-quality-and-warnings">Code Quality and Warnings</a></li>
 <li><a class="reference internal" href="#testing">Testing</a><ul>
+<li><a class="reference internal" href="#testing-the-conda-forge-package-locally">Testing the Conda-Forge Package Locally</a></li>
 <li><a class="reference internal" href="#testing-with-assertions">Testing with Assertions</a></li>
 </ul>
 </li>
