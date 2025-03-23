@@ -155,6 +155,28 @@ When adding tests:
 - Test both success and error conditions
 - Include comments explaining complex test scenarios
 
+#### Testing the Conda-Forge Package Locally
+
+To test the Conda-Forge package locally:
+
+1. Create a new environment:
+
+   ```bash
+   conda create -n edgar-sec-test python=3.9
+   conda activate edgar-sec-test
+   ```
+
+2. Install the package from Conda-Forge:
+
+   ```bash
+   conda install -c conda-forge edgar-sec
+   ```
+
+3. Run the test suite
+   ```bash
+   python -m pytest
+   ```
+
 #### Testing with Assertions
 
 We use Python assertions extensively in our testing suite to verify assumptions and catch edge cases:

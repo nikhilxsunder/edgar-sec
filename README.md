@@ -11,9 +11,11 @@
     <a href="https://pepy.tech/projects/edgar-sec"><img src="https://static.pepy.tech/badge/edgar-sec" alt="PyPI Downloads"></a>
     <a href="https://www.bestpractices.dev/projects/10210"><img src="https://www.bestpractices.dev/projects/10210/badge"></a>
     <a href="https://codecov.io/gh/nikhilxsunder/edgar-sec"><img src="https://codecov.io/gh/nikhilxsunder/edgar-sec/graph/badge.svg?token=RDI3Q99UJB" alt="codecov"></a>
-    <a href="https://anaconda.org/nikhil.sunder/edgar-sec"><img src="https://img.shields.io/conda/vn/nikhil.sunder/edgar-sec.svg" alt="Conda Version"></a>
-    <a href="https://anaconda.org/nikhil.sunder/edgar-sec"><img src="https://img.shields.io/conda/dn/nikhil.sunder/edgar-sec.svg" alt="Conda Downloads"></a>
+    <a href="https://anaconda.org/conda-forge/edgar-sec"><img src="https://img.shields.io/conda/vn/conda-forge/edgar-sec.svg" alt="Conda Version"></a>
+    <a href="https://anaconda.org/conda-forge/edgar-sec"><img src="https://img.shields.io/conda/dn/conda-forge/edgar-sec.svg" alt="Conda Downloads"></a>
 </div>
+
+**Note**: edgar-sec is now officially available on Conda-Forge. We recommend using Conda-Forge for the most up-to-date and reliable builds.
 
 ### Features
 
@@ -31,12 +33,20 @@ You can install the package using pip:
 pip install edgar-sec
 ```
 
-### Using conda
-
-edgar-sec is available on Anaconda through the author's channel:
+We recommend creating a dedicated environment:
 
 ```sh
+conda create -n edgar-env
+conda activate edgar-env
 conda install -c nikhilxsunder edgar-sec
+```
+
+### Using conda
+
+edgar-sec is available on Conda-Forge. You can install it with:
+
+```sh
+conda install -c conda-forge edgar-sec
 ```
 
 We recommend creating a dedicated environment:
@@ -44,7 +54,7 @@ We recommend creating a dedicated environment:
 ```sh
 conda create -n edgar-env
 conda activate edgar-env
-conda install -c nikhilxsunder edgar-sec
+conda install -c conda-forge edgar-sec
 ```
 
 Note: edgar-sec will be submitted to conda-forge in the future for broader distribution.

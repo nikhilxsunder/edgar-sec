@@ -13,11 +13,11 @@ You can install edgar-sec using pip:
 Using conda
 -----------
 
-edgar-sec is available on Anaconda through the author's channel. You can install it with conda:
+edgar-sec is available on Conda-Forge. You can install it with:
 
 .. code-block:: bash
 
-   conda install nikhilxsunder::edgar-sec
+   conda install -c conda-forge edgar-sec
 
 We recommend creating a dedicated environment for your project:
 
@@ -25,9 +25,7 @@ We recommend creating a dedicated environment for your project:
 
    conda create -n myenv
    conda activate myenv
-   conda install nikhilxsunder::edgar-sec
-
-Note: edgar-sec will be submitted to conda-forge in the future for broader distribution.
+   conda install -c conda-forge edgar-sec
 
 Optional Type Stubs
 -------------------
