@@ -57,8 +57,6 @@ conda activate edgar-env
 conda install -c conda-forge edgar-sec
 ```
 
-Note: edgar-sec will be submitted to conda-forge in the future for broader distribution.
-
 ### Rest API Usage
 
 I recommend consulting the documentation at:
