@@ -1,8 +1,12 @@
-<!doctype html>
-<html class="no-js" lang="en" data-content_root="../">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM6ZC88602"></script>
@@ -12,605 +16,1017 @@
         gtag('js', new Date());
         gtag('config', 'G-HM6ZC88602');
     </script>
-    <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="EdgarAPI" href="edgarapi.html" /><link rel="prev" title="Advanced Usage Examples" href="../examples/advanced_usage.html" />
-        <link rel="canonical" href="https://nikhilxsunder.github.io/edgar-sec/api/index.html" />
+    <meta property="og:title" content="API Reference" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://nikhilxsunder.github.io/edgar-sec/api/index.html" />
+<meta property="og:site_name" content="edgar-sec" />
+<meta property="og:description" content="This section provides detailed, automatically generated documentation for edgar-sec’s modules, classes, and functions. It covers both synchronous and asynchronous clients, helper utilities, and typed object models. All API documentation is generated from the live source code using Sphinx autodoc ..." />
+<meta property="og:image" content="https://nikhilxsunder.github.io/edgar-sec/_static/edgar-sec-logo.png" />
+<meta property="og:image:alt" content="edgar-sec" />
+<meta name="description" content="This section provides detailed, automatically generated documentation for edgar-sec’s modules, classes, and functions. It covers both synchronous and asynchronous clients, helper utilities, and typed object models. All API documentation is generated from the live source code using Sphinx autodoc ..." />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="EDGAR SEC Documentation" />
+<meta property="og:url" content="https://nikhilxsunder.github.io/edgar-sec/" />
+<meta property="og:image:alt" content="EDGAR SEC Logo" />
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
-        <title>API Reference - edgar-sec</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
-    
-    
-
-
-<style>
-  body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
-  --color-brand-primary: #4B6EAF;
-  --color-brand-content: #4B6EAF;
-  
-  }
-  @media not print {
-    body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  --color-brand-primary: #7A97D0;
-  --color-brand-content: #7A97D0;
-  
-    }
-    @media (prefers-color-scheme: dark) {
-      body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  --color-brand-primary: #7A97D0;
-  --color-brand-content: #7A97D0;
-  
-      }
-    }
-  }
-</style></head>
-  <body>
-    
-    <script>
-      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
-    
-
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="svg-toc" viewBox="0 0 24 24">
-    <title>Contents</title>
-    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
-      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-menu" viewBox="0 0 24 24">
-    <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
-    <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </symbol>
-  <symbol id="svg-sun" viewBox="0 0 24 24">
-    <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon" viewBox="0 0 24 24">
-    <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-    </svg>
-  </symbol>
-  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
-    <title>Auto light/dark, in light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
-      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
-      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
-      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
-      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
-      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
-      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
-      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
-      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
-      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
-      <circle cx="14.5" cy="9.55" r="3.6"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
-    <title>Auto light/dark, in dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
-      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
-      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
-      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
-      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
-      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
-      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
-      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
-      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
-      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
-      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-pencil" viewBox="0 0 24 24">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
-      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
-      <path d="M13.5 6.5l4 4" />
-      <path d="M20 21l2 -2l-2 -2" />
-      <path d="M17 17l-2 2l2 2" />
-    </svg>
-  </symbol>
-  <symbol id="svg-eye" viewBox="0 0 24 24">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-      <path
-        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
-      <path d="M20 21l2 -2l-2 -2" />
-      <path d="M17 17l-2 2l2 2" />
-    </svg>
-  </symbol>
-</svg>
-
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
-
-<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
-
-
-
-<div class="page">
-  <header class="mobile-header">
-    <div class="header-left">
-      <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
-      </label>
-    </div>
-    <div class="header-center">
-      <a href="../index.html"><div class="brand">edgar-sec</div></a>
-    </div>
-    <div class="header-right">
-      <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
-          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
-          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-        </button>
-      </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-      </label>
-    </div>
-  </header>
-  <aside class="sidebar-drawer">
-    <div class="sidebar-container">
-      
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+    <title>API Reference &#8212; edgar-sec</title>
   
   
-  <span class="sidebar-brand-text">edgar-sec</span>
   
-</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start Guide</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../examples/index.html">Usage Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Usage Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../examples/basic_usage.html">Basic Usage Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../examples/advanced_usage.html">Advanced Usage Examples</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="edgarapi.html">EdgarAPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="asyncapi.html">AsyncAPI Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_classes.html">Data Classes</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../security.html">Security</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
-</ul>
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
 
-</div>
-</div>
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-      </div>
-      
-    </div>
-  </aside>
-  <div class="main">
-    <div class="content">
-      <div class="article-container">
-        <a href="#" class="back-to-top muted-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-          </svg>
-          <span>Back to top</span>
-        </a>
-        <div class="content-icon-container">
-          <div class="view-this-page">
-  <a class="muted-link" href="../_sources/api/index.rst.txt" title="View this page">
-    <svg><use href="#svg-eye"></use></svg>
-    <span class="visually-hidden">View this page</span>
-  </a>
-</div>
-<div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
-              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-            </button>
-          </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-          </label>
-        </div>
-        <article role="main" id="furo-main-content">
-          <section id="api-reference">
-<h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">¶</a></h1>
-<p>This section provides detailed API documentation for fedfred’s classes and functions.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="edgarapi.html">EdgarAPI</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="edgarapi.html#edgar_sec.EdgarAPI"><code class="docutils literal notranslate"><span class="pre">EdgarAPI</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="edgarapi.html#edgar_sec.EdgarAPI.AsyncAPI"><code class="docutils literal notranslate"><span class="pre">EdgarAPI.AsyncAPI</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="edgarapi.html#edgar_sec.EdgarAPI.AsyncAPI.get_company_concept"><code class="docutils literal notranslate"><span class="pre">EdgarAPI.AsyncAPI.get_company_concept()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="edgarapi.html#edgar_sec.EdgarAPI.AsyncAPI.get_company_facts"><code class="docutils literal notranslate"><span class="pre">EdgarAPI.AsyncAPI.get_company_facts()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="edgarapi.html#edgar_sec.EdgarAPI.AsyncAPI.get_frames"><code class="docutils literal notranslate"><span class="pre">EdgarAPI.AsyncAPI.get_frames()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="edgarapi.html#edgar_sec.EdgarAPI.AsyncAPI.get_submissions"><code class="docutils literal notranslate"><span class="pre">EdgarAPI.AsyncAPI.get_submissions()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="edgarapi.html#edgar_sec.EdgarAPI.get_company_concept"><code class="docutils literal notranslate"><span class="pre">EdgarAPI.get_company_concept()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="edgarapi.html#edgar_sec.EdgarAPI.get_company_facts"><code class="docutils literal notranslate"><span class="pre">EdgarAPI.get_company_facts()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="edgarapi.html#edgar_sec.EdgarAPI.get_frames"><code class="docutils literal notranslate"><span class="pre">EdgarAPI.get_frames()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="edgarapi.html#edgar_sec.EdgarAPI.get_submissions"><code class="docutils literal notranslate"><span class="pre">EdgarAPI.get_submissions()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="asyncapi.html">AsyncAPI Class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="asyncapi.html#edgar_sec.EdgarAPI.AsyncAPI"><code class="docutils literal notranslate"><span class="pre">AsyncAPI</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="asyncapi.html#edgar_sec.EdgarAPI.AsyncAPI.get_company_concept"><code class="docutils literal notranslate"><span class="pre">AsyncAPI.get_company_concept()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="asyncapi.html#edgar_sec.EdgarAPI.AsyncAPI.get_company_facts"><code class="docutils literal notranslate"><span class="pre">AsyncAPI.get_company_facts()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="asyncapi.html#edgar_sec.EdgarAPI.AsyncAPI.get_frames"><code class="docutils literal notranslate"><span class="pre">AsyncAPI.get_frames()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="asyncapi.html#edgar_sec.EdgarAPI.AsyncAPI.get_submissions"><code class="docutils literal notranslate"><span class="pre">AsyncAPI.get_submissions()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="data_classes.html">Data Classes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Address"><code class="docutils literal notranslate"><span class="pre">Address</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Address.address_type"><code class="docutils literal notranslate"><span class="pre">Address.address_type</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Address.street1"><code class="docutils literal notranslate"><span class="pre">Address.street1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Address.street2"><code class="docutils literal notranslate"><span class="pre">Address.street2</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Address.city"><code class="docutils literal notranslate"><span class="pre">Address.city</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Address.state_or_country"><code class="docutils literal notranslate"><span class="pre">Address.state_or_country</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Address.zipcode"><code class="docutils literal notranslate"><span class="pre">Address.zipcode</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Address.state_or_country_description"><code class="docutils literal notranslate"><span class="pre">Address.state_or_country_description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id0"><code class="docutils literal notranslate"><span class="pre">Address.address_type</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id1"><code class="docutils literal notranslate"><span class="pre">Address.city</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Address.from_dict"><code class="docutils literal notranslate"><span class="pre">Address.from_dict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id2"><code class="docutils literal notranslate"><span class="pre">Address.state_or_country</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id3"><code class="docutils literal notranslate"><span class="pre">Address.state_or_country_description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id4"><code class="docutils literal notranslate"><span class="pre">Address.street1</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id5"><code class="docutils literal notranslate"><span class="pre">Address.street2</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id6"><code class="docutils literal notranslate"><span class="pre">Address.zipcode</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyConcept"><code class="docutils literal notranslate"><span class="pre">CompanyConcept</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyConcept.cik"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.cik</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyConcept.taxonomy"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.taxonomy</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyConcept.tag"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.tag</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyConcept.label"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.label</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyConcept.description"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyConcept.entity_name"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.entity_name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyConcept.units"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.units</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id7"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.cik</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id8"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id9"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.entity_name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyConcept.from_api_response"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.from_api_response()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id10"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.label</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id11"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.tag</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id12"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.taxonomy</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id13"><code class="docutils literal notranslate"><span class="pre">CompanyConcept.units</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyFact"><code class="docutils literal notranslate"><span class="pre">CompanyFact</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyFact.cik"><code class="docutils literal notranslate"><span class="pre">CompanyFact.cik</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyFact.entity_name"><code class="docutils literal notranslate"><span class="pre">CompanyFact.entity_name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyFact.facts"><code class="docutils literal notranslate"><span class="pre">CompanyFact.facts</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id14"><code class="docutils literal notranslate"><span class="pre">CompanyFact.cik</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id15"><code class="docutils literal notranslate"><span class="pre">CompanyFact.entity_name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id16"><code class="docutils literal notranslate"><span class="pre">CompanyFact.facts</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.CompanyFact.from_api_response"><code class="docutils literal notranslate"><span class="pre">CompanyFact.from_api_response()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.EntityDisclosure"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.EntityDisclosure.name"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.EntityDisclosure.label"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.label</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.EntityDisclosure.description"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.EntityDisclosure.units"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.units</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id17"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.EntityDisclosure.from_dict"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.from_dict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id18"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.label</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id19"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id20"><code class="docutils literal notranslate"><span class="pre">EntityDisclosure.units</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Fact"><code class="docutils literal notranslate"><span class="pre">Fact</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Fact.taxonomy"><code class="docutils literal notranslate"><span class="pre">Fact.taxonomy</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Fact.disclosures"><code class="docutils literal notranslate"><span class="pre">Fact.disclosures</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id21"><code class="docutils literal notranslate"><span class="pre">Fact.disclosures</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Fact.from_dict"><code class="docutils literal notranslate"><span class="pre">Fact.from_dict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id22"><code class="docutils literal notranslate"><span class="pre">Fact.taxonomy</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.File"><code class="docutils literal notranslate"><span class="pre">File</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.File.name"><code class="docutils literal notranslate"><span class="pre">File.name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.File.filing_count"><code class="docutils literal notranslate"><span class="pre">File.filing_count</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.File.filing_from"><code class="docutils literal notranslate"><span class="pre">File.filing_from</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.File.filing_to"><code class="docutils literal notranslate"><span class="pre">File.filing_to</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id23"><code class="docutils literal notranslate"><span class="pre">File.filing_count</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id24"><code class="docutils literal notranslate"><span class="pre">File.filing_from</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id25"><code class="docutils literal notranslate"><span class="pre">File.filing_to</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.File.from_dict"><code class="docutils literal notranslate"><span class="pre">File.from_dict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id26"><code class="docutils literal notranslate"><span class="pre">File.name</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing"><code class="docutils literal notranslate"><span class="pre">Filing</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.accession_number"><code class="docutils literal notranslate"><span class="pre">Filing.accession_number</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.filing_date"><code class="docutils literal notranslate"><span class="pre">Filing.filing_date</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.report_date"><code class="docutils literal notranslate"><span class="pre">Filing.report_date</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.acceptance_date_time"><code class="docutils literal notranslate"><span class="pre">Filing.acceptance_date_time</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.act"><code class="docutils literal notranslate"><span class="pre">Filing.act</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.form"><code class="docutils literal notranslate"><span class="pre">Filing.form</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.file_number"><code class="docutils literal notranslate"><span class="pre">Filing.file_number</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.film_number"><code class="docutils literal notranslate"><span class="pre">Filing.film_number</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.items"><code class="docutils literal notranslate"><span class="pre">Filing.items</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.core_type"><code class="docutils literal notranslate"><span class="pre">Filing.core_type</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.size"><code class="docutils literal notranslate"><span class="pre">Filing.size</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.is_xbrl"><code class="docutils literal notranslate"><span class="pre">Filing.is_xbrl</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.is_inline_xbrl"><code class="docutils literal notranslate"><span class="pre">Filing.is_inline_xbrl</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.primary_document"><code class="docutils literal notranslate"><span class="pre">Filing.primary_document</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.primary_doc_description"><code class="docutils literal notranslate"><span class="pre">Filing.primary_doc_description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id27"><code class="docutils literal notranslate"><span class="pre">Filing.acceptance_date_time</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id28"><code class="docutils literal notranslate"><span class="pre">Filing.accession_number</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id29"><code class="docutils literal notranslate"><span class="pre">Filing.act</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id30"><code class="docutils literal notranslate"><span class="pre">Filing.core_type</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id31"><code class="docutils literal notranslate"><span class="pre">Filing.file_number</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id32"><code class="docutils literal notranslate"><span class="pre">Filing.filing_date</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id33"><code class="docutils literal notranslate"><span class="pre">Filing.film_number</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id34"><code class="docutils literal notranslate"><span class="pre">Filing.form</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Filing.from_dict"><code class="docutils literal notranslate"><span class="pre">Filing.from_dict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id35"><code class="docutils literal notranslate"><span class="pre">Filing.is_inline_xbrl</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id36"><code class="docutils literal notranslate"><span class="pre">Filing.is_xbrl</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id37"><code class="docutils literal notranslate"><span class="pre">Filing.items</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id38"><code class="docutils literal notranslate"><span class="pre">Filing.primary_doc_description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id39"><code class="docutils literal notranslate"><span class="pre">Filing.primary_document</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id40"><code class="docutils literal notranslate"><span class="pre">Filing.report_date</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id41"><code class="docutils literal notranslate"><span class="pre">Filing.size</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.FormerName"><code class="docutils literal notranslate"><span class="pre">FormerName</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.FormerName.name"><code class="docutils literal notranslate"><span class="pre">FormerName.name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.FormerName.from_date"><code class="docutils literal notranslate"><span class="pre">FormerName.from_date</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.FormerName.to_date"><code class="docutils literal notranslate"><span class="pre">FormerName.to_date</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id42"><code class="docutils literal notranslate"><span class="pre">FormerName.from_date</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.FormerName.from_dict"><code class="docutils literal notranslate"><span class="pre">FormerName.from_dict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id43"><code class="docutils literal notranslate"><span class="pre">FormerName.name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id44"><code class="docutils literal notranslate"><span class="pre">FormerName.to_date</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Frame"><code class="docutils literal notranslate"><span class="pre">Frame</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Frame.taxonomy"><code class="docutils literal notranslate"><span class="pre">Frame.taxonomy</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Frame.tag"><code class="docutils literal notranslate"><span class="pre">Frame.tag</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Frame.ccp"><code class="docutils literal notranslate"><span class="pre">Frame.ccp</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Frame.uom"><code class="docutils literal notranslate"><span class="pre">Frame.uom</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Frame.label"><code class="docutils literal notranslate"><span class="pre">Frame.label</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Frame.description"><code class="docutils literal notranslate"><span class="pre">Frame.description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Frame.pts"><code class="docutils literal notranslate"><span class="pre">Frame.pts</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Frame.frames"><code class="docutils literal notranslate"><span class="pre">Frame.frames</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id45"><code class="docutils literal notranslate"><span class="pre">Frame.ccp</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id46"><code class="docutils literal notranslate"><span class="pre">Frame.description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id47"><code class="docutils literal notranslate"><span class="pre">Frame.frames</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.Frame.from_api_response"><code class="docutils literal notranslate"><span class="pre">Frame.from_api_response()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id48"><code class="docutils literal notranslate"><span class="pre">Frame.label</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id49"><code class="docutils literal notranslate"><span class="pre">Frame.pts</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id50"><code class="docutils literal notranslate"><span class="pre">Frame.tag</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id51"><code class="docutils literal notranslate"><span class="pre">Frame.taxonomy</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id52"><code class="docutils literal notranslate"><span class="pre">Frame.uom</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.FrameDisclosure"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.FrameDisclosure.accn"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.accn</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.FrameDisclosure.cik"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.cik</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.FrameDisclosure.entity_name"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.entity_name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.FrameDisclosure.loc"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.loc</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.FrameDisclosure.end"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.end</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.FrameDisclosure.val"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.val</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id53"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.accn</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id54"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.cik</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id55"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.end</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id56"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.entity_name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.FrameDisclosure.from_dict"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.from_dict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id57"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.loc</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id58"><code class="docutils literal notranslate"><span class="pre">FrameDisclosure.val</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.cik"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.cik</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.entity_type"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.entity_type</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.sic"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.sic</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.sic_description"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.sic_description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.owner_org"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.owner_org</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.insider_transaction_for_owner_exists"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.insider_transaction_for_owner_exists</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.insider_transaction_for_issuer_exists"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.insider_transaction_for_issuer_exists</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.name"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.tickers"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.tickers</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.exchanges"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.exchanges</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.ein"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.ein</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.description"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.website"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.website</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.investor_website"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.investor_website</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.category"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.category</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.fiscal_year_end"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.fiscal_year_end</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.state_of_incorporation"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.state_of_incorporation</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.state_of_incorporation_description"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.state_of_incorporation_description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.addresses"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.addresses</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.phone"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.phone</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.flags"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.flags</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.former_names"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.former_names</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.filings"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.filings</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.files"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.files</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id59"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.addresses</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id60"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.category</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id61"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.cik</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id62"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id63"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.ein</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id64"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.entity_type</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id65"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.exchanges</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id66"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.files</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id67"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.filings</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id68"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.fiscal_year_end</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id69"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.flags</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id70"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.former_names</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.SubmissionHistory.from_api_response"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.from_api_response()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id71"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.insider_transaction_for_issuer_exists</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id72"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.insider_transaction_for_owner_exists</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id73"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.investor_website</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id74"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id75"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.owner_org</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id76"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.phone</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id77"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.sic</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id78"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.sic_description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id79"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.state_of_incorporation</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id80"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.state_of_incorporation_description</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id81"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.tickers</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id82"><code class="docutils literal notranslate"><span class="pre">SubmissionHistory.website</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.UnitDisclosure"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.UnitDisclosure.unit"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.unit</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.UnitDisclosure.end"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.end</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.UnitDisclosure.val"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.val</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.UnitDisclosure.accn"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.accn</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.UnitDisclosure.fy"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.fy</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.UnitDisclosure.fp"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.fp</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.UnitDisclosure.form"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.form</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.UnitDisclosure.filed"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.filed</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.UnitDisclosure.frame"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.frame</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.UnitDisclosure.start"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.start</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id83"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.accn</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id84"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.end</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id85"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.filed</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id86"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.form</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id87"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.fp</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id88"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.frame</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#edgar_sec.edgar_data.UnitDisclosure.from_dict"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.from_dict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id89"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.fy</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id90"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.start</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id91"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.unit</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_classes.html#id92"><code class="docutils literal notranslate"><span class="pre">UnitDisclosure.val</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</section>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-        </article>
-      </div>
-      <footer>
-        
-        <div class="related-pages">
-          <a class="next-page" href="edgarapi.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">EdgarAPI</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../examples/advanced_usage.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Advanced Usage Examples</div>
-                
-              </div>
-            </a>
-        </div>
-        <div class="bottom-of-page">
-          <div class="left-details">
-            <div class="copyright">
-                Copyright &#169; 2025, Nikhil Sunder
-            </div>
-            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-            
-            <a href="https://github.com/pradyunsg/furo">Furo</a>
-            
-          </div>
-          <div class="right-details">
-            <div class="icons">
-              <a class="muted-link " href="https://github.com/nikhilxsunder/edgar-sec" aria-label="GitHub">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-                </svg>
-            </a>
-              <a class="muted-link " href="https://pypi.org/project/edgar-sec/" aria-label="PyPI">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
-                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                </svg>
-            </a>
-              
-            </div>
-          </div>
-        </div>
-        
-      </footer>
-    </div>
-    <aside class="toc-drawer no-toc">
-      
-      
-      
-    </aside>
-  </div>
-</div><script src="../_static/documentation_options.js?v=292eb321"></script>
+    <script src="../_static/documentation_options.js?v=51b770b3"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
-    </body>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/index';</script>
+    <script src="../_static/json_ld.js?v=8e491528"></script>
+    <link rel="canonical" href="https://nikhilxsunder.github.io/edgar-sec/api/index.html" />
+    <link rel="icon" href="../_static/edgar-sec-favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="EdgarAPI" href="_autosummary/edgar_sec.EdgarAPI.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="../installation/data_visualization.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jul 31, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">
+        <div class="sidebar-message">
+            Version 2 is now available!
+            Please check the
+            <a href="resources/notes.html" target="_self">
+                special notes page
+            </a>
+            for more information.
+        </div>
+    </div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/edgar-sec-logo.png" class="logo__image only-light" alt="edgar-sec - Home"/>
+    <img src="../_static/edgar-sec-logo.png" class="logo__image only-dark pst-js-only" alt="edgar-sec - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="ms-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../installation/index.html">
+    Installation and Usage Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../resources/index.html">
+    <no title>
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../glossary.html">
+    <no title>
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contributing.html">
+    Contributing to Edgar-SEC
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../code_of_conduct.html">
+    Contributor Covenant Code of Conduct
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../security.html">
+    Security Policy
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../license.html">
+    License
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/nikhilxsunder/edgar-sec" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/edgar-sec/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-python fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://anaconda.org/conda-forge/edgar-sec" title="Conda-Forge" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-database fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Conda-Forge</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://app.codecov.io/gh/nikhilxsunder/edgar-sec" title="Codecov" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-umbrella fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Codecov</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://socket.dev/pypi/package/edgar-sec/overview/2.1.1/tar-gz" title="Socket" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-shield fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Socket</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.bestpractices.dev/en/projects/10210?criteria_level=2" title="OpenSSF" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-trophy fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">OpenSSF</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../installation/index.html">
+    Installation and Usage Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../resources/index.html">
+    <no title>
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../glossary.html">
+    <no title>
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../contributing.html">
+    Contributing to Edgar-SEC
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../code_of_conduct.html">
+    Contributor Covenant Code of Conduct
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../security.html">
+    Security Policy
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../license.html">
+    License
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/nikhilxsunder/edgar-sec" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/edgar-sec/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-python fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://anaconda.org/conda-forge/edgar-sec" title="Conda-Forge" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-database fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Conda-Forge</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://app.codecov.io/gh/nikhilxsunder/edgar-sec" title="Codecov" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-umbrella fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Codecov</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://socket.dev/pypi/package/edgar-sec/overview/2.1.1/tar-gz" title="Socket" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-shield fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Socket</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.bestpractices.dev/en/projects/10210?criteria_level=2" title="OpenSSF" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-trophy fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">OpenSSF</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.EdgarAPI.html">EdgarAPI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.EdgarAPI.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.EdgarAPI.get_company_concept.html">get_company_concept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.EdgarAPI.get_company_facts.html">get_company_facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.EdgarAPI.get_frames.html">get_frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.EdgarAPI.get_submissions.html">get_submissions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.AsyncAPI.html">AsyncAPI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.AsyncAPI.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.AsyncAPI.get_company_concept.html">get_company_concept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.AsyncAPI.get_company_facts.html">get_company_facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.AsyncAPI.get_frames.html">get_frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.AsyncAPI.get_submissions.html">get_submissions</a></li>
+</ul>
+</details></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.helpers.EdgarHelpers.html">EdgarHelpers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.helpers.EdgarHelpers.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.helpers.EdgarHelpers.cik_validation.html">cik_validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.helpers.EdgarHelpers.cik_validation_async.html">cik_validation_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.helpers.EdgarHelpers.datetime_cy_conversion.html">datetime_cy_conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.helpers.EdgarHelpers.datetime_cy_conversion_async.html">datetime_cy_conversion_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.helpers.EdgarHelpers.get_cik.html">get_cik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.helpers.EdgarHelpers.get_cik_async.html">get_cik_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.helpers.EdgarHelpers.get_universe.html">get_universe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.helpers.EdgarHelpers.get_universe_async.html">get_universe_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.helpers.EdgarHelpers.string_cy_conversion.html">string_cy_conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.helpers.EdgarHelpers.string_cy_conversion_async.html">string_cy_conversion_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.helpers.EdgarHelpers.string_cy_validation.html">string_cy_validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.helpers.EdgarHelpers.string_cy_validation_async.html">string_cy_validation_async</a></li>
+</ul>
+</details></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.html">Address</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.to_object.html">to_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.to_object_async.html">to_object_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.country.html">country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.country_code.html">country_code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.foreign_state_territory.html">foreign_state_territory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.address_type.html">address_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.street1.html">street1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.street2.html">street2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.city.html">city</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.state_or_country.html">state_or_country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.zipcode.html">zipcode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.state_or_country_description.html">state_or_country_description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.is_foreign_location.html">is_foreign_location</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.objects.FormerName.html">FormerName</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.FormerName.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.FormerName.to_object.html">to_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.FormerName.to_object_async.html">to_object_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.FormerName.name.html">name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.FormerName.from_date.html">from_date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.FormerName.to_date.html">to_date</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.objects.File.html">File</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.File.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.File.to_object.html">to_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.File.to_object_async.html">to_object_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.File.name.html">name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.File.filing_count.html">filing_count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.File.filing_from.html">filing_from</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.File.filing_to.html">filing_to</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.html">Filing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.to_object.html">to_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.to_object_async.html">to_object_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.accession_number.html">accession_number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.filing_date.html">filing_date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.report_date.html">report_date</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.acceptance_date_time.html">acceptance_date_time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.act.html">act</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.form.html">form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.file_number.html">file_number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.film_number.html">film_number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.items.html">items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.core_type.html">core_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.size.html">size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.is_xbrl.html">is_xbrl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.is_inline_xbrl.html">is_inline_xbrl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.primary_document.html">primary_document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.primary_doc_description.html">primary_doc_description</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.html">SubmissionHistory</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.to_object.html">to_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.to_object_async.html">to_object_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.lei.html">lei</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.cik.html">cik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.entity_type.html">entity_type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.sic.html">sic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.sic_description.html">sic_description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.owner_org.html">owner_org</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.insider_transaction_for_owner_exists.html">insider_transaction_for_owner_exists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.insider_transaction_for_issuer_exists.html">insider_transaction_for_issuer_exists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.name.html">name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.tickers.html">tickers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.exchanges.html">exchanges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.ein.html">ein</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.description.html">description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.website.html">website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.investor_website.html">investor_website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.category.html">category</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.fiscal_year_end.html">fiscal_year_end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.state_of_incorporation.html">state_of_incorporation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.state_of_incorporation_description.html">state_of_incorporation_description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.addresses.html">addresses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.phone.html">phone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.flags.html">flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.former_names.html">former_names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.filings.html">filings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.files.html">files</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.objects.UnitDisclosure.html">UnitDisclosure</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.UnitDisclosure.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.UnitDisclosure.to_object.html">to_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.UnitDisclosure.to_object_async.html">to_object_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.UnitDisclosure.units.html">units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.UnitDisclosure.end.html">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.UnitDisclosure.val.html">val</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.UnitDisclosure.accn.html">accn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.UnitDisclosure.fy.html">fy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.UnitDisclosure.fp.html">fp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.UnitDisclosure.form.html">form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.UnitDisclosure.filed.html">filed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.UnitDisclosure.frame.html">frame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.UnitDisclosure.start.html">start</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyConcept.html">CompanyConcept</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyConcept.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyConcept.to_object.html">to_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyConcept.to_object_async.html">to_object_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyConcept.cik.html">cik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyConcept.taxonomy.html">taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyConcept.tag.html">tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyConcept.label.html">label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyConcept.description.html">description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyConcept.entity_name.html">entity_name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyConcept.units.html">units</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyDisclosures.html">TaxonomyDisclosures</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyDisclosures.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyDisclosures.to_object.html">to_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyDisclosures.to_object_async.html">to_object_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyDisclosures.name.html">name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyDisclosures.label.html">label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyDisclosures.description.html">description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyDisclosures.units.html">units</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyFacts.html">TaxonomyFacts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyFacts.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyFacts.to_object.html">to_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyFacts.to_object_async.html">to_object_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyFacts.taxonomy.html">taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyFacts.disclosures.html">disclosures</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyFacts.html">CompanyFacts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyFacts.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyFacts.to_object.html">to_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyFacts.to_object_async.html">to_object_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyFacts.cik.html">cik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyFacts.entity_name.html">entity_name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyFacts.facts.html">facts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.objects.FrameDisclosure.html">FrameDisclosure</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.FrameDisclosure.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.FrameDisclosure.to_object.html">to_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.FrameDisclosure.to_object_async.html">to_object_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.FrameDisclosure.accn.html">accn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.FrameDisclosure.cik.html">cik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.FrameDisclosure.entity_name.html">entity_name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.FrameDisclosure.loc.html">loc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.FrameDisclosure.end.html">end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.FrameDisclosure.val.html">val</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.objects.Frame.html">Frame</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Frame.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Frame.to_object.html">to_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Frame.to_object_async.html">to_object_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Frame.taxonomy.html">taxonomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Frame.tag.html">tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Frame.ccp.html">ccp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Frame.uom.html">uom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Frame.label.html">label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Frame.description.html">description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Frame.pts.html">pts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Frame.disclosures.html">disclosures</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="_autosummary/edgar_sec.objects.Company.html">Company</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Company.__init__.html">__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Company.to_object.html">to_object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Company.to_object_async.html">to_object_async</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Company.cik.html">cik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Company.ticker.html">ticker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/edgar_sec.objects.Company.title.html">title</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">API Reference</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="api-reference">
+<span id="api-index"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">#</a></h1>
+<p>This section provides detailed, automatically generated documentation for edgar-sec’s <strong>modules</strong>, <strong>classes</strong>, and <strong>functions</strong>.
+It covers both synchronous and asynchronous clients, helper utilities, and typed object models.</p>
+<p>All API documentation is generated from the live source code using Sphinx <code class="xref py py-mod docutils literal notranslate"><span class="pre">autodoc</span></code> and <code class="xref py py-mod docutils literal notranslate"><span class="pre">autosummary</span></code>.</p>
+<p>—</p>
+<section id="api-clients">
+<h2>API Clients<a class="headerlink" href="#api-clients" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/edgar_sec.EdgarAPI.html#edgar_sec.EdgarAPI" title="edgar_sec.EdgarAPI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.EdgarAPI</span></code></a>([cache_mode, cache_size])</p></td>
+<td><p>Interact with the US Securities and Exchange Commission EDGAR API.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/edgar_sec.AsyncAPI.html#edgar_sec.AsyncAPI" title="edgar_sec.AsyncAPI"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.AsyncAPI</span></code></a>(parent)</p></td>
+<td><p>The Async sub-class contains methods for interacting with the SEC EDGAR API asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="utility-helpers">
+<h2>Utility Helpers<a class="headerlink" href="#utility-helpers" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/edgar_sec.helpers.EdgarHelpers.html#edgar_sec.helpers.EdgarHelpers" title="edgar_sec.helpers.EdgarHelpers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.helpers.EdgarHelpers</span></code></a>()</p></td>
+<td><p>A class containing helper methods for the Edgar SEC module.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="data-objects">
+<h2>Data Objects<a class="headerlink" href="#data-objects" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/edgar_sec.objects.Address.html#edgar_sec.objects.Address" title="edgar_sec.objects.Address"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.objects.Address</span></code></a>(address_type, ...)</p></td>
+<td><p>A class representing an address from SEC filing data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/edgar_sec.objects.FormerName.html#edgar_sec.objects.FormerName" title="edgar_sec.objects.FormerName"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.objects.FormerName</span></code></a>(name, ...)</p></td>
+<td><p>A class representing a former name of an SEC filing entity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/edgar_sec.objects.File.html#edgar_sec.objects.File" title="edgar_sec.objects.File"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.objects.File</span></code></a>(name, filing_count, ...)</p></td>
+<td><p>A class representing a file reference in SEC EDGAR submission history.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/edgar_sec.objects.Filing.html#edgar_sec.objects.Filing" title="edgar_sec.objects.Filing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.objects.Filing</span></code></a>(accession_number, ...)</p></td>
+<td><p>A class representing an SEC filing document.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/edgar_sec.objects.SubmissionHistory.html#edgar_sec.objects.SubmissionHistory" title="edgar_sec.objects.SubmissionHistory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.objects.SubmissionHistory</span></code></a>(cik, ...)</p></td>
+<td><p>A class representing the complete submission history of an SEC filing entity.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/edgar_sec.objects.UnitDisclosure.html#edgar_sec.objects.UnitDisclosure" title="edgar_sec.objects.UnitDisclosure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.objects.UnitDisclosure</span></code></a>(units, end, ...)</p></td>
+<td><p>A class representing a specific financial disclosure for a single unit of measurement.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyConcept.html#edgar_sec.objects.CompanyConcept" title="edgar_sec.objects.CompanyConcept"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.objects.CompanyConcept</span></code></a>(cik, ...)</p></td>
+<td><p>A class representing a specific financial concept for a company from SEC filings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyDisclosures.html#edgar_sec.objects.TaxonomyDisclosures" title="edgar_sec.objects.TaxonomyDisclosures"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.objects.TaxonomyDisclosures</span></code></a>(name, ...)</p></td>
+<td><p>A class representing a specific financial concept disclosure for an entity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/edgar_sec.objects.TaxonomyFacts.html#edgar_sec.objects.TaxonomyFacts" title="edgar_sec.objects.TaxonomyFacts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.objects.TaxonomyFacts</span></code></a>(taxonomy, ...)</p></td>
+<td><p>A class representing a collection of financial disclosures for a specific taxonomy.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/edgar_sec.objects.CompanyFacts.html#edgar_sec.objects.CompanyFacts" title="edgar_sec.objects.CompanyFacts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.objects.CompanyFacts</span></code></a>(cik, ...)</p></td>
+<td><p>A class representing the complete collection of financial facts for a company from SEC filings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/edgar_sec.objects.FrameDisclosure.html#edgar_sec.objects.FrameDisclosure" title="edgar_sec.objects.FrameDisclosure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.objects.FrameDisclosure</span></code></a>(accn, cik, ...)</p></td>
+<td><p>A class representing a single financial disclosure from an SEC reporting frame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/edgar_sec.objects.Frame.html#edgar_sec.objects.Frame" title="edgar_sec.objects.Frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.objects.Frame</span></code></a>(taxonomy, tag, ccp, ...)</p></td>
+<td><p>A class representing a collection of financial disclosures across multiple companies for a specific concept and time period.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/edgar_sec.objects.Company.html#edgar_sec.objects.Company" title="edgar_sec.objects.Company"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edgar_sec.objects.Company</span></code></a>(cik, ticker, title)</p></td>
+<td><p>A class representing a company in the Edgar SEC database.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>—</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../installation/data_visualization.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="_autosummary/edgar_sec.EdgarAPI.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">EdgarAPI</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-clients">API Clients</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utility-helpers">Utility Helpers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-objects">Data Objects</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/nikhilxsunder/edgar-sec/edit/main/docs/source/api/index.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Nikhil Sunder.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
 </html>

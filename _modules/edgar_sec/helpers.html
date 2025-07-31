@@ -1,0 +1,941 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM6ZC88602"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HM6ZC88602');
+    </script>
+    
+    <title>edgar_sec.helpers &#8212; edgar-sec</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/edgar_sec/helpers';</script>
+    <script src="../../_static/json_ld.js?v=8e491528"></script>
+    <link rel="canonical" href="https://nikhilxsunder.github.io/edgar-sec/_modules/edgar_sec/helpers.html" />
+    <link rel="icon" href="../../_static/edgar-sec-favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jul 31, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">
+        <div class="sidebar-message">
+            Version 2 is now available!
+            Please check the
+            <a href="resources/notes.html" target="_self">
+                special notes page
+            </a>
+            for more information.
+        </div>
+    </div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/edgar-sec-logo.png" class="logo__image only-light" alt="edgar-sec - Home"/>
+    <img src="../../_static/edgar-sec-logo.png" class="logo__image only-dark pst-js-only" alt="edgar-sec - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="ms-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../installation/index.html">
+    Installation and Usage Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../resources/index.html">
+    <no title>
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../glossary.html">
+    <no title>
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contributing.html">
+    Contributing to Edgar-SEC
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../code_of_conduct.html">
+    Contributor Covenant Code of Conduct
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../security.html">
+    Security Policy
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../license.html">
+    License
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/nikhilxsunder/edgar-sec" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/edgar-sec/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-python fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://anaconda.org/conda-forge/edgar-sec" title="Conda-Forge" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-database fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Conda-Forge</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://app.codecov.io/gh/nikhilxsunder/edgar-sec" title="Codecov" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-umbrella fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Codecov</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://socket.dev/pypi/package/edgar-sec/overview/2.1.1/tar-gz" title="Socket" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-shield fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Socket</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.bestpractices.dev/en/projects/10210?criteria_level=2" title="OpenSSF" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-trophy fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">OpenSSF</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../installation/index.html">
+    Installation and Usage Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../resources/index.html">
+    <no title>
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../glossary.html">
+    <no title>
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contributing.html">
+    Contributing to Edgar-SEC
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../code_of_conduct.html">
+    Contributor Covenant Code of Conduct
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../security.html">
+    Security Policy
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../license.html">
+    License
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/nikhilxsunder/edgar-sec" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/edgar-sec/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-python fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://anaconda.org/conda-forge/edgar-sec" title="Conda-Forge" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-database fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Conda-Forge</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://app.codecov.io/gh/nikhilxsunder/edgar-sec" title="Codecov" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-umbrella fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Codecov</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://socket.dev/pypi/package/edgar-sec/overview/2.1.1/tar-gz" title="Socket" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-shield fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Socket</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.bestpractices.dev/en/projects/10210?criteria_level=2" title="OpenSSF" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-trophy fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">OpenSSF</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">edgar_sec.helpers</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for edgar_sec.helpers</h1><div class="highlight"><pre>
+<span></span><span class="c1"># filepath: /src/edgar_sec/helpers.py</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright (c) 2025 Nikhil Sunder</span>
+<span class="c1">#</span>
+<span class="c1"># This program is free software: you can redistribute it and/or modify</span>
+<span class="c1"># it under the terms of the GNU Affero General Public License as published by</span>
+<span class="c1"># the Free Software Foundation, either version 3 of the License, or</span>
+<span class="c1"># (at your option) any later version.</span>
+<span class="c1">#</span>
+<span class="c1"># This program is distributed in the hope that it will be useful,</span>
+<span class="c1"># but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c1"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="c1"># GNU Affero General Public License for more details.</span>
+<span class="c1">#</span>
+<span class="c1"># You should have received a copy of the GNU Affero General Public License</span>
+<span class="c1"># along with this program. If not, see &lt;https://www.gnu.org/licenses/&gt;.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This module defines helper methods for the edgar-sec package.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">edgar_sec.objects</span><span class="w"> </span><span class="kn">import</span> <span class="n">Company</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">edgar_sec.__about__</span><span class="w"> </span><span class="kn">import</span> <span class="n">__title__</span><span class="p">,</span> <span class="n">__version__</span><span class="p">,</span> <span class="n">__author__</span><span class="p">,</span> <span class="n">__license__</span><span class="p">,</span> <span class="n">__copyright__</span><span class="p">,</span> <span class="n">__description__</span><span class="p">,</span> <span class="n">__url__</span>
+
+<div class="viewcode-block" id="EdgarHelpers">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.helpers.EdgarHelpers.html#edgar_sec.helpers.EdgarHelpers">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">EdgarHelpers</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class containing helper methods for the Edgar SEC module.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="EdgarHelpers.get_cik">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.helpers.EdgarHelpers.get_cik.html#edgar_sec.helpers.EdgarHelpers.get_cik">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_cik</span><span class="p">(</span><span class="n">ticker</span><span class="p">:</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">search_text</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper method to get the CIK (Central Index Key) for a given ticker symbol.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ticker (str): The ticker symbol of the company.</span>
+<span class="sd">            search_text (str): The name of the company to search for.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str | List[str]: The CIK of the company or a list of CIKs if multiple matches are found.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If neither ticker nor search_text is provided, or if both are provided.</span>
+
+<span class="sd">        Example:</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ticker</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">search_text</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">ticker</span> <span class="ow">and</span> <span class="n">search_text</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provide exactly one of ticker or search_text.&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">httpx</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://www.sec.gov/files/company_tickers.json&#39;</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">ticker</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;ticker&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">ticker</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;cik_str&#39;</span><span class="p">]</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ticker &#39;</span><span class="si">{</span><span class="n">ticker</span><span class="si">}</span><span class="s2">&#39; not found in the SEC EDGAR database.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">assert</span> <span class="n">search_text</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">search_text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                        <span class="k">return</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;cik_str&#39;</span><span class="p">]</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Search text &#39;</span><span class="si">{</span><span class="n">search_text</span><span class="si">}</span><span class="s2">&#39; not found in the SEC EDGAR database.&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EdgarHelpers.get_universe">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.helpers.EdgarHelpers.get_universe.html#edgar_sec.helpers.EdgarHelpers.get_universe">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_universe</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Company</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper method to get the universe of companies from the SEC EDGAR database.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            List[Company]: A list of Company instances representing the universe of companies.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">httpx</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://www.sec.gov/files/company_tickers.json&#39;</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">Company</span><span class="o">.</span><span class="n">to_object</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="EdgarHelpers.datetime_cy_conversion">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.helpers.EdgarHelpers.datetime_cy_conversion.html#edgar_sec.helpers.EdgarHelpers.datetime_cy_conversion">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">datetime_cy_conversion</span><span class="p">(</span><span class="n">period</span><span class="p">:</span> <span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper method to convert a reporting period in datetime format to the &#39;CY####Q#&#39; format.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            period (datetime): The reporting period as a datetime object.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The reporting period in &#39;CY####Q#&#39; format.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">period</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;period must be a datetime object.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">period</span><span class="o">.</span><span class="n">month</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;CY</span><span class="si">{</span><span class="n">period</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">Q</span><span class="si">{</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">elif</span> <span class="n">period</span><span class="o">.</span><span class="n">month</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;CY</span><span class="si">{</span><span class="n">period</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">Q</span><span class="si">{</span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">elif</span> <span class="n">period</span><span class="o">.</span><span class="n">month</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;CY</span><span class="si">{</span><span class="n">period</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">Q</span><span class="si">{</span><span class="mi">3</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;CY</span><span class="si">{</span><span class="n">period</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">Q</span><span class="si">{</span><span class="mi">4</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+<div class="viewcode-block" id="EdgarHelpers.string_cy_conversion">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.helpers.EdgarHelpers.string_cy_conversion.html#edgar_sec.helpers.EdgarHelpers.string_cy_conversion">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">string_cy_conversion</span><span class="p">(</span><span class="n">period</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper method to convert a reporting period string in YYYY-MM-DD format to CY####Q# format.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            period (str): The reporting period in &#39;YYYY-MM-DD&#39; format.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The reporting period in &#39;CY####Q#&#39; format.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">period</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;period must be a string.&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">date_obj</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">period</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">date_obj</span><span class="o">.</span><span class="n">month</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;CY</span><span class="si">{</span><span class="n">date_obj</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">Q1&quot;</span>
+            <span class="k">elif</span> <span class="n">date_obj</span><span class="o">.</span><span class="n">month</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;CY</span><span class="si">{</span><span class="n">date_obj</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">Q2&quot;</span>
+            <span class="k">elif</span> <span class="n">date_obj</span><span class="o">.</span><span class="n">month</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;CY</span><span class="si">{</span><span class="n">date_obj</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">Q3&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;CY</span><span class="si">{</span><span class="n">date_obj</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">Q4&quot;</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid date format. Must be in &#39;YYYY-MM-DD&#39; format.&quot;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span></div>
+
+<div class="viewcode-block" id="EdgarHelpers.string_cy_validation">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.helpers.EdgarHelpers.string_cy_validation.html#edgar_sec.helpers.EdgarHelpers.string_cy_validation">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">string_cy_validation</span><span class="p">(</span><span class="n">period</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper method to validate if a string is in &#39;CY####&#39; or &#39;CY####Q#&#39; format.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            period (str): The reporting period string to validate.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the string is in &#39;CY####&#39; or &#39;CY####Q#&#39; format, False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">period</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;period must be a string.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;CY\d</span><span class="si">{4}</span><span class="s1">(Q[1-4])?&#39;</span><span class="p">,</span> <span class="n">period</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="EdgarHelpers.cik_validation">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.helpers.EdgarHelpers.cik_validation.html#edgar_sec.helpers.EdgarHelpers.cik_validation">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cik_validation</span><span class="p">(</span><span class="n">central_index_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper method to validate and fix the CIK (Central Index Key) format.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            central_index_key (str): The CIK to validate.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The validated CIK.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If the CIK is not in the correct format.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">central_index_key</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;central_index_key must be a string.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">central_index_key</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;CIK must be 10 digits or less.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d</span><span class="si">{10}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">central_index_key</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">central_index_key</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">central_index_key</span></div>
+
+<div class="viewcode-block" id="EdgarHelpers.get_cik_async">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.helpers.EdgarHelpers.get_cik_async.html#edgar_sec.helpers.EdgarHelpers.get_cik_async">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_cik_async</span><span class="p">(</span><span class="n">ticker</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">search_text</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper method to asynchronously get the CIK (Central Index Key) for a given ticker symbol.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ticker (str): The ticker symbol of the company.</span>
+<span class="sd">            search_text (str): The name of the company to search for.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str | List[str]: The CIK of the company or a list of CIKs if multiple matches are found.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ticker</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">search_text</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">ticker</span> <span class="ow">and</span> <span class="n">search_text</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provide exactly one of ticker or search_text.&quot;</span><span class="p">)</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">httpx</span><span class="o">.</span><span class="n">AsyncClient</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://www.sec.gov/files/company_tickers.json&#39;</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">ticker</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;ticker&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">ticker</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;cik_str&#39;</span><span class="p">]</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ticker &#39;</span><span class="si">{</span><span class="n">ticker</span><span class="si">}</span><span class="s2">&#39; not found in the SEC EDGAR database.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">assert</span> <span class="n">search_text</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">search_text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                        <span class="k">return</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;cik_str&#39;</span><span class="p">]</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Search text &#39;</span><span class="si">{</span><span class="n">search_text</span><span class="si">}</span><span class="s2">&#39; not found in the SEC EDGAR database.&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EdgarHelpers.get_universe_async">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.helpers.EdgarHelpers.get_universe_async.html#edgar_sec.helpers.EdgarHelpers.get_universe_async">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_universe_async</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Company</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper method to asynchronously get the universe of companies from the SEC EDGAR database.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">httpx</span><span class="o">.</span><span class="n">AsyncClient</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://www.sec.gov/files/company_tickers.json&#39;</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            <span class="k">return</span> <span class="p">[</span><span class="k">await</span> <span class="n">Company</span><span class="o">.</span><span class="n">to_object_async</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="EdgarHelpers.datetime_cy_conversion_async">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.helpers.EdgarHelpers.datetime_cy_conversion_async.html#edgar_sec.helpers.EdgarHelpers.datetime_cy_conversion_async">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">datetime_cy_conversion_async</span><span class="p">(</span><span class="n">period</span><span class="p">:</span> <span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper method to convert a reporting period in datetime format to the &#39;CY####Q#&#39; format.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            period (datetime): The reporting period as a datetime object.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The reporting period in &#39;CY####Q#&#39; format.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">to_thread</span><span class="p">(</span><span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">datetime_cy_conversion</span><span class="p">,</span> <span class="n">period</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EdgarHelpers.string_cy_conversion_async">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.helpers.EdgarHelpers.string_cy_conversion_async.html#edgar_sec.helpers.EdgarHelpers.string_cy_conversion_async">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">string_cy_conversion_async</span><span class="p">(</span><span class="n">period</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper method to asynchronously convert a reporting period string in YYYY-MM-DD format to CY####Q# format.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            period (str): The reporting period in &#39;YYYY-MM-DD&#39; format.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The reporting period in &#39;CY####Q#&#39; format.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">to_thread</span><span class="p">(</span><span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">string_cy_conversion</span><span class="p">,</span> <span class="n">period</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EdgarHelpers.string_cy_validation_async">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.helpers.EdgarHelpers.string_cy_validation_async.html#edgar_sec.helpers.EdgarHelpers.string_cy_validation_async">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">string_cy_validation_async</span><span class="p">(</span><span class="n">period</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper method to asynchronously validate if a string is in &#39;CY####&#39; or &#39;CY####Q#&#39; format.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            period (str): The reporting period string to validate.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the string is in &#39;CY####&#39; or &#39;CY####Q#&#39; format, False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">to_thread</span><span class="p">(</span><span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">string_cy_validation</span><span class="p">,</span> <span class="n">period</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EdgarHelpers.cik_validation_async">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.helpers.EdgarHelpers.cik_validation_async.html#edgar_sec.helpers.EdgarHelpers.cik_validation_async">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">cik_validation_async</span><span class="p">(</span><span class="n">central_index_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper method to asynchronously validate and fix the CIK (Central Index Key) format.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            central_index_key (str): The CIK to validate.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The validated CIK.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If the CIK is not in the correct format.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">to_thread</span><span class="p">(</span><span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">cik_validation</span><span class="p">,</span> <span class="n">central_index_key</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Nikhil Sunder.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

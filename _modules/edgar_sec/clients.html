@@ -1,0 +1,1406 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HM6ZC88602"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HM6ZC88602');
+    </script>
+    
+    <title>edgar_sec.clients &#8212; edgar-sec</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/edgar_sec/clients';</script>
+    <script src="../../_static/json_ld.js?v=8e491528"></script>
+    <link rel="canonical" href="https://nikhilxsunder.github.io/edgar-sec/_modules/edgar_sec/clients.html" />
+    <link rel="icon" href="../../_static/edgar-sec-favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jul 31, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">
+        <div class="sidebar-message">
+            Version 2 is now available!
+            Please check the
+            <a href="resources/notes.html" target="_self">
+                special notes page
+            </a>
+            for more information.
+        </div>
+    </div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/edgar-sec-logo.png" class="logo__image only-light" alt="edgar-sec - Home"/>
+    <img src="../../_static/edgar-sec-logo.png" class="logo__image only-dark pst-js-only" alt="edgar-sec - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="ms-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../installation/index.html">
+    Installation and Usage Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../resources/index.html">
+    <no title>
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../glossary.html">
+    <no title>
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contributing.html">
+    Contributing to Edgar-SEC
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../code_of_conduct.html">
+    Contributor Covenant Code of Conduct
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../security.html">
+    Security Policy
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../license.html">
+    License
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/nikhilxsunder/edgar-sec" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/edgar-sec/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-python fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://anaconda.org/conda-forge/edgar-sec" title="Conda-Forge" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-database fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Conda-Forge</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://app.codecov.io/gh/nikhilxsunder/edgar-sec" title="Codecov" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-umbrella fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Codecov</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://socket.dev/pypi/package/edgar-sec/overview/2.1.1/tar-gz" title="Socket" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-shield fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Socket</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.bestpractices.dev/en/projects/10210?criteria_level=2" title="OpenSSF" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-trophy fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">OpenSSF</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../installation/index.html">
+    Installation and Usage Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../resources/index.html">
+    <no title>
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../glossary.html">
+    <no title>
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../contributing.html">
+    Contributing to Edgar-SEC
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../changelog.html">
+    Changelog
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../code_of_conduct.html">
+    Contributor Covenant Code of Conduct
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../security.html">
+    Security Policy
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../license.html">
+    License
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/nikhilxsunder/edgar-sec" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/edgar-sec/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-python fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://anaconda.org/conda-forge/edgar-sec" title="Conda-Forge" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-database fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Conda-Forge</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://app.codecov.io/gh/nikhilxsunder/edgar-sec" title="Codecov" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-umbrella fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Codecov</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://socket.dev/pypi/package/edgar-sec/overview/2.1.1/tar-gz" title="Socket" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-shield fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Socket</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.bestpractices.dev/en/projects/10210?criteria_level=2" title="OpenSSF" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fas fa-trophy fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">OpenSSF</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">edgar_sec.clients</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for edgar_sec.clients</h1><div class="highlight"><pre>
+<span></span><span class="c1"># filepath: /src/edgar_sec/clients.py</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright (c) 2025 Nikhil Sunder</span>
+<span class="c1">#</span>
+<span class="c1"># This program is free software: you can redistribute it and/or modify</span>
+<span class="c1"># it under the terms of the GNU Affero General Public License as published by</span>
+<span class="c1"># the Free Software Foundation, either version 3 of the License, or</span>
+<span class="c1"># (at your option) any later version.</span>
+<span class="c1">#</span>
+<span class="c1"># This program is distributed in the hope that it will be useful,</span>
+<span class="c1"># but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="c1"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<span class="c1"># GNU Affero General Public License for more details.</span>
+<span class="c1">#</span>
+<span class="c1"># You should have received a copy of the GNU Affero General Public License</span>
+<span class="c1"># along with this program. If not, see &lt;https://www.gnu.org/licenses/&gt;.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">A feature-rich python-package for interacting with the US Securities and Exchange Commission API: EDGAR</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># Imports</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">cast</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tenacity</span><span class="w"> </span><span class="kn">import</span> <span class="n">retry</span><span class="p">,</span> <span class="n">wait_fixed</span><span class="p">,</span> <span class="n">stop_after_attempt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cachetools</span><span class="w"> </span><span class="kn">import</span> <span class="n">FIFOCache</span><span class="p">,</span> <span class="n">cached</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">asyncache</span><span class="w"> </span><span class="kn">import</span> <span class="n">cached</span> <span class="k">as</span> <span class="n">async_cached</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">edgar_sec.objects</span><span class="w"> </span><span class="kn">import</span> <span class="n">CompanyConcept</span><span class="p">,</span> <span class="n">SubmissionHistory</span><span class="p">,</span> <span class="n">CompanyFacts</span><span class="p">,</span> <span class="n">Frame</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">edgar_sec.helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">EdgarHelpers</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">edgar_sec.__about__</span><span class="w"> </span><span class="kn">import</span> <span class="n">__title__</span><span class="p">,</span> <span class="n">__version__</span><span class="p">,</span> <span class="n">__author__</span><span class="p">,</span> <span class="n">__license__</span><span class="p">,</span> <span class="n">__copyright__</span><span class="p">,</span> <span class="n">__description__</span><span class="p">,</span> <span class="n">__url__</span>
+
+<div class="viewcode-block" id="EdgarAPI">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.EdgarAPI.html#edgar_sec.EdgarAPI">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">EdgarAPI</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Interact with the US Securities and Exchange Commission EDGAR API.</span>
+
+<span class="sd">    This class provides methods to access the SEC&#39;s EDGAR database through their</span>
+<span class="sd">    RESTful API endpoints. The data.sec.gov service delivers JSON-formatted data</span>
+<span class="sd">    without requiring authentication or API keys. The API provides access to: Filing</span>
+<span class="sd">    entity submission history and XBRL financial statement data (forms 10-Q, 10-K,</span>
+<span class="sd">    8-K, 20-F, 40-F, 6-K).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Dunder Methods</span>
+<div class="viewcode-block" id="EdgarAPI.__init__">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.EdgarAPI.__init__.html#edgar_sec.EdgarAPI.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cache_mode</span><span class="p">:</span> <span class="nb">bool</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cache_size</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize the EdgarAPI class the provide functions for accessing SEC EDGAR data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            cache_mode (bool): Whether to enable caching for API responses. Defaults to False.</span>
+<span class="sd">            cache_size (int): The maximum number of items to store in the cache if caching is enabled. Defaults to 256.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            EdgarAPI: An instance of the EdgarAPI class.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If the cache_size parameter is not a positive integer.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; import edgar_sec as ed</span>
+<span class="sd">            &gt;&gt;&gt; api = ed.EdgarAPI(cache_mode=True)</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            Unlike many APIs, the SEC EDGAR API doesn&#39;t require an API key, but it does enforce a</span>
+<span class="sd">            rate limit of 10 requests per second which this implementation automatically respects.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;https://data.sec.gov&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (compatible; SEC-API/1.0; +https://www.sec.gov)&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cache_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">cache_mode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cache_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">cache_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">:</span> <span class="n">FIFOCache</span> <span class="o">=</span> <span class="n">FIFOCache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="n">cache_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_requests_per_second</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">request_times</span><span class="p">:</span> <span class="n">deque</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Lock</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">semaphore</span><span class="p">:</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Semaphore</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Semaphore</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_requests_per_second</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Async</span><span class="p">:</span> <span class="n">EdgarAPI</span><span class="o">.</span><span class="n">AsyncAPI</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">AsyncAPI</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        string representation of the EdgarAPI class.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: A string representation of the EdgarAPI class.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;EdgarAPI(cache_mode=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cache_mode</span><span class="si">}</span><span class="s2">, cache_size=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cache_size</span><span class="si">}</span><span class="s2">)&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        string representation of the EdgarAPI class.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: A string representation of the EdgarAPI class.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;EdgarAPI Instance:</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Base URL: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Cache Mode: </span><span class="si">{</span><span class="s1">&#39;Enabled&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">cache_mode</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Disabled&#39;</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Cache Size: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cache_size</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;Max Requests per Second: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">max_requests_per_second</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Equality comparison for the EdgarAPI class.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            other (object): The object to compare with.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the objects are equal, False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">EdgarAPI</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">NotImplemented</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cache_mode</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">cache_mode</span> <span class="ow">and</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cache_size</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">cache_size</span>
+        <span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Hash function for the EdgarAPI class.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: A hash value for the EdgarAPI instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">hash</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">cache_mode</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache_size</span><span class="p">))</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Destructor for the EdgarAPI class. Clears the cache when the instance is deleted.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;cache&quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a specific item from the cache.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key (str): The name of the attribute to get.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Any: The value of the attribute.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            AttributeError: If the key does not exist.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39; not found in cache.&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the number of cached items in the EdgarAPI class.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            int: The number of cached items in the EdgarAPI instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if a specific item exists in the cache.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key (str): The name of the attribute to check.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the attribute exists, False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache_mode</span> <span class="k">else</span> <span class="kc">False</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set a specific item in the cache.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key (str): The name of the attribute to set.</span>
+<span class="sd">            value (Any): The value to set.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Delete a specific item from the cache.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            key (str): The name of the attribute to delete.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            AttributeError: If the key does not exist in the cache.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39; not found in cache.&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Call the EdgarAPI instance to get a summary of its configuration.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: A string representation of the EdgarAPI instance&#39;s configuration.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;EdgarAPI Instance:</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;  Base URL: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;  Cache Mode: </span><span class="si">{</span><span class="s1">&#39;Enabled&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">cache_mode</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Disabled&#39;</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;  Cache Size: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cache_size</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+    <span class="c1"># Private Methods</span>
+    <span class="nd">@retry</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="n">wait_fixed</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop_after_attempt</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__rate_limited</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Ensures synchronous requests comply with rate limits.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">request_times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_times</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_times</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">now</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">request_times</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request_times</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_requests_per_second</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_times</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="nd">@retry</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="n">wait_fixed</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop_after_attempt</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__edgar_get_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url_endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Helper method to perform a synchronous GET request to the EDGAR API.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">__get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Helper method to perform a synchronous GET request to the EDGAR API.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__rate_limited</span><span class="p">()</span>
+            <span class="k">with</span> <span class="n">httpx</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span> <span class="o">+</span> <span class="n">url_endpoint</span><span class="p">),</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+                <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+                <span class="n">response_json</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+                <span class="k">return</span> <span class="n">response_json</span>
+        <span class="nd">@cached</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">__cached_get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Helper method to perform a synchronous GET request to the EDGAR API with caching.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="n">__get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache_mode</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">__cached_get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">__get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">)</span>
+    <span class="c1"># Public Methods</span>
+<div class="viewcode-block" id="EdgarAPI.get_submissions">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.EdgarAPI.get_submissions.html#edgar_sec.EdgarAPI.get_submissions">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_submissions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ticker</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">central_index_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SubmissionHistory</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a submission history.</span>
+
+<span class="sd">        Retrieve a company&#39;s submission history from the SEC EDGAR database.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ticker (str, optional): The ticker symbol of the company. If provided, the CIK will be derived from the ticker.</span>
+<span class="sd">            central_index_key (str, optional): 10-digit Central Index Key (CIK) of the entity, including leading zeros. A CIK may be obtained at the SEC&#39;s CIK lookup: https://www.sec.gov/search-filings/cik-lookup</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            SubmissionHistory: An object containing the entity&#39;s filing history, including company information and recent filings.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If the request fails or the response is not valid JSON format.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; import edgar_sec as ed</span>
+<span class="sd">            &gt;&gt;&gt; api = ed.EdgarAPI()</span>
+<span class="sd">            &gt;&gt;&gt; apple_history = api.get_submissions(&quot;AAPL&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; print(apple_history.name)</span>
+<span class="sd">            &#39;Apple Inc.&#39;</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            This endpoint returns the most recent 1,000 filings or at least one year&#39;s worth, whichever is more. For entities with additional filings, the response includes references to additional JSON files and their date ranges.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">ticker</span> <span class="ow">and</span> <span class="n">central_index_key</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provide either ticker or central_index_key, not both.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">central_index_key</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ticker</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provide either ticker or central_index_key.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ticker</span><span class="p">:</span>
+            <span class="n">central_index_key</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">get_cik</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">))</span>
+        <span class="k">assert</span> <span class="n">central_index_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="n">central_index_key</span> <span class="o">=</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">cik_validation</span><span class="p">(</span><span class="n">central_index_key</span><span class="p">)</span>
+        <span class="n">url_endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/submissions/CIK</span><span class="si">{</span><span class="n">central_index_key</span><span class="si">}</span><span class="s1">.json&#39;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__edgar_get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">SubmissionHistory</span><span class="o">.</span><span class="n">to_object</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EdgarAPI.get_company_concept">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.EdgarAPI.get_company_concept.html#edgar_sec.EdgarAPI.get_company_concept">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_company_concept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">taxonomy</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">tag</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ticker</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">central_index_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CompanyConcept</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a company concept.</span>
+
+<span class="sd">        Retrieve XBRL disclosures for a specific concept from a company.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ticker (str, optional): The ticker symbol of the company. If provided, the CIK will be derived from the ticker.</span>
+<span class="sd">            central_index_key (str, optional): 10-digit Central Index Key (CIK) of the entity, including leading zeros. A CIK may be obtained at the SEC&#39;s CIK lookup: https://www.sec.gov/search-filings/cik-lookup</span>
+<span class="sd">            taxonomy (str): A non-custom taxonomy identifier (e.g. &#39;us-gaap&#39;, &#39;ifrs-full&#39;, &#39;dei&#39;, or &#39;srt&#39;).</span>
+<span class="sd">            tag (str): The specific disclosure concept tag to retrieve, such as &#39;AccountsPayableCurrent&#39; or &#39;Assets&#39;.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            CompanyConcept: An object containing all disclosures related to the specified concept, organized by units of measure.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If the request fails or the response is not valid JSON format.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; import edgar_sec as ed</span>
+<span class="sd">            &gt;&gt;&gt; api = ed.EdgarAPI()</span>
+<span class="sd">            &gt;&gt;&gt; concept = api.get_company_concept(&quot;us-gaap&quot;, &quot;AccountsPayableCurrent&quot;, &quot;AAPL&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; for unit in concept.units:</span>
+<span class="sd">            &gt;&gt;&gt;     print(f&quot;Value: {unit.val}, Period: {unit.end}&quot;)</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            This endpoint returns separate arrays of facts for each unit of measure that the company has disclosed (e.g., values reported in both USD and EUR).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">ticker</span> <span class="ow">and</span> <span class="n">central_index_key</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provide either ticker or central_index_key, not both.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">central_index_key</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ticker</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provide either ticker or central_index_key.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ticker</span><span class="p">:</span>
+            <span class="n">central_index_key</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">get_cik</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">))</span>
+        <span class="k">assert</span> <span class="n">central_index_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="n">central_index_key</span> <span class="o">=</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">cik_validation</span><span class="p">(</span><span class="n">central_index_key</span><span class="p">)</span>
+        <span class="n">url_endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/api/xbrl/companyconcept/CIK</span><span class="si">{</span><span class="n">central_index_key</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">taxonomy</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s1">.json&#39;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__edgar_get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">CompanyConcept</span><span class="o">.</span><span class="n">to_object</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EdgarAPI.get_company_facts">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.EdgarAPI.get_company_facts.html#edgar_sec.EdgarAPI.get_company_facts">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_company_facts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ticker</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">central_index_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CompanyFacts</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get all company facts.</span>
+
+<span class="sd">        Retrieve all XBRL disclosures for a company in a single request.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ticker (str, optional): The ticker symbol of the company. If provided, the CIK will be derived from the ticker.</span>
+<span class="sd">            central_index_key (str, optional): 10-digit Central Index Key (CIK) of the entity, including leading zeros. A CIK may be obtained at the SEC&#39;s CIK lookup: https://www.sec.gov/search-filings/cik-lookup</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            CompanyFact: An object containing all facts and disclosures for the company, organized by taxonomy and concept.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If the request fails or the response is not valid JSON format.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; import edgar_sec as ed</span>
+<span class="sd">            &gt;&gt;&gt; api = ed.EdgarAPI()</span>
+<span class="sd">            &gt;&gt;&gt; facts = api.get_company_facts(&quot;AAPL&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; revenue = facts.facts[&quot;us-gaap&quot;].disclosures.get(&quot;RevenueFromContractWithCustomerExcludingAssessedTax&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; if revenue and &quot;USD&quot; in revenue.units:</span>
+<span class="sd">            &gt;&gt;&gt;     print(f&quot;Latest revenue: ${revenue.units[&#39;USD&#39;][0].val}&quot;)</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            This is the most comprehensive endpoint, returning all concepts across all taxonomies for a company. The response can be quite large for companies with extensive filing histories.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">ticker</span> <span class="ow">and</span> <span class="n">central_index_key</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provide either ticker or central_index_key, not both.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">central_index_key</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ticker</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provide either ticker or central_index_key.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ticker</span><span class="p">:</span>
+            <span class="n">central_index_key</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">get_cik</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">))</span>
+        <span class="n">url_endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/api/xbrl/companyfacts/CIK</span><span class="si">{</span><span class="n">central_index_key</span><span class="si">}</span><span class="s1">.json&#39;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__edgar_get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">CompanyFacts</span><span class="o">.</span><span class="n">to_object</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EdgarAPI.get_frames">
+<a class="viewcode-back" href="../../api/_autosummary/edgar_sec.EdgarAPI.get_frames.html#edgar_sec.EdgarAPI.get_frames">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">taxonomy</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">tag</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">period</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">datetime</span><span class="p">],</span> <span class="n">instantaneous</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Frame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Retrieve aggregated XBRL facts across multiple companies for a specific period.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            taxonomy (str): A non-custom taxonomy identifier (e.g. &#39;us-gaap&#39;, &#39;ifrs-full&#39;, &#39;dei&#39;, or &#39;srt&#39;).</span>
+<span class="sd">            tag (str): The specific disclosure concept tag to retrieve (e.g. &#39;AccountsPayableCurrent&#39;, &#39;Assets&#39;).</span>
+<span class="sd">            unit (str): Unit of measurement for the requested data. Default is &#39;pure&#39;. Denominated units are separated by &#39;-per-&#39; (e.g. &#39;USD-per-shares&#39;), non-denominated units are specified directly (e.g. &#39;USD&#39;).</span>
+<span class="sd">            period (str | datetime): The reporting period as a datetime object or a string in the formats: &quot;YYYY-MM-DD&quot; or Annual (365 days ±30 days): CY#### (e.g. &#39;CY2019&#39;), Quarterly (91 days ±30 days): CY####Q# (e.g. &#39;CY2019Q1&#39;), Instantaneous: CY####Q#I (e.g. &#39;CY2019Q1I&#39;).</span>
+<span class="sd">            instantaneous (bool): Whether the period is instantaneous (e.g. &#39;CY2019Q1I&#39;).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Frame: An object containing facts from multiple companies for the specified concept and period.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">            &gt;&gt;&gt; import edgar_sec as ed</span>
+<span class="sd">            &gt;&gt;&gt; api = ed.EdgarAPI()</span>
+<span class="sd">            &gt;&gt;&gt; frame = api.get_frames(&quot;us-gaap&quot;, &quot;AccountsPayableCurrent&quot;, &quot;USD&quot;, &quot;2019-01-01&quot;, instantaneous=True)</span>
+<span class="sd">            &gt;&gt;&gt; for i, disclosure in enumerate(frame.data[:3]):</span>
+<span class="sd">            &gt;&gt;&gt;     print(f&quot;{disclosure.entity_name}: ${disclosure.val}&quot;)</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            Due to varying company fiscal calendars, the frame data is assembled using the dates that best align with calendar periods. Be mindful that facts in a frame may have different exact reporting start and end dates.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">period</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">datetime</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;period must be a string or datetime object.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">period</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+            <span class="n">period</span> <span class="o">=</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">datetime_cy_conversion</span><span class="p">(</span><span class="n">period</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">period</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">string_cy_validation</span><span class="p">(</span><span class="n">period</span><span class="p">):</span>
+                <span class="n">period</span> <span class="o">=</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">string_cy_conversion</span><span class="p">(</span><span class="n">period</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">instantaneous</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">period</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;I&quot;</span><span class="p">):</span>
+            <span class="n">period</span> <span class="o">+=</span> <span class="s2">&quot;I&quot;</span>
+        <span class="n">url_endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/api/xbrl/frames/</span><span class="si">{</span><span class="n">taxonomy</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s1">.json&#39;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__edgar_get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Frame</span><span class="o">.</span><span class="n">to_object</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">AsyncAPI</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The Async sub-class contains methods for interacting with the SEC EDGAR API asynchronously.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Dunder Methods</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">:</span> <span class="s1">&#39;EdgarAPI&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Initialize with a reference to the parent EdgarAPI instance.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="p">:</span> <span class="n">EdgarAPI</span> <span class="o">=</span> <span class="n">parent</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cache_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">cache_mode</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">:</span> <span class="n">FIFOCache</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">cache</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">base_url</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">headers</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            String representation of the AsyncAPI Instance.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                str: A string representation of the AsyncAPI class.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span><span class="si">}</span><span class="s2">.AsyncAPI&quot;</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            String representation of the AsyncAPI Instance.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                str: A string representation of the AsyncAPI class.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;  AsyncAPI Instance:</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;    Base URL: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Equality comparison for the AsyncAPI class.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                other (object): The object to compare with.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                bool: True if the objects are equal, False otherwise.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">EdgarAPI</span><span class="o">.</span><span class="n">AsyncAPI</span><span class="p">):</span>
+                <span class="k">return</span> <span class="bp">NotImplemented</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">cache_mode</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">cache_mode</span> <span class="ow">and</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">cache_size</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">cache_size</span>
+            <span class="p">)</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Hash function for the AsyncAPI instance.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                int: A hash value for the AsyncAPI instance.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="nb">hash</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">cache_mode</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">cache_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="p">))</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Destructor for the AsyncAPI class. Clears the cache when the instance is deleted.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;cache&quot;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Get a specific item from the cache.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                key (str): The name of the attribute to get.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                Any: The value of the attribute.</span>
+
+<span class="sd">            Raises:</span>
+<span class="sd">                AttributeError: If the key does not exist.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39; not found in cache.&quot;</span><span class="p">)</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Get the length of the cache.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                int: The number of items in the cache.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Check if a specific item exists in the cache.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                key (str): The name of the attribute to check.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                bool: True if the attribute exists, False otherwise.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Set a specific item in the cache.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                key (str): The name of the attribute to set.</span>
+<span class="sd">                value (Any): The value to set.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Delete a specific item from the cache.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                key (str): The name of the attribute to delete.</span>
+
+<span class="sd">            Raises:</span>
+<span class="sd">                AttributeError: If the key does not exist in the cache.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39; not found in cache.&quot;</span><span class="p">)</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Call the AsyncAPI instance to get a summary of its configuration.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                str: A string representation of the AsyncAPI instance&#39;s configuration.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;EdgarAPI Instance</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;  AsyncAPI Instance:</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;    Base URL: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;    Cache Mode: </span><span class="si">{</span><span class="s1">&#39;Enabled&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">cache_mode</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;Disabled&#39;</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;    Cache Size: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span><span class="si">}</span><span class="s2"> items</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="c1"># Private Methods</span>
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">__update_semaphore</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Dynamically adjusts the semaphore based on requests left in the second.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span>
+                <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+                <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">request_times</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">request_times</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">now</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">request_times</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+                <span class="n">requests_made</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">request_times</span><span class="p">)</span>
+                <span class="n">requests_left</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">max_requests_per_second</span> <span class="o">-</span> <span class="n">requests_made</span><span class="p">)</span>
+                <span class="n">time_left</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">request_times</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">request_times</span> <span class="k">else</span> <span class="n">now</span><span class="p">)))</span>
+                <span class="n">new_limit</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">requests_left</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">semaphore</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">Semaphore</span><span class="p">(</span><span class="n">new_limit</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">requests_left</span><span class="p">,</span> <span class="n">time_left</span>
+        <span class="nd">@retry</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="n">wait_fixed</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop_after_attempt</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">__rate_limited</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Enforces the rate limit dynamically based on requests left in the current second.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">semaphore</span><span class="p">:</span>
+                <span class="n">requests_left</span><span class="p">,</span> <span class="n">time_left</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__update_semaphore</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">requests_left</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">sleep_time</span> <span class="o">=</span> <span class="n">time_left</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">requests_left</span><span class="p">)</span>
+                    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">sleep_time</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">time_left</span><span class="p">)</span>
+                <span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">lock</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">request_times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+        <span class="nd">@retry</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="n">wait_fixed</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop_after_attempt</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">__edgar_get_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url_endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Helper method to perform an asynchronous GET request to the EDGAR API.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">__get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">                </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Helper method to perform an asynchronous GET request to the EDGAR API.</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+                <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__rate_limited</span><span class="p">()</span>
+                <span class="k">async</span> <span class="k">with</span> <span class="n">httpx</span><span class="o">.</span><span class="n">AsyncClient</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+                    <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span> <span class="o">+</span> <span class="n">url_endpoint</span><span class="p">),</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+                    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+                    <span class="n">response_json</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+                    <span class="k">return</span> <span class="n">response_json</span>
+            <span class="nd">@async_cached</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cache</span><span class="p">)</span>
+            <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">__cached_get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="k">await</span> <span class="n">__get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache_mode</span><span class="p">:</span>
+                <span class="k">return</span> <span class="k">await</span> <span class="n">__cached_get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="k">await</span> <span class="n">__get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">)</span>
+        <span class="c1"># Public Methods</span>
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_submissions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ticker</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">central_index_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SubmissionHistory</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Get a submission history.</span>
+
+<span class="sd">            Retrieve a company&#39;s submission history from the SEC EDGAR database.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                ticker (str, optional): The ticker symbol of the company. If provided, the CIK will be derived from the ticker.</span>
+<span class="sd">                central_index_key (str, optional): 10-digit Central Index Key (CIK) of the entity, including leading zeros. A CIK may be obtained at the SEC&#39;s CIK lookup: https://www.sec.gov/search-filings/cik-lookup</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                SubmissionHistory: An object containing the entity&#39;s filing history, including company information and recent filings.</span>
+
+<span class="sd">            Raises:</span>
+<span class="sd">                ValueError: If the request fails or the response is not valid JSON format.</span>
+
+<span class="sd">            Example:</span>
+<span class="sd">                &gt;&gt;&gt; import edgar_sec as ed</span>
+<span class="sd">                &gt;&gt;&gt; import asyncio</span>
+<span class="sd">                &gt;&gt;&gt; async def main():</span>
+<span class="sd">                &gt;&gt;&gt;     api = ed.EdgarAPI().Async</span>
+<span class="sd">                &gt;&gt;&gt;     apple_history = await api.get_submissions(&quot;AAPL&quot;)</span>
+<span class="sd">                &gt;&gt;&gt;     print(apple_history.name)</span>
+<span class="sd">                &gt;&gt;&gt; asyncio.run(main())</span>
+<span class="sd">                &#39;Apple Inc.&#39;</span>
+
+<span class="sd">            Note:</span>
+<span class="sd">                This endpoint returns the most recent 1,000 filings or at least one year&#39;s worth, whichever is more. For entities with additional filings, the response includes references to additional JSON files and their date ranges.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="n">ticker</span> <span class="ow">and</span> <span class="n">central_index_key</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provide either ticker or central_index_key, not both.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">central_index_key</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ticker</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provide either ticker or central_index_key.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">ticker</span><span class="p">:</span>
+                <span class="n">central_index_key</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="k">await</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">get_cik_async</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">))</span>
+            <span class="k">assert</span> <span class="n">central_index_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="n">central_index_key</span> <span class="o">=</span> <span class="k">await</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">cik_validation_async</span><span class="p">(</span><span class="n">central_index_key</span><span class="p">)</span>
+            <span class="n">url_endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/submissions/CIK</span><span class="si">{</span><span class="n">central_index_key</span><span class="si">}</span><span class="s1">.json&#39;</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__edgar_get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">)</span>
+            <span class="k">return</span> <span class="k">await</span> <span class="n">SubmissionHistory</span><span class="o">.</span><span class="n">to_object_async</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_company_concept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">taxonomy</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">tag</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ticker</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">central_index_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CompanyConcept</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Get a company concept.</span>
+
+<span class="sd">            Retrieve XBRL disclosures for a specific concept from a company.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                ticker (str, optional): The ticker symbol of the company. If provided, the CIK will be derived from the ticker.</span>
+<span class="sd">                central_index_key (str, optional): 10-digit Central Index Key (CIK) of the entity, including leading zeros. A CIK may be obtained at the SEC&#39;s CIK lookup: https://www.sec.gov/search-filings/cik-lookup</span>
+<span class="sd">                taxonomy (str): A non-custom taxonomy identifier (e.g. &#39;us-gaap&#39;, &#39;ifrs-full&#39;, &#39;dei&#39;, or &#39;srt&#39;).</span>
+<span class="sd">                tag (str): The specific disclosure concept tag to retrieve, such as &#39;AccountsPayableCurrent&#39; or &#39;Assets&#39;.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                CompanyConcept: An object containing all disclosures related to the specified concept, organized by units of measure.</span>
+
+<span class="sd">            Raises:</span>
+<span class="sd">                ValueError: If the request fails or the response is not valid JSON format.</span>
+
+<span class="sd">            Example:</span>
+<span class="sd">                &gt;&gt;&gt; import edgar_sec as ed</span>
+<span class="sd">                &gt;&gt;&gt; import asyncio</span>
+<span class="sd">                &gt;&gt;&gt; async def main():</span>
+<span class="sd">                &gt;&gt;&gt;     api = ed.EdgarAPI()</span>
+<span class="sd">                &gt;&gt;&gt;     # Get Apple Inc&#39;s Accounts Payable disclosure asynchronously</span>
+<span class="sd">                &gt;&gt;&gt;     concept = await api.Async.get_company_concept(&quot;us-gaap&quot;, &quot;AccountsPayableCurrent&quot;, &quot;AAPL&quot;)</span>
+<span class="sd">                &gt;&gt;&gt;     for unit in concept.units:</span>
+<span class="sd">                &gt;&gt;&gt;         print(f&quot;Value: {unit.val}, Period: {unit.end}&quot;)</span>
+<span class="sd">                &gt;&gt;&gt; asyncio.run(main())</span>
+
+<span class="sd">            Note:</span>
+<span class="sd">                This endpoint returns separate arrays of facts for each unit of measure that the company has disclosed (e.g., values reported in both USD and EUR).</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="n">ticker</span> <span class="ow">and</span> <span class="n">central_index_key</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provide either ticker or central_index_key, not both.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">central_index_key</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ticker</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provide either ticker or central_index_key.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">ticker</span><span class="p">:</span>
+                <span class="n">central_index_key</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="k">await</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">get_cik_async</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">))</span>
+            <span class="k">assert</span> <span class="n">central_index_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="n">central_index_key</span> <span class="o">=</span> <span class="k">await</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">cik_validation_async</span><span class="p">(</span><span class="n">central_index_key</span><span class="p">)</span>
+            <span class="n">url_endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/api/xbrl/companyconcept/CIK</span><span class="si">{</span><span class="n">central_index_key</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">taxonomy</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s1">.json&#39;</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__edgar_get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">)</span>
+            <span class="k">return</span> <span class="k">await</span> <span class="n">CompanyConcept</span><span class="o">.</span><span class="n">to_object_async</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_company_facts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ticker</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">central_index_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CompanyFacts</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Get all company facts.</span>
+
+<span class="sd">            Retrieve all XBRL disclosures for a company in a single request.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                ticker (str, optional): The ticker symbol of the company. If provided, the CIK will be derived from the ticker.</span>
+<span class="sd">                central_index_key (str): 10-digit Central Index Key (CIK) of the entity, including leading zeros. A CIK may be obtained at the SEC&#39;s CIK lookup: https://www.sec.gov/search-filings/cik-lookup</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                CompanyFact: An object containing all facts and disclosures for the company, organized by taxonomy and concept.</span>
+
+<span class="sd">            Raises:</span>
+<span class="sd">                ValueError: If the request fails or the response is not valid JSON format.</span>
+
+<span class="sd">            Example:</span>
+<span class="sd">                &gt;&gt;&gt; import edgar_sec as ed</span>
+<span class="sd">                &gt;&gt;&gt; import asyncio</span>
+<span class="sd">                &gt;&gt;&gt; async def main():</span>
+<span class="sd">                &gt;&gt;&gt;     api = ed.EdgarAPI()</span>
+<span class="sd">                &gt;&gt;&gt;     facts = await api.Async.get_company_facts(&quot;AAPL&quot;)</span>
+<span class="sd">                &gt;&gt;&gt;     revenue = facts.facts[&quot;us-gaap&quot;].disclosures.get(&quot;RevenueFromContractWithCustomerExcludingAssessedTax&quot;)</span>
+<span class="sd">                &gt;&gt;&gt;     if revenue and &quot;USD&quot; in revenue.units:</span>
+<span class="sd">                &gt;&gt;&gt;         print(f&quot;Latest revenue: ${revenue.units[&#39;USD&#39;][0].val}&quot;)</span>
+<span class="sd">                &gt;&gt;&gt; asyncio.run(main())</span>
+
+<span class="sd">            Note:</span>
+<span class="sd">                This is the most comprehensive endpoint, returning all concepts across all taxonomies for a company. The response can be quite large for companies with extensive filing histories.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="n">ticker</span> <span class="ow">and</span> <span class="n">central_index_key</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provide either ticker or central_index_key, not both.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">central_index_key</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ticker</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provide either ticker or central_index_key.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">ticker</span><span class="p">:</span>
+                <span class="n">central_index_key</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="k">await</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">get_cik_async</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">))</span>
+            <span class="k">assert</span> <span class="n">central_index_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="n">central_index_key</span> <span class="o">=</span> <span class="k">await</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">cik_validation_async</span><span class="p">(</span><span class="n">central_index_key</span><span class="p">)</span>
+            <span class="n">url_endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/api/xbrl/companyfacts/CIK</span><span class="si">{</span><span class="n">central_index_key</span><span class="si">}</span><span class="s1">.json&#39;</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__edgar_get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">)</span>
+            <span class="k">return</span> <span class="k">await</span> <span class="n">CompanyFacts</span><span class="o">.</span><span class="n">to_object_async</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">taxonomy</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">tag</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">period</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">datetime</span><span class="p">],</span> <span class="n">instantaneous</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Frame</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Get frames for a period.</span>
+
+<span class="sd">            Retrieve aggregated XBRL facts across multiple companies for a specific period.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                taxonomy (str): A non-custom taxonomy identifier (e.g. &#39;us-gaap&#39;, &#39;ifrs-full&#39;, &#39;dei&#39;, or &#39;srt&#39;).</span>
+<span class="sd">                tag (str): The specific disclosure concept tag to retrieve (e.g. &#39;AccountsPayableCurrent&#39;, &#39;Assets&#39;).</span>
+<span class="sd">                unit (str): Unit of measurement for the requested data. Default is &#39;pure&#39;. Denominated units are separated by &#39;-per-&#39; (e.g. &#39;USD-per-shares&#39;), non-denominated units are specified directly (e.g. &#39;USD&#39;).</span>
+<span class="sd">                period (str | datetime): The reporting period as a datetime object or a string in the formats: &quot;YYYY-MM-DD&quot; or Annual (365 days ±30 days): CY#### (e.g. &#39;CY2019&#39;), Quarterly (91 days ±30 days): CY####Q# (e.g. &#39;CY2019Q1&#39;), Instantaneous: CY####Q#I (e.g. &#39;CY2019Q1I&#39;).</span>
+<span class="sd">                instantaneous (bool): Whether the period is instantaneous (e.g. &#39;CY2019Q1I&#39;).</span>
+<span class="sd">            Returns:</span>
+<span class="sd">                Frame: An object containing facts from multiple companies for the specified concept and period.</span>
+
+<span class="sd">            Raises:</span>
+<span class="sd">                ValueError: If the request fails or the response is not valid JSON format.</span>
+
+<span class="sd">            Example:</span>
+<span class="sd">                &gt;&gt;&gt; from edgar_sec import EdgarAPI</span>
+<span class="sd">                &gt;&gt;&gt; import asyncio</span>
+<span class="sd">                &gt;&gt;&gt; async def main():</span>
+<span class="sd">                &gt;&gt;&gt;     api = EdgarAPI()</span>
+<span class="sd">                &gt;&gt;&gt;     frame = await api.Async.get_frames(&quot;us-gaap&quot;, &quot;AccountsPayableCurrent&quot;, &quot;USD&quot;, &quot;CY2019Q1I&quot;)</span>
+<span class="sd">                &gt;&gt;&gt;     for i, disclosure in enumerate(frame.data[:3]):</span>
+<span class="sd">                &gt;&gt;&gt;         print(f&quot;{disclosure.entity_name}: ${disclosure.val}&quot;)</span>
+<span class="sd">                &gt;&gt;&gt; asyncio.run(main())</span>
+
+<span class="sd">            Note:</span>
+<span class="sd">                Due to varying company fiscal calendars, the frame data is assembled using the dates that best align with calendar periods. Be mindful that facts in a frame may have different exact reporting start and end dates.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">period</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">datetime</span><span class="p">)):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;period must be a string or datetime object.&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">period</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+                <span class="n">period</span> <span class="o">=</span> <span class="k">await</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">datetime_cy_conversion_async</span><span class="p">(</span><span class="n">period</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">period</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="k">await</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">string_cy_validation_async</span><span class="p">(</span><span class="n">period</span><span class="p">):</span>
+                    <span class="n">period</span> <span class="o">=</span> <span class="k">await</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">string_cy_conversion_async</span><span class="p">(</span><span class="n">period</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">instantaneous</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">period</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;I&quot;</span><span class="p">):</span>
+                <span class="n">period</span> <span class="o">+=</span> <span class="s2">&quot;I&quot;</span>
+            <span class="n">url_endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/api/xbrl/frames/</span><span class="si">{</span><span class="n">taxonomy</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">unit</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s1">.json&#39;</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">__edgar_get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">)</span>
+            <span class="k">return</span> <span class="k">await</span> <span class="n">Frame</span><span class="o">.</span><span class="n">to_object_async</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Nikhil Sunder.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
