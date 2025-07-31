@@ -92,6 +92,7 @@ requirements:
     - httpx
     - tenacity
     - conda-forge::cachetools
+    - conda-forge::asyncache
 
 test:
   imports:

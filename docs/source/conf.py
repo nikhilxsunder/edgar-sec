@@ -6,11 +6,15 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+# imports
+import os
+import sys
+
 # -- Project information -----------------------------------------------------
 project = 'edgar-sec'
 copyright = '2025, Nikhil Sunder'
 author = 'Nikhil Sunder'
-release = '1.0.1'
+release = '2.0.0'
 
 # -- General configuration ---------------------------------------------------
 extensions = [
@@ -21,6 +25,15 @@ extensions = [
     'myst_parser',
     'sphinxcontrib.googleanalytics',
     'sphinx_sitemap',
+    'sphinxext.opengraph',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.inheritance_diagram',
+    'sphinx.ext.graphviz',
+    'sphinx.ext.extlinks',
+    'sphinx.ext.doctest',
+    "sphinx_design",
+    'pydata_sphinx_theme',
 ]
 
 # myst
@@ -36,8 +49,6 @@ myst_enable_extensions = [
 myst_heading_anchors = 4
 
 # path
-import os
-import sys
 sys.path.insert(0, os.path.abspath('../..'))
 
 # google analytics
@@ -50,41 +61,87 @@ sitemap_url_scheme = "{link}"
 
 # html
 html_baseurl = 'https://nikhilxsunder.github.io/edgar-sec/'
-html_theme = 'furo'
+html_theme = "pydata_sphinx_theme"
 html_theme_options = {
-    "sidebar_hide_name": False,
-    "light_css_variables": {
-        "color-brand-primary": "#4B6EAF",
-        "color-brand-content": "#4B6EAF",
+    "logo": {
+        "image_light": "_static/edgar-sec-logo.png",
+        "image_dark": "_static/edgar-sec-logo.png",
     },
-    "dark_css_variables": {
-        "color-brand-primary": "#7A97D0",
-        "color-brand-content": "#7A97D0",
-    },
-    "footer_icons": [
+    "header_links_before_dropdown": 5,
+    "navbar_start": ["navbar-logo"],
+    "navbar_center": ["navbar-nav"],
+    "navbar_end": [ "navbar-icon-links"],
+    "icon_links": [
         {
             "name": "GitHub",
             "url": "https://github.com/nikhilxsunder/edgar-sec",
-            "html": """
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-                </svg>
-            """,
-            "class": "",
+            "icon": "fab fa-github",
         },
         {
             "name": "PyPI",
             "url": "https://pypi.org/project/edgar-sec/",
-            "html": """
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
-                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-                </svg>
-            """,
+            "icon": "fab fa-python",
+        },
+        {
+            "name": "Conda-Forge",
+            "url": "https://anaconda.org/conda-forge/edgar-sec",
+            "icon": "fas fa-database",
+        },
+        {
+            "name": "Codecov",
+            "url": "https://app.codecov.io/gh/nikhilxsunder/edgar-sec",
+            "icon": "fas fa-umbrella",
+        },
+        {
+            "name": "Socket",
+            "url": "https://socket.dev/pypi/package/edgar-sec/overview/2.1.1/tar-gz",
+            "icon": "fas fa-shield",
+        },
+        {
+            "name": "OpenSSF",
+            "url": "https://www.bestpractices.dev/en/projects/10210?criteria_level=2",
+            "icon": "fas fa-trophy",
         },
     ],
+    "navbar_align": "right",
+    "primary_sidebar_end": ["sidebar-ethical-ads"],
+    "footer_start": ["copyright"],
+    "footer_end": ["sphinx-version", "theme-version"],
+    "use_edit_page_button": True,
+    "show_toc_level": 1,
+    "show_prev_next": True,
+    "announcement": """
+        <div class="sidebar-message">
+            Version 2 is now available!
+            Please check the
+            <a href="resources/notes.html" target="_self">
+                special notes page
+            </a>
+            for more information.
+        </div>
+    """,
 }
 html_static_path = ['_static']
 html_title = "edgar-sec"
+html_favicon = "_static/edgar-sec-favicon.ico"
+html_logo = "_static/edgar-sec-logo.png"
+html_context = {
+    "github_user": "nikhilxsunder",
+    "github_repo": "edgar-sec",
+    "github_version": "main",
+    "doc_path": "docs/source",
+}
+html_meta ={
+    "description": "A feature-rich python-package for interacting with the US Securities and Exchange Commission API: EDGAR",
+    "keywords": "edgar, sec, api, financial data, economic data, data analysis, data science"
+}
+html_js_files = [
+    'json_ld.js',
+]
+html_show_copyright = True
+html_last_updated_fmt = '%b %d, %Y'
+
+templates_path = ['_templates']
 
 # autodocs
 autodoc_default_options = {
@@ -92,6 +149,8 @@ autodoc_default_options = {
     'undoc-members': True,
     'show-inheritance': True,
 }
+autodoc_typehints = "description"
+autodoc_typehints_format = "short"
 
 # md/rst
 source_suffix = {
@@ -99,4 +158,32 @@ source_suffix = {
     '.md': 'markdown',
 }
 
-templates_path = ['_templates']
+# opengraph
+ogp_site_url = "https://nikhilxsunder.github.io/edgar-sec/"
+ogp_image = "https://nikhilxsunder.github.io/edgar-sec/_static/edgar-sec-logo.png"
+ogp_description_length = 300
+ogp_type = "website"
+ogp_custom_meta_tags = [
+    '<meta property="og:locale" content="en_US" />',
+    '<meta property="og:site_name" content="EDGAR SEC Documentation" />',
+    '<meta property="og:url" content="https://nikhilxsunder.github.io/edgar-sec/" />',
+    '<meta property="og:image:alt" content="EDGAR SEC Logo" />',
+]
+ogp_enable_meta_description = True
+
+# intersphinx
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3', None),
+    "tenacity": ("https://tenacity.readthedocs.io/en/latest/", None),
+    "sphinx": ("https://www.sphinx-doc.org/en/master/", None),
+}
+
+# autosummary
+autosummary_generate = True
+
+# extlinks
+extlinks = {
+    'python-doc': ('https://docs.python.org/3/library/%s', 'Python Docs: %s'),
+    'edgar-api': ('https://www.sec.gov/search-filings/edgar-application-programming-interfaces', 'EDGAR API Docs: %s'),
+    'github': ('https://github.com/nikhilxsunder/edgar-sec/%s', 'GitHub: %s'),
+}

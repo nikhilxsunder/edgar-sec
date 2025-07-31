@@ -4,17 +4,17 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "edgar-sec"
-version = "1.0.1"
+version = "2.0.0"
 description = "A feature-rich python package for interacting with the US Securities and Exchange Commission API: EDGAR"
-authors = ["Nikhil Sunder <nsunder724@gmail.com>"]
+authors = [
+    "Nikhil Sunder <nsunder724@gmail.com>"
+]
 license = "AGPL-3.0-or-later"
 readme = "README.md"
-keywords = ["edgar", "sec", "api", "finance", "reporting"]
-homepage = "https://github.com/nikhilxsunder/edgar-sec"
 repository = "https://github.com/nikhilxsunder/edgar-sec"
 documentation = "https://nikhilxsunder.github.io/edgar-sec/"
 packages = [{include = "edgar_sec", from = "src"}]
-include = ["src/edgar_sec/py.typed", "src/edgar_sec/**/*.pyi"]
+include = ["src/edgar_sec/py.typed"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: GNU Affero General Public License v3",
@@ -23,34 +23,45 @@ classifiers = [
     "Intended Audience :: Financial and Insurance Industry",
     "Topic :: Office/Business :: Financial :: Investment"
 ]
+keywords = [
+    "edgar", "sec", "api", "finance", "reporting", "economics", "investing",
+    "python", "data", "financial-data", "us-securities-and-exchange-commission",
+    "cache", "financial analysis", "economic analysis", "data analysis",
+    "data science", "data visualization", "data mining", "data wrangling", "data cleaning"
+]
 
 [tool.poetry.dependencies]
 python = ">=3.9, <4.0"
 httpx = "*"
 tenacity = "*"
 cachetools = "*"
+asyncache = "*"
 
 [tool.poetry.group.dev.dependencies]
 types-cachetools = "*"
-pytest = ">=7.0.0,<=8.3.5"
-pytest-cov = ">=3.0.0,<=3.0.1"
-pylint = ">=2.15.0,<=3.3.9"
-mypy = ">=1.0.0,<=1.15.0"
-bandit = ">=1.7.0, <=1.8.3"
-pip-audit = ">=2.4.0,<=2.8.0"
-pre-commit = "^4.1.0"
-hypothesis = "^6.129.0"
-sphinx = ">=6.2.0,<=8.2.3"
-furo = ">=2021.11.23,<=2024.09.06"
-sphinx-autodoc-typehints = ">=1.12.0,<=3.1.0"
-myst-parser = ">=0.15,<4.0.1"
-linkify-it-py = "^2.0.3"
-sphinxcontrib-googleanalytics = "^0.4"
-tox = ">=3.24.0,<=4.24.2"
-pytest-asyncio = "^0.15.1"
-pytest-mock = "^3.6.1"
-tomli = "^2.0.1"
-sphinx-sitemap = "^2.6.0"
+pytest = "*"
+pytest-cov = "*"
+pylint = "*"
+mypy = "*"
+bandit = "*"
+pip-audit = "*"
+pre-commit = "*"
+hypothesis = "*"
+sphinx = "*"
+pydata-sphinx-theme = "*"
+sphinx-design = "*"
+sphinx-autodoc-typehints = "*"
+myst-parser = "*"
+linkify-it-py = "* "
+sphinxcontrib-googleanalytics = "*"
+tox = "*"
+pytest-asyncio = "*"
+pytest-mock = "*"
+tomli = "*"
+sphinx-sitemap = "*"
+sphinxext-opengraph = "*"
+matplotlib = "*"
+toml = "*"
 
 [tool.poetry.extras]
 types = ["types-cachetools"]
@@ -60,8 +71,8 @@ files = "edgar_sec"
 ignore_missing_imports = true
 
 [tool.pylint]
-max-line-length = 120
-disable = ["C2801", "C0114", "C0115", "C0116", "C0302", "C0301", "E0401", "R0902", "R0913", "R0917", "R0914", "R0912", "R0904", "R1705", "C0103", "R1710"]
+max-line-length = 200
+disable = ["C0415", "C2801", "C0114", "C0115", "C0116", "C0302", "C0301", "E0401", "R0902", "R0913", "R0917", "R0914", "R0912", "R0904", "R1705", "C0103", "R1710"]
 ignore-patterns = [".*\\.pyi$"]
 
 [tool.bandit]
@@ -69,3 +80,4 @@ exclude_dirs = ["tests", "docs"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = "src"
