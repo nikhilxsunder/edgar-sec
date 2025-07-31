@@ -1,36 +1,40 @@
 # Test Coverage Report
 
-Last updated: 2025-06-28
+Last updated: 2025-07-31
 
 ## Coverage Summary
 
-Overall coverage: 91%
+Overall coverage: 100%
 
 ## Detailed Coverage
 
 ```
 ============================= test session starts ==============================
-platform linux -- Python 3.11.13, pytest-8.3.5, pluggy-1.5.0
+platform linux -- Python 3.11.13, pytest-8.4.1, pluggy-1.6.0
 rootdir: /home/runner/work/edgar-sec/edgar-sec
 configfile: pyproject.toml
-plugins: mock-3.14.0, cov-3.0.0, hypothesis-6.130.0, asyncio-0.15.1, anyio-4.9.0
-collected 26 items
+plugins: cov-6.2.1, hypothesis-6.136.6, asyncio-1.1.0, anyio-4.9.0, mock-3.14.1
+asyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 83 items
 
-tests/edgar_data_test.py ..........                                      [ 38%]
-tests/edgar_sec_test.py ................                                 [100%]
+tests/clients_test.py .............................................      [ 54%]
+tests/helpers_test.py ............                                       [ 68%]
+tests/objects_test.py ..........................                         [100%]
 
----------- coverage: platform linux, python 3.11.13-final-0 ----------
-Name                          Stmts   Miss  Cover
--------------------------------------------------
-src/edgar_sec/__init__.py         3      0   100%
-src/edgar_sec/edgar_data.py     222      5    98%
-src/edgar_sec/edgar_sec.py      119     25    79%
--------------------------------------------------
-TOTAL                           344     30    91%
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.11.13-final-0 _______________
+
+Name                         Stmts   Miss  Cover
+------------------------------------------------
+src/edgar_sec/__about__.py       7      0   100%
+src/edgar_sec/__init__.py        9      0   100%
+src/edgar_sec/clients.py       244      0   100%
+src/edgar_sec/helpers.py       110      0   100%
+src/edgar_sec/objects.py       209      0   100%
+------------------------------------------------
+TOTAL                          579      0   100%
 Coverage XML written to file coverage.xml
-
-
-======================== 26 passed, 2 warnings in 3.04s ========================
+============================== 83 passed in 5.73s ==============================
 ```
 
 ## Running Test Coverage Locally
