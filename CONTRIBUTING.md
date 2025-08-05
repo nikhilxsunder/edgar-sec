@@ -24,6 +24,7 @@ Thank you for your interest in contributing to Edgar-SEC! We welcome contributio
   - [Property-Based Testing with Hypothesis](#property-based-testing-with-hypothesis)
   - [Running Dynamic Analysis Tests](#running-dynamic-analysis-tests)
 - [Release Process](#release-process)
+- [Governance Model](#governance-model)
 
 ## How to Contribute
 
@@ -46,17 +47,14 @@ Before opening a new issue:
 Before major releases, all code undergoes static analysis using multiple tools:
 
 - **pylint**: General code quality and adherence to PEP 8
-
   - Configured with strict settings (9.0+ score required)
   - `poetry run pylint src/edgar_sec/`
 
 - **mypy**: Static type checking
-
   - Configured with strict type checking rules
   - `poetry run mypy src/edgar_sec/`
 
 - **bandit**: Security-focused static analysis
-
   - Identifies common security issues in Python code
   - `poetry run bandit -r src/edgar_sec/`
 
@@ -73,22 +71,32 @@ All identified issues must be addressed before release, either by fixing the cod
 Follow these steps when contributing code:
 
 1. **Fork the Repository**
-
    - Create your own fork of the repository on GitHub
    - Clone your fork locally
 
 2. **Create a Branch**
-
    - Create a new branch from `main` with a descriptive name
    - Use a prefix like `feature/`, `fix/`, or `docs/` (e.g., `feature/add-logging`)
 
 3. **Make Your Changes**
-
    - Follow the coding standards outlined below
    - Write clear commit messages explaining your changes
    - Keep commits focused and logical
 
-4. **Submit a Pull Request**
+4. **Sign Your Commits**
+   - All commits must be signed off to certify that you have the legal right to contribute the code.
+   - Use the -s flag when making a commit:
+     ```bash
+     git commit -s -m "Your commit message"
+     ```
+   - This will append a Signed-off-by line to your commit message, indicating your agreement to the [Developer Certificate of Origin (DCO)](https://github.com/nikhilxsunder/edgar-sec/blob/main/DCO.md).
+   - Example:
+     ```bash
+     Signed-off-by: Your Name <your.email@example.com>
+     ```
+   - Pull requests with unsigned commits will not be merged.
+
+5. **Submit a Pull Request**
    - Ensure all tests pass locally
    - Create a PR against the `main` branch
    - Use the PR template to describe your changes
@@ -150,7 +158,7 @@ We take testing seriously to maintain code quality:
 When adding tests:
 
 - Place tests in the `tests/` directory
-- Name test files with a `test_` prefix
+- Name test files with a `_test` suffix
 - Follow the existing test patterns
 - Test both success and error conditions
 - Include comments explaining complex test scenarios
@@ -244,75 +252,60 @@ This project adheres to our [CODE_OF_CONDUCT](https://github.com/nikhilxsunder/e
 To set up your development environment:
 
 1. **Prerequisites**
-
    - Python 3.9+
    - Poetry (for dependency management)
    - Git
 
-2. **Installation**
+2. **Installation with Poetry**
 
    ```bash
    # Clone the repository
    git clone https://github.com/nikhilxsunder/edgar-sec.git
-   cd edgar_sec
+   cd fedfred
 
-   # Install dependencies
+   # Install dependencies (including dev dependencies and type stubs)
    poetry install
+
+   # If you want to install with explicit type stubs
+   poetry install --extras "types"
 
    # Set up pre-commit hooks
    poetry run pre-commit install
    ```
 
-3. **Environment Configuration**
-   - Create a `.env` file based on `.env.example` if needed
-   - Configure any necessary environment variables
-
-#### Conda Development
-
-To work with the conda package:
-
-1. **Conda Environment Setup**
+3. **Installation with Conda**
 
    ```bash
-   # Create a conda environment
-   conda create -n edgar-sec-dev python=3.11
+   # Clone the repository
+   git clone https://github.com/nikhilxsunder/edgar-sec.git
+   cd fedfred
+
+   # Create conda environment
+   conda create -n edgar-sec-dev python=3.10
    conda activate edgar-sec-dev
 
-   # Install build dependencies
-   conda install conda-build anaconda-client
+   # Option 1: Install from the author's Anaconda channel
+   conda install -c conda-forge fedfred
+
+   # Option 2: Install in development mode with all dependencies
+   pip install -e ".[dev,types]"
+
+   # Set up pre-commit hooks
+   pre-commit install
    ```
 
-2. **Building the Conda Package Locally**
-
-   ```bash
-   # Clone the repository if you haven't already
-   git clone https://github.com/nikhilxsunder/edgar-sec.git
-   cd edgar-sec
-
-   # Build the conda package
-   conda build conda-recipe/
-   ```
-
-3. **Testing the Conda Package Locally**
-
-   ```bash
-   # Install the locally built package
-   conda install --use-local edgar-sec
-
-   # Run tests
-   python -m pytest
-   ```
+4. **Environment Configuration**
+   - Create a `.env` file based on `.env.example` if needed
+   - Configure any necessary environment variables
 
 ### Pull Request Process
 
 1. **Submission**
-
    - Create a PR against the `main` branch
    - Fill out the PR template completely
    - Link any related issues
 
 2. **Review Process**
-
    - At least one maintainer will review your PR
    - Expect initial feedback within 1-2 weeks
    - Address any requested changes and push updates
@@ -407,9 +400,8 @@ Release Procedure:
 3. Review test results including property-based tests
 4. After merging, tag the release and publish to PyPI
 
-Conda Release Process:
+## Governance Model
 
-1. The GitHub Actions workflow automatically builds and uploads conda packages to Anaconda Cloud when a new version is tagged
-2. Verify the package is available on the nikhilxsunder channel: https://anaconda.org/nikhilxsunder/edgar-sec
-3. Test installation from the channel: `conda install -c nikhilxsunder edgar-sec`
-4. Future releases will also be submitted to conda-forge for broader distribution
+Edgar-SEC follows a centralized governance model. The project owner and lead, Nikhil Sunder, has the final authority on all decisions regarding the project's direction, contributions, and dispute resolution. Contributors are encouraged to participate in discussions and submit pull requests, but the project owner retains the right to approve or reject changes.
+
+For questions or concerns, contributors can reach out via GitHub Issues or email at nsunder724@gmail.com.

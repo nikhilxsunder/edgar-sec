@@ -21,7 +21,7 @@
 
 ## Current Vulnerability Status
 
-As of March 2025, there are no unpatched vulnerabilities of medium or higher severity that have been publicly known for more than 60 days in the Edgar-SEC codebase.
+As of August 2025, there are no unpatched vulnerabilities of medium or higher severity that have been publicly known for more than 60 days in the Edgar-SEC codebase.
 
 We monitor for vulnerabilities through:
 
@@ -69,8 +69,8 @@ When you report a vulnerability, you can expect:
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0.x   | :white_check_mark: |
-| < 1.0   | :x:                |
+| 2.0.x   | :white_check_mark: |
+| < 2.0   | :x:                |
 
 Only the latest minor release within each supported major version will receive security updates.
 
@@ -81,17 +81,14 @@ As an API client library, Edgar-SEC's primary developer is knowledgeable about t
 ### API Client-Specific Vulnerabilities
 
 1. **Injection in API Parameters**
-
    - **Vulnerability**: Unvalidated user inputs passed directly to API calls
    - **Mitigation**: All parameters are validated against allowlists before being sent to the API
 
 2. **Certificate Verification Bypass**
-
    - **Vulnerability**: Disabling SSL/TLS verification to make HTTPS requests work
    - **Mitigation**: Edgar-SEC always enforces certificate verification in all HTTP clients
 
 3. **Insecure Deserialization**
-
    - **Vulnerability**: Unsafe parsing of API responses
    - **Mitigation**: Strict type validation of all API responses before further processing
 
@@ -102,17 +99,14 @@ As an API client library, Edgar-SEC's primary developer is knowledgeable about t
 ### General Python Vulnerabilities
 
 1. **Dependency-Chain Vulnerabilities**
-
    - **Vulnerability**: Security issues in dependencies
    - **Mitigation**: Regular dependency scanning with Dependabot, minimal dependency philosophy
 
 2. **Path Traversal in File Operations**
-
    - **Vulnerability**: For cached data storage
    - **Mitigation**: Strict validation of file paths and names
 
 3. **Regular Expression Denial of Service (ReDoS)**
-
    - **Vulnerability**: Unsafe regular expressions for input validation
    - **Mitigation**: Careful design of regular expressions, usage of timeout mechanisms
 
@@ -138,6 +132,12 @@ Edgar-SEC relies on several third-party libraries. We regularly update these dep
 
 Edgar-SEC is distributed through these secure channels to prevent MITM attacks:
 
+### PyPI (Python Package Index)
+
+- All PyPI downloads use HTTPS (TLS) by default
+- PyPI implements modern TLS practices to prevent interception
+- Install securely using: `pip install fedfred`
+
 ### Anaconda
 
 - All Anaconda packages are distributed through secure HTTPS connections
@@ -155,12 +155,6 @@ For maximum security with conda packages:
 
 2. Compare the SHA256 checksum with the one published in our release notes
 
-### PyPI (Python Package Index)
-
-- All PyPI downloads use HTTPS (TLS) by default
-- PyPI implements modern TLS practices to prevent interception
-- Install securely using: `pip install edgar-sec`
-
 ### GitHub Releases
 
 - All GitHub downloads use HTTPS (TLS) by default
@@ -171,7 +165,7 @@ For maximum security, you can also verify our release signatures:
 
 1. Download our public GPG key: [\[LINK_TO_GPG_KEY\]](https://raw.githubusercontent.com/nikhilxsunder/edgar-sec/main/edgar_sec_public_key.asc)
 2. Import the key: `gpg --import edgar_sec_public_key.asc`
-3. Verify the release: `gpg --verify edgar_sec-1.0.0.tar.gz.asc edgar_sec-1.0.0.tar.gz`
+3. Verify the release: `gpg --verify edgar_sec-2.0.0.tar.gz.asc edgar_sec-2.0.0.tar.gz`
 
 ## Verifying Package Signatures
 
@@ -187,13 +181,13 @@ curl -s https://raw.githubusercontent.com/nikhilxsunder/edgar-sec/main/edgar_sec
    Example for version 1.0.0
 
 ```sh
-curl -O https://github.com/nikhilxsunder/edgar-sec/releases/download/v1.0.0/edgar_sec-1.0.0.tar.gz curl -O https://github.com/nikhilxsunder/edgar-sec/releases/download/v1.0.0/edgar_sec-1.0.0.tar.gz.asc
+curl -O https://github.com/nikhilxsunder/edgar-sec/releases/download/v2.0.0/edgar_sec-=2.0.0.tar.gz curl -O https://github.com/nikhilxsunder/edgar-sec/releases/download/v2.0.0/edgar_sec-2.0.0.tar.gz.asc
 ```
 
 3. Verify the signature:
 
 ```sh
-gpg --verify edgar_sec-1.0.0.tar.gz.asc edgar_sec-1.0.0.tar.gz
+gpg --verify edgar_sec-2.0.0.tar.gz.asc edgar_sec-2.0.0.tar.gz
 ```
 
 ## Security Updates and Announcements

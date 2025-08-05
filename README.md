@@ -3,22 +3,27 @@
 ## A feature-rich python package for interacting with the US Securities and Exchange Commission API: EDGAR
 
 <div align="center">
+    <img src="https://raw.githubusercontent.com/nikhilxsunder/fedfred/main/docs/source/_static/edgar-sec-logo.png" width="30%" alt="Edgar-SEC Logo">
+</div>
+
+<div align="center">
     <a href="https://github.com/nikhilxsunder/edgar-sec/actions/workflows/main.yml"><img src="https://github.com/nikhilxsunder/edgar-sec/actions/workflows/main.yml/badge.svg" alt="Build and test GitHub"></a>
     <a href="https://github.com/nikhilxsunder/edgar-sec/actions/workflows/analyze.yml"><img src="https://github.com/nikhilxsunder/edgar-sec/actions/workflows/analyze.yml/badge.svg" alt="Analyze Status"></a>
     <a href="https://github.com/nikhilxsunder/edgar-sec/actions/workflows/test.yml"><img src="https://github.com/nikhilxsunder/edgar-sec/actions/workflows/test.yml/badge.svg" alt="Test Status"></a>
     <a href="https://github.com/nikhilxsunder/edgar-sec/actions/workflows/codeql.yml"><img src="https://github.com/nikhilxsunder/edgar-sec/actions/workflows/codeql.yml/badge.svg" alt="CodeQL"></a>
-    <a href="https://pypi.org/project/edgar-sec/"><img src="https://img.shields.io/pypi/v/edgar-sec.svg" alt="PyPI version"></a>
-    <a href="https://pepy.tech/projects/edgar-sec"><img src="https://static.pepy.tech/badge/edgar-sec" alt="PyPI Downloads"></a>
     <a href="https://www.bestpractices.dev/projects/10210"><img src="https://www.bestpractices.dev/projects/10210/badge"></a>
     <a href="https://codecov.io/gh/nikhilxsunder/edgar-sec"><img src="https://codecov.io/gh/nikhilxsunder/edgar-sec/graph/badge.svg?token=RDI3Q99UJB" alt="codecov"></a>
-    <a href="https://anaconda.org/conda-forge/edgar-sec"><img src="https://img.shields.io/conda/vn/conda-forge/edgar-sec.svg" alt="Conda Version"></a>
+    <a href="https://socket.dev/pypi/package/edgar-sec/overview/=2.0.0/tar-gz"><img src="https://socket.dev/api/badge/pypi/package/edgar-sec/2.0.0?artifact_id=tar-gz"></a>
+    <a href="https://repology.org/project/python%3Afedfred/versions"><img src="https://repology.org/badge/tiny-repos/python%3Afedfred.svg" alt="Packaging status"></a>
+    <a href="https://pypi.org/project/edgar-sec/"><img src="https://img.shields.io/pypi/v/edgar-sec.svg" alt="PyPI version"></a>
+    <a href="https://pepy.tech/projects/edgar-sec"><img src="https://static.pepy.tech/badge/edgar-sec" alt="PyPI Downloads"></a>
+    <a href="https://anaconda.org/conda-forge/edgar-sec"><img src="https://img.shields.io/conda/vn/conda-forge/edgar-sec.svg" alt="Conda-Forge Version"></a>
     <a href="https://anaconda.org/conda-forge/edgar-sec"><img src="https://img.shields.io/conda/dn/conda-forge/edgar-sec.svg" alt="Conda Downloads"></a>
 </div>
 
-**Note**: edgar-sec is now officially available on Conda-Forge. We recommend using Conda-Forge for the most up-to-date and reliable builds.
-
 ### Features
 
+- Now available on Conda-Forge!
 - Native support for asynchronous requests (async).
 - All method outputs are mapped to dataclasses for better usability.
 - Local caching for easier data access and faster execution times.
@@ -33,29 +38,19 @@ You can install the package using pip:
 pip install edgar-sec
 ```
 
-We recommend creating a dedicated environment:
-
-```sh
-conda create -n edgar-env
-conda activate edgar-env
-conda install -c nikhilxsunder edgar-sec
-```
-
-### Using conda
-
-edgar-sec is available on Conda-Forge. You can install it with:
+Or install from conda-forge:
 
 ```sh
 conda install -c conda-forge edgar-sec
 ```
 
-We recommend creating a dedicated environment:
+For type checking support, install with optional type stubs:
 
 ```sh
-conda create -n edgar-env
-conda activate edgar-env
-conda install -c conda-forge edgar-sec
+pip install edgar-sec[types]
 ```
+
+We recommend using a virtual environment with either installation method.
 
 ### Rest API Usage
 
@@ -76,15 +71,11 @@ print(company_concept.label)
 # Get company concept disclosures (async)
 import asyncio
 async def main():
-    edgar = ed.EdgarAPI()
+    edgar = ed.EdgarAPI().Async
     company_concept = await edgar.get_company_concept(central_index_key='0001067983', taxonomy='us-gaap', tag='AccountsPayableCurrent')
     print(company_concept.label)
 asyncio.run(main())
 ```
-
-### Important Notes
-
-- OpenSSF Badge in progress.
 
 ### Continuous Integration
 
@@ -94,6 +85,7 @@ Edgar-SEC uses GitHub Actions for continuous integration. The following workflow
 - **Analyze**: Runs static code analysis to identify potential issues
 - **Test**: Comprehensive test suite with coverage reporting
 - **CodeQL**: Security analysis to detect vulnerabilities
+- **Docs**: Deploys Sphinx docs site to Github Pages.
 
 These checks ensure that all contributions maintain code quality and don't introduce regressions.
 
@@ -143,7 +135,7 @@ poetry run pytest --cov=edgar_sec tests/
 To run a specific test file:
 
 ```sh
-poetry run pytest tests/test_specific_module.py
+poetry run pytest tests/specific_module_test.py
 ```
 
 #### Test Coverage
