@@ -20,10 +20,10 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://nikhilxsunder.github.io/edgar-sec/changelog.html" />
 <meta property="og:site_name" content="edgar-sec" />
-<meta property="og:description" content="All notable changes to edgar-sec will be documented in this file. The format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Unreleased: Added: Property-based testing framework.[1.0.1] - 2025-03-21: Fixed: Minor patch for publishing error (Anaconda). 1.0.0- 2025-03-..." />
+<meta property="og:description" content="All notable changes to edgar-sec will be documented in this file. The format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Unreleased: 2.0.0-: Changed: Updated pre-commit-config.yaml, Conda/Conda-Forge version now 2.0.0 in both meta.yaml files, Complete overhaul o..." />
 <meta property="og:image" content="https://nikhilxsunder.github.io/edgar-sec/_static/edgar-sec-logo.png" />
 <meta property="og:image:alt" content="edgar-sec" />
-<meta name="description" content="All notable changes to edgar-sec will be documented in this file. The format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Unreleased: Added: Property-based testing framework.[1.0.1] - 2025-03-21: Fixed: Minor patch for publishing error (Anaconda). 1.0.0- 2025-03-..." />
+<meta name="description" content="All notable changes to edgar-sec will be documented in this file. The format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Unreleased: 2.0.0-: Changed: Updated pre-commit-config.yaml, Conda/Conda-Forge version now 2.0.0 in both meta.yaml files, Complete overhaul o..." />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="EDGAR SEC Documentation" />
 <meta property="og:url" content="https://nikhilxsunder.github.io/edgar-sec/" />
@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Jul 31, 2025"/>
+    <meta name="docbuild:last-update" content="Aug 05, 2025"/>
   </head>
   
   
@@ -602,27 +602,114 @@
 <p>The format is based on <a class="reference external" href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>,
 and this project adheres to <a class="reference external" href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
 <section id="unreleased">
-<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v1.0.0...HEAD">Unreleased</a><a class="headerlink" href="#unreleased" title="Link to this heading">#</a></h2>
+<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v2.0.0...HEAD">Unreleased</a><a class="headerlink" href="#unreleased" title="Link to this heading">#</a></h2>
+</section>
+<section id="id1">
+<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v1.0.1...v2.0.0">2.0.0</a> -<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="changed">
+<h3>Changed<a class="headerlink" href="#changed" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Updated <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/.pre-commit-config.yaml">pre-commit-config.yaml</a></p></li>
+<li><p>Conda/Conda-Forge version now 2.0.0 in both meta.yaml files</p></li>
+<li><p>Complete overhaul of sphinx documentation</p></li>
+<li><p>Changed sphinx theme to <a class="reference external" href="https://pypi.org/project/pydata-sphinx-theme/">pydata-sphinx-theme</a></p></li>
+<li><p>Updated <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/pyproject.toml">pyproject.toml</a></p></li>
+<li><p>Updated imports for <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/src/edgar_sec/__init__.py"><strong>init</strong>.py</a></p></li>
+<li><p>edgar_sec.py renamed to <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/src/edgar_sec/clients.py">clients.py</a></p></li>
+<li><p>edgar_data.py renamed to <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/src/edgar_sec/objects.py">objects.py</a></p></li>
+<li><p>Markdown documents updated:</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/CHANGELOG.md">CHANGELOG.md</a></p></li>
+<li><p><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a></p></li>
+<li><p><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/README.md">README.md</a></p></li>
+<li><p><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/SECURITY.md">SECURITY.md</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
 <section id="added">
 <h3>Added<a class="headerlink" href="#added" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Property-based testing framework</p></li>
+<li><p>Created <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/tree/main/conda-forge">conda-forge</a> directory.</p>
+<ul>
+<li><p>Added <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/conda-forge/meta.yaml">meta.yaml</a> for conda-forge.</p></li>
+</ul>
+</li>
+<li><p>Added <a class="reference external" href="https://pypi.org/project/asyncache/">asyncache</a> dependency</p></li>
+<li><p>Added favicon file: <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/docs/source/_static/edgar-sec-favicon.ico">edgar-sec-favicon.ico</a></p></li>
+<li><p>Added logo file: <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/docs/source/_static/edgar-sec-logo.png">edgar-sec-logo.png</a></p></li>
+<li><p>Added [json_ld.js(<a class="github reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/docs/source/_static/json_ld.js">nikhilxsunder/edgar-sec</a>)] for sphinx</p></li>
+<li><p>Added sphinx autosummary templates:</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/docs/source/_templates/autosummary/attribute.rst">attribute.rst</a></p></li>
+<li><p><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/docs/source/_templates/autosummary/class.rst">class.rst</a></p></li>
+<li><p><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/docs/source/_templates/autosummary/method.rst">method.rst</a></p></li>
+</ul>
+</li>
+<li><p>Added sphinx dependencies:</p>
+<ul>
+<li><p><a class="reference external" href="https://pypi.org/project/sphinxext-opengraph/">sphinxext-opengraph</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/sphinx_design/">sphinx-design</a></p></li>
+</ul>
+</li>
+<li><p>Added <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/docs/source/robots.txt">robots.txt</a></p></li>
+<li><p>Added <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/scripts/sync_about_version.py">sync_about_version.py</a></p></li>
+<li><p>Added <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/scripts/sync_conda_forge_version.py">sync_conda_forge_version.py</a></p></li>
+<li><p>Added <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/scripts/sync_conf_version.py">sync_conf_version.py</a></p></li>
+<li><p>Added <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/src/edgar_sec/__about__.py"><strong>about</strong>.py</a></p></li>
+<li><p>Added <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/src/edgar_sec/helpers.py">helpers.py</a></p></li>
+<li><p>Added complete test suite:</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/tests/clients_test.py">clients_test.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/tests/objects_test.py">objects_test.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/tests/helpers_test.py">helpers_test.py</a></p></li>
+</ul>
+</li>
+<li><p>Markdown documents added:</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/DCO.md">DCO.md</a></p></li>
+<li><p><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/ROADMAP.md">ROADMAP.md</a></p></li>
+</ul>
+</li>
+<li><p>Added security analysis through <a class="reference external" href="https://socket.dev/pypi/package/edgar-sec/overview">Socket</a></p></li>
+</ul>
+</section>
+<section id="fixed">
+<h3>Fixed<a class="headerlink" href="#fixed" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Fixed dependency list in <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/scripts/sync_conda_recipe.py">sync_conda_recipe.py</a></p></li>
+<li><p>Fixed return objects in <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/src/edgar_sec/objects.py">objects.py</a></p></li>
+<li><p>Fixed caching implementations in <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/src/edgar_sec/clients.py">clients.py</a></p></li>
+<li><p>Achieved OpenSSF Gold</p></li>
+<li><p>Achieved 100% test coverage on <a class="reference external" href="https://app.codecov.io/gh/nikhilxsunder/edgar-sec">Codecov</a></p></li>
+</ul>
+</section>
+<section id="removed">
+<h3>Removed<a class="headerlink" href="#removed" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Deleted update_feedstock.py</p></li>
+<li><p>Deleted type stub files:</p>
+<ul>
+<li><p>edgar_data.pyi</p></li>
+<li><p>edgar_sec.pyi</p></li>
+</ul>
+</li>
 </ul>
 </section>
 </section>
-<section id="id1">
-<h2>[1.0.1] - 2025-03-21<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<section id="fixed">
-<h3>Fixed<a class="headerlink" href="#fixed" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v1.0.0...v1.0.1">1.0.1</a> - 2025-03-21<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h3>Fixed<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Minor patch for publishing error (Anaconda)</p></li>
 </ul>
 </section>
 </section>
-<section id="id2">
-<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v0.0.2...v1.0.0">1.0.0</a> - 2025-03-21<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<section id="id3">
-<h3>Added<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v0.0.2...v1.0.0">1.0.0</a> - 2025-03-21<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h3>Added<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>EdgarAPI class for interacting with SEC EDGAR API</p></li>
 <li><p>Full async support through EdgarAPI.Async</p></li>
@@ -647,8 +734,8 @@ and this project adheres to <a class="reference external" href="https://semver.o
 <li><p>Anaconda Distribution</p></li>
 </ul>
 </section>
-<section id="changed">
-<h3>Changed<a class="headerlink" href="#changed" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h3>Changed<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Updated project structure to use Poetry for dependency management</p></li>
 <li><p>Improved error handling for API requests</p></li>
@@ -656,10 +743,10 @@ and this project adheres to <a class="reference external" href="https://semver.o
 </ul>
 </section>
 </section>
-<section id="id4">
-<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v0.0.1...v0.0.2">0.0.2</a> - 2025-02-10<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<section id="id5">
-<h3>Added<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="id7">
+<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v0.0.1...v0.0.2">0.0.2</a> - 2025-02-10<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<section id="id8">
+<h3>Added<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Initial project structure</p></li>
 <li><p>Basic EdgarAPI class</p></li>
@@ -670,10 +757,10 @@ and this project adheres to <a class="reference external" href="https://semver.o
 </ul>
 </section>
 </section>
-<section id="id6">
-<h2>[0.0.1] - 2025-02-09<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
-<section id="id7">
-<h3>Added<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<section id="id9">
+<h2>[0.0.1] - 2025-02-09<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h3>Added<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Project initialization</p></li>
 <li><p>License file</p></li>
@@ -731,25 +818,29 @@ and this project adheres to <a class="reference external" href="https://semver.o
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unreleased">Unreleased</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#added">Added</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">[1.0.1] - 2025-03-21</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed">Fixed</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.0.0 - 2025-03-21</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Added</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unreleased">Unreleased</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.0.0 -</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changed">Changed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#added">Added</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed">Fixed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removed">Removed</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">0.0.2 - 2025-02-10</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.0.1 - 2025-03-21</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Fixed</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.0.0 - 2025-03-21</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Added</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Changed</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">[0.0.1] - 2025-02-09</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Added</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">0.0.2 - 2025-02-10</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Added</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">[0.0.1] - 2025-02-09</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Added</a></li>
 </ul>
 </li>
 </ul>

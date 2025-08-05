@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Jul 31, 2025"/>
+    <meta name="docbuild:last-update" content="Aug 05, 2025"/>
   </head>
   
   
@@ -631,6 +631,7 @@
 </ul>
 </li>
 <li><p><a class="reference internal" href="#release-process">Release Process</a></p></li>
+<li><p><a class="reference internal" href="#governance-model">Governance Model</a></p></li>
 </ul>
 </section>
 <section id="how-to-contribute">
@@ -687,7 +688,7 @@
 <section id="submitting-code-changes">
 <h3>Submitting Code Changes<a class="headerlink" href="#submitting-code-changes" title="Link to this heading">#</a></h3>
 <p>Follow these steps when contributing code:</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p><strong>Fork the Repository</strong></p>
 <ul class="simple">
 <li><p>Create your own fork of the repository on GitHub</p></li>
@@ -705,6 +706,23 @@
 <li><p>Follow the coding standards outlined below</p></li>
 <li><p>Write clear commit messages explaining your changes</p></li>
 <li><p>Keep commits focused and logical</p></li>
+</ul>
+</li>
+<li><p><strong>Sign Your Commits</strong></p>
+<ul>
+<li><p>All commits must be signed off to certify that you have the legal right to contribute the code.</p></li>
+<li><p>Use the -s flag when making a commit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-s<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Your commit message&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>This will append a Signed-off-by line to your commit message, indicating your agreement to the <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/DCO.md">Developer Certificate of Origin (DCO)</a>.</p></li>
+<li><p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Signed-off-by:<span class="w"> </span>Your<span class="w"> </span>Name<span class="w"> </span>&lt;your.email@example.com&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Pull requests with unsigned commits will not be merged.</p></li>
 </ul>
 </li>
 <li><p><strong>Submit a Pull Request</strong></p>
@@ -783,7 +801,7 @@ poetry<span class="w"> </span>run<span class="w"> </span>bandit<span class="w"> 
 <p>When adding tests:</p>
 <ul class="simple">
 <li><p>Place tests in the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory</p></li>
-<li><p>Name test files with a <code class="docutils literal notranslate"><span class="pre">test_</span></code> prefix</p></li>
+<li><p>Name test files with a <code class="docutils literal notranslate"><span class="pre">_test</span></code> suffix</p></li>
 <li><p>Follow the existing test patterns</p></li>
 <li><p>Test both success and error conditions</p></li>
 <li><p>Include comments explaining complex test scenarios</p></li>
@@ -890,16 +908,39 @@ python<span class="w"> </span>-O<span class="w"> </span>-m<span class="w"> </spa
 <li><p>Git</p></li>
 </ul>
 </li>
-<li><p><strong>Installation</strong></p>
+<li><p><strong>Installation with Poetry</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/nikhilxsunder/edgar-sec.git
-<span class="nb">cd</span><span class="w"> </span>edgar_sec
+<span class="nb">cd</span><span class="w"> </span>fedfred
 
-<span class="c1"># Install dependencies</span>
+<span class="c1"># Install dependencies (including dev dependencies and type stubs)</span>
 poetry<span class="w"> </span>install
+
+<span class="c1"># If you want to install with explicit type stubs</span>
+poetry<span class="w"> </span>install<span class="w"> </span>--extras<span class="w"> </span><span class="s2">&quot;types&quot;</span>
 
 <span class="c1"># Set up pre-commit hooks</span>
 poetry<span class="w"> </span>run<span class="w"> </span>pre-commit<span class="w"> </span>install
+</pre></div>
+</div>
+</li>
+<li><p><strong>Installation with Conda</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/nikhilxsunder/edgar-sec.git
+<span class="nb">cd</span><span class="w"> </span>fedfred
+
+<span class="c1"># Create conda environment</span>
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>edgar-sec-dev<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
+conda<span class="w"> </span>activate<span class="w"> </span>edgar-sec-dev
+
+<span class="c1"># Option 1: Install from the author&#39;s Anaconda channel</span>
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>fedfred
+
+<span class="c1"># Option 2: Install in development mode with all dependencies</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev,types]&quot;</span>
+
+<span class="c1"># Set up pre-commit hooks</span>
+pre-commit<span class="w"> </span>install
 </pre></div>
 </div>
 </li>
@@ -910,41 +951,6 @@ poetry<span class="w"> </span>run<span class="w"> </span>pre-commit<span class="
 </ul>
 </li>
 </ol>
-<section id="conda-development">
-<h4>Conda Development<a class="headerlink" href="#conda-development" title="Link to this heading">#</a></h4>
-<p>To work with the conda package:</p>
-<ol class="arabic">
-<li><p><strong>Conda Environment Setup</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a conda environment</span>
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>edgar-sec-dev<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
-conda<span class="w"> </span>activate<span class="w"> </span>edgar-sec-dev
-
-<span class="c1"># Install build dependencies</span>
-conda<span class="w"> </span>install<span class="w"> </span>conda-build<span class="w"> </span>anaconda-client
-</pre></div>
-</div>
-</li>
-<li><p><strong>Building the Conda Package Locally</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository if you haven&#39;t already</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/nikhilxsunder/edgar-sec.git
-<span class="nb">cd</span><span class="w"> </span>edgar-sec
-
-<span class="c1"># Build the conda package</span>
-conda<span class="w"> </span>build<span class="w"> </span>conda-recipe/
-</pre></div>
-</div>
-</li>
-<li><p><strong>Testing the Conda Package Locally</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install the locally built package</span>
-conda<span class="w"> </span>install<span class="w"> </span>--use-local<span class="w"> </span>edgar-sec
-
-<span class="c1"># Run tests</span>
-python<span class="w"> </span>-m<span class="w"> </span>pytest
-</pre></div>
-</div>
-</li>
-</ol>
-</section>
 </section>
 <section id="pull-request-process">
 <h3>Pull Request Process<a class="headerlink" href="#pull-request-process" title="Link to this heading">#</a></h3>
@@ -1054,14 +1060,12 @@ python<span class="w"> </span>-B<span class="w"> </span>-m<span class="w"> </spa
 <li><p>Review test results including property-based tests</p></li>
 <li><p>After merging, tag the release and publish to PyPI</p></li>
 </ol>
-<p>Conda Release Process:</p>
-<ol class="arabic simple">
-<li><p>The GitHub Actions workflow automatically builds and uploads conda packages to Anaconda Cloud when a new version is tagged</p></li>
-<li><p>Verify the package is available on the nikhilxsunder channel: <a class="reference external" href="https://anaconda.org/nikhilxsunder/edgar-sec">https://anaconda.org/nikhilxsunder/edgar-sec</a></p></li>
-<li><p>Test installation from the channel: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">nikhilxsunder</span> <span class="pre">edgar-sec</span></code></p></li>
-<li><p>Future releases will also be submitted to conda-forge for broader distribution</p></li>
-</ol>
 </section>
+</section>
+<section id="governance-model">
+<h2>Governance Model<a class="headerlink" href="#governance-model" title="Link to this heading">#</a></h2>
+<p>Edgar-SEC follows a centralized governance model. The project owner and lead, Nikhil Sunder, has the final authority on all decisions regarding the project’s direction, contributions, and dispute resolution. Contributors are encouraged to participate in discussions and submit pull requests, but the project owner retains the right to approve or reject changes.</p>
+<p>For questions or concerns, contributors can reach out via GitHub Issues or email at <a class="reference external" href="mailto:nsunder724&#37;&#52;&#48;gmail&#46;com">nsunder724<span>&#64;</span>gmail<span>&#46;</span>com</a>.</p>
 </section>
 </section>
 
@@ -1131,10 +1135,7 @@ python<span class="w"> </span>-B<span class="w"> </span>-m<span class="w"> </spa
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contact">Contact</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#security-vulnerability-reporting">Security Vulnerability Reporting</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-of-conduct">Code of Conduct</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#development-setup">Development Setup</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-development">Conda Development</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#development-setup">Development Setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-request-process">Pull Request Process</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-integration">Continuous Integration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-analysis">Dynamic Analysis</a><ul class="nav section-nav flex-column">
@@ -1145,6 +1146,7 @@ python<span class="w"> </span>-B<span class="w"> </span>-m<span class="w"> </spa
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#release-process">Release Process</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#governance-model">Governance Model</a></li>
 </ul>
   </nav></div>
 

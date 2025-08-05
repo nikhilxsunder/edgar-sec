@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Jul 31, 2025"/>
+    <meta name="docbuild:last-update" content="Aug 05, 2025"/>
   </head>
   
   
@@ -627,7 +627,7 @@
 </section>
 <section id="current-vulnerability-status">
 <h2>Current Vulnerability Status<a class="headerlink" href="#current-vulnerability-status" title="Link to this heading">#</a></h2>
-<p>As of March 2025, there are no unpatched vulnerabilities of medium or higher severity that have been publicly known for more than 60 days in the Edgar-SEC codebase.</p>
+<p>As of August 2025, there are no unpatched vulnerabilities of medium or higher severity that have been publicly known for more than 60 days in the Edgar-SEC codebase.</p>
 <p>We monitor for vulnerabilities through:</p>
 <ul class="simple">
 <li><p>Automated dependency scanning with GitHub Dependabot</p></li>
@@ -682,10 +682,10 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>1.0.x</p></td>
+<tr class="row-even"><td><p>2.0.x</p></td>
 <td><p>:white_check_mark:</p></td>
 </tr>
-<tr class="row-odd"><td><p>&lt; 1.0</p></td>
+<tr class="row-odd"><td><p>&lt; 2.0</p></td>
 <td><p>:x:</p></td>
 </tr>
 </tbody>
@@ -773,6 +773,14 @@
 <section id="secure-software-delivery">
 <h2>Secure Software Delivery<a class="headerlink" href="#secure-software-delivery" title="Link to this heading">#</a></h2>
 <p>Edgar-SEC is distributed through these secure channels to prevent MITM attacks:</p>
+<section id="pypi-python-package-index">
+<h3>PyPI (Python Package Index)<a class="headerlink" href="#pypi-python-package-index" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>All PyPI downloads use HTTPS (TLS) by default</p></li>
+<li><p>PyPI implements modern TLS practices to prevent interception</p></li>
+<li><p>Install securely using: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">fedfred</span></code></p></li>
+</ul>
+</section>
 <section id="anaconda">
 <h3>Anaconda<a class="headerlink" href="#anaconda" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -791,14 +799,6 @@
 <li><p>Compare the SHA256 checksum with the one published in our release notes</p></li>
 </ol>
 </section>
-<section id="pypi-python-package-index">
-<h3>PyPI (Python Package Index)<a class="headerlink" href="#pypi-python-package-index" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>All PyPI downloads use HTTPS (TLS) by default</p></li>
-<li><p>PyPI implements modern TLS practices to prevent interception</p></li>
-<li><p>Install securely using: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">edgar-sec</span></code></p></li>
-</ul>
-</section>
 <section id="github-releases">
 <h3>GitHub Releases<a class="headerlink" href="#github-releases" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -810,7 +810,7 @@
 <ol class="arabic simple">
 <li><p>Download our public GPG key: <a class="reference external" href="https://raw.githubusercontent.com/nikhilxsunder/edgar-sec/main/edgar_sec_public_key.asc">[LINK_TO_GPG_KEY]</a></p></li>
 <li><p>Import the key: <code class="docutils literal notranslate"><span class="pre">gpg</span> <span class="pre">--import</span> <span class="pre">edgar_sec_public_key.asc</span></code></p></li>
-<li><p>Verify the release: <code class="docutils literal notranslate"><span class="pre">gpg</span> <span class="pre">--verify</span> <span class="pre">edgar_sec-1.0.0.tar.gz.asc</span> <span class="pre">edgar_sec-1.0.0.tar.gz</span></code></p></li>
+<li><p>Verify the release: <code class="docutils literal notranslate"><span class="pre">gpg</span> <span class="pre">--verify</span> <span class="pre">edgar_sec-2.0.0.tar.gz.asc</span> <span class="pre">edgar_sec-2.0.0.tar.gz</span></code></p></li>
 </ol>
 </section>
 </section>
@@ -827,13 +827,13 @@
 <li><p>Download the package and signature:
 Example for version 1.0.0</p></li>
 </ol>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-O<span class="w"> </span>https://github.com/nikhilxsunder/edgar-sec/releases/download/v1.0.0/edgar_sec-1.0.0.tar.gz<span class="w"> </span>curl<span class="w"> </span>-O<span class="w"> </span>https://github.com/nikhilxsunder/edgar-sec/releases/download/v1.0.0/edgar_sec-1.0.0.tar.gz.asc
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-O<span class="w"> </span>https://github.com/nikhilxsunder/edgar-sec/releases/download/v2.0.0/edgar_sec-<span class="o">=</span><span class="m">2</span>.0.0.tar.gz<span class="w"> </span>curl<span class="w"> </span>-O<span class="w"> </span>https://github.com/nikhilxsunder/edgar-sec/releases/download/v2.0.0/edgar_sec-2.0.0.tar.gz.asc
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>Verify the signature:</p></li>
 </ol>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>--verify<span class="w"> </span>edgar_sec-1.0.0.tar.gz.asc<span class="w"> </span>edgar_sec-1.0.0.tar.gz
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>--verify<span class="w"> </span>edgar_sec-2.0.0.tar.gz.asc<span class="w"> </span>edgar_sec-2.0.0.tar.gz
 </pre></div>
 </div>
 </section>
@@ -926,8 +926,8 @@ Example for version 1.0.0</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#security-measures">Security Measures</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#third-party-security-dependencies">Third-Party Security Dependencies</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#secure-software-delivery">Secure Software Delivery</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">Anaconda</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pypi-python-package-index">PyPI (Python Package Index)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">Anaconda</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-releases">GitHub Releases</a></li>
 </ul>
 </li>
