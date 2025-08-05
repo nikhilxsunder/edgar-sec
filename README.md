@@ -3,7 +3,7 @@
 ## A feature-rich python package for interacting with the US Securities and Exchange Commission API: EDGAR
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/nikhilxsunder/fedfred/main/docs/source/_static/edgar-sec-logo.png" width="30%" alt="Edgar-SEC Logo">
+    <img src="https://github.com/nikhilxsunder/edgar-sec/blob/main/docs/source/_static/edgar-sec-logo.png" width="30%" alt="Edgar-SEC Logo">
 </div>
 
 <div align="center">
