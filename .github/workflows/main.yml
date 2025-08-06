@@ -170,6 +170,7 @@ jobs:
 
           # Sign the package with Anaconda
           anaconda upload --user nikhil.sunder --force $CONDA_PACKAGE
+          
   update-feedstock:
     name: Update Conda-Forge Feedstock
     needs: build
@@ -218,7 +219,7 @@ jobs:
           SHA256=$(sha256sum $TARBALL_PATH | cut -d ' ' -f 1)
 
           sed -i "s/version:.*/version: $VERSION/" conda-recipe/meta.yaml
-          sed -i "s|url:.*|url: \"https://pypi.io/packages/source/e/edgar-sec/edgar-sec-${VERSION}.tar.gz\"|" conda-recipe/meta.yaml
+          sed -i "s|url:.*|url: \"https://pypi.io/packages/source/e/edgar-sec/edgar_sec-${VERSION}.tar.gz\"|" conda-recipe/meta.yaml
           sed -i "s/sha256:.*/sha256: \"$SHA256\"/" conda-recipe/meta.yaml
 
           cp conda-recipe/meta.yaml feedstock/recipe/meta.yaml
