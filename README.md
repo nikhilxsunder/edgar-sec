@@ -13,7 +13,7 @@
     <a href="https://github.com/nikhilxsunder/edgar-sec/actions/workflows/codeql.yml"><img src="https://github.com/nikhilxsunder/edgar-sec/actions/workflows/codeql.yml/badge.svg" alt="CodeQL"></a>
     <a href="https://www.bestpractices.dev/projects/10210"><img src="https://www.bestpractices.dev/projects/10210/badge"></a>
     <a href="https://codecov.io/gh/nikhilxsunder/edgar-sec"><img src="https://codecov.io/gh/nikhilxsunder/edgar-sec/graph/badge.svg?token=RDI3Q99UJB" alt="codecov"></a>
-    <a href="https://socket.dev/pypi/package/edgar-sec/overview/=2.0.0/tar-gz"><img src="https://socket.dev/api/badge/pypi/package/edgar-sec/2.0.0?artifact_id=tar-gz"></a>
+    <a href="https://socket.dev/pypi/package/edgar-sec/overview/2.0.0/tar-gz"><img src="https://socket.dev/api/badge/pypi/package/edgar-sec/2.0.0?artifact_id=tar-gz"></a>
     <a href="https://repology.org/project/python%3Afedfred/versions"><img src="https://repology.org/badge/tiny-repos/python%3Afedfred.svg" alt="Packaging status"></a>
     <a href="https://pypi.org/project/edgar-sec/"><img src="https://img.shields.io/pypi/v/edgar-sec.svg" alt="PyPI version"></a>
     <a href="https://pepy.tech/projects/edgar-sec"><img src="https://static.pepy.tech/badge/edgar-sec" alt="PyPI Downloads"></a>
