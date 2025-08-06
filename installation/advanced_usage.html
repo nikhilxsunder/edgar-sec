@@ -20,10 +20,10 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://nikhilxsunder.github.io/edgar-sec/installation/advanced_usage.html" />
 <meta property="og:site_name" content="edgar-sec" />
-<meta property="og:description" content="edgar-sec enables high-performance, robust access to SEC EDGAR data pipelines. This page covers caching, rate limiting, async concurrent requests, parameter control, and error handling. — Advanced Client Features: Caching and Rate Limiting Cache responses and throttle API usage to maximize throug..." />
+<meta property="og:description" content="edgar-sec enables high-throughput, resilient EDGAR® data pipelines. This page covers file caching, rate limiting, concurrent async requests, parameter customization, and error handling. — Advanced Client Features: Caching and Rate Limiting Automatically cache responses and throttle API requests t..." />
 <meta property="og:image" content="https://nikhilxsunder.github.io/edgar-sec/_static/edgar-sec-logo.png" />
 <meta property="og:image:alt" content="edgar-sec" />
-<meta name="description" content="edgar-sec enables high-performance, robust access to SEC EDGAR data pipelines. This page covers caching, rate limiting, async concurrent requests, parameter control, and error handling. — Advanced Client Features: Caching and Rate Limiting Cache responses and throttle API usage to maximize throug..." />
+<meta name="description" content="edgar-sec enables high-throughput, resilient EDGAR® data pipelines. This page covers file caching, rate limiting, concurrent async requests, parameter customization, and error handling. — Advanced Client Features: Caching and Rate Limiting Automatically cache responses and throttle API requests t..." />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="EDGAR SEC Documentation" />
 <meta property="og:url" content="https://nikhilxsunder.github.io/edgar-sec/" />
@@ -71,12 +71,12 @@
     <link rel="icon" href="../_static/edgar-sec-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="data_visualization.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="basic_usage.html" />
+    <link rel="next" title="Data Visualization Examples" href="data_visualization.html" />
+    <link rel="prev" title="Basic Usage Examples" href="basic_usage.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Aug 05, 2025"/>
+    <meta name="docbuild:last-update" content="Aug 06, 2025"/>
   </head>
   
   
@@ -186,14 +186,14 @@
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../resources/index.html">
-    <no title>
+    Resources
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../glossary.html">
-    <no title>
+    Glossary
   </a>
 </li>
 
@@ -399,14 +399,14 @@
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../resources/index.html">
-    <no title>
+    Resources
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../glossary.html">
-    <no title>
+    Glossary
   </a>
 </li>
 
@@ -547,7 +547,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic and Advanced Usage</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="basic_usage.html">Basic Usage Examples</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Advanced Usage Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Visualization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="data_visualization.html">Data Visualization Examples</a></li>
 </ul>
 </div>
 </nav></div>
@@ -610,7 +615,8 @@
                   
   <section id="advanced-usage-examples">
 <span id="advanced-usage"></span><h1>Advanced Usage Examples<a class="headerlink" href="#advanced-usage-examples" title="Link to this heading">#</a></h1>
-<p>edgar-sec enables high-performance, robust access to SEC EDGAR data pipelines. This page covers caching, rate limiting, async concurrent requests, parameter control, and error handling.</p>
+<p>edgar-sec enables <strong>high-throughput</strong>, <strong>resilient</strong> EDGAR® data pipelines.
+This page covers <strong>file caching</strong>, <strong>rate limiting</strong>, <strong>concurrent async requests</strong>, <strong>parameter customization</strong>, and <strong>error handling</strong>.</p>
 <p>—</p>
 <section id="advanced-client-features">
 <h2>Advanced Client Features<a class="headerlink" href="#advanced-client-features" title="Link to this heading">#</a></h2>
@@ -621,7 +627,7 @@
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Caching and Rate Limiting</div>
-<p class="sd-card-text">Cache responses and throttle API usage to maximize throughput.</p>
+<p class="sd-card-text">Automatically cache responses and throttle API requests to comply with EDGAR limits.</p>
 </div>
 <a class="sd-stretched-link sd-hide-link-text reference external" href="#caching-and-rate-limiting"><span>Caching and rate limiting documentation</span></a></div>
 </div>
@@ -630,27 +636,27 @@ Caching and Rate Limiting</div>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Async Concurrent Requests</div>
-<p class="sd-card-text">Use the Async client to batch multiple EDGAR requests in parallel.</p>
+<p class="sd-card-text">Fetch multiple endpoints concurrently using <code class="xref py py-attr docutils literal notranslate"><span class="pre">edgar_sec.EdgarAPI.Async</span></code>.</p>
 </div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="#concurrent-requests-with-async"><span>Asynchronous concurrent fetches</span></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="#concurrent-requests-with-async"><span>Asynchronous requests using AsyncAPI</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-Custom API Requests</div>
-<p class="sd-card-text">Control filtering, document types, and pagination with ease.</p>
+Parameter Customization</div>
+<p class="sd-card-text">Use datetime, list, and string inputs seamlessly with auto-conversion.</p>
 </div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="#customizing-api-requests"><span>Customizing API requests</span></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="#customizing-api-requests"><span>API parameter formatting</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Error Handling</div>
-<p class="sd-card-text">Capture and debug common EDGAR edge cases and input errors.</p>
+<p class="sd-card-text">Raise clear, typed exceptions for invalid inputs and failed requests.</p>
 </div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="#error-handling-and-validation"><span>Error and exception handling</span></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="#error-handling-and-validation"><span>Exception catching and validation</span></a></div>
 </div>
 </div>
 </div>
@@ -658,6 +664,128 @@ Error Handling</div>
 </section>
 <section id="caching-and-rate-limiting">
 <h2>Caching and Rate Limiting<a class="headerlink" href="#caching-and-rate-limiting" title="Link to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-text">See Example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">edgar_sec</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ed</span>
+
+<span class="n">edgar</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">EdgarAPI</span><span class="p">(</span><span class="n">cache_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cache_size</span><span class="o">=</span><span class="mi">512</span><span class="p">)</span>
+
+<span class="n">submission</span> <span class="o">=</span> <span class="n">edgar</span><span class="o">.</span><span class="n">get_submissions</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;MSFT&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">submission</span><span class="o">.</span><span class="n">entity_type</span><span class="p">)</span>
+
+<span class="c1"># Cached if repeated:</span>
+<span class="n">filing</span> <span class="o">=</span> <span class="n">edgar</span><span class="o">.</span><span class="n">get_company_facts</span><span class="p">(</span><span class="s2">&quot;AAPL&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><p>edgar-sec enforces the <strong>10 requests per second</strong> SEC limit and supports <strong>file-based caching</strong>.</p>
+<p>—</p>
+</section>
+<section id="concurrent-requests-with-async">
+<h2>Concurrent Requests with Async<a class="headerlink" href="#concurrent-requests-with-async" title="Link to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-text">See Example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">edgar_sec</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ed</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">fetch_all</span><span class="p">():</span>
+    <span class="n">edgar</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">EdgarAPI</span><span class="p">()</span><span class="o">.</span><span class="n">Async</span>
+    <span class="n">tickers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span> <span class="s2">&quot;TSLA&quot;</span><span class="p">,</span> <span class="s2">&quot;MSFT&quot;</span><span class="p">]</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="n">edgar</span><span class="o">.</span><span class="n">get_submissions</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tickers</span><span class="p">]</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">filings</span><span class="p">))</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fetch_all</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</details><p>Perfect for <strong>data collection pipelines</strong> and <strong>bulk processing</strong>.</p>
+<p>—</p>
+</section>
+<section id="customizing-api-requests">
+<h2>Customizing API Requests<a class="headerlink" href="#customizing-api-requests" title="Link to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-secondary sd-bg-text-secondary">
+<span class="sd-summary-text">See Example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">edgar_sec</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ed</span>
+
+<span class="n">edgar</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">EdgarAPI</span><span class="p">()</span>
+<span class="n">frame</span> <span class="o">=</span> <span class="n">edgar</span><span class="o">.</span><span class="n">get_frames</span><span class="p">(</span>
+    <span class="n">taxonomy</span><span class="o">=</span><span class="s2">&quot;us-gaap&quot;</span><span class="p">,</span>
+    <span class="n">tag</span><span class="o">=</span><span class="s2">&quot;RevenueFromContractWithCustomerExcludingAssessedTax&quot;</span><span class="p">,</span>
+    <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+    <span class="n">period</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">31</span><span class="p">),</span>
+    <span class="n">instantaneous</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">entity_name</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><p>Use <strong>datetime</strong>, <strong>CIKs</strong>, or <strong>tickers</strong> — edgar-sec converts and validates them for you.</p>
+<p>—</p>
+</section>
+<section id="error-handling-and-validation">
+<h2>Error Handling and Validation<a class="headerlink" href="#error-handling-and-validation" title="Link to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-danger sd-bg-text-danger">
+<span class="sd-summary-text">See Example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">edgar_sec</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ed</span>
+
+<span class="n">edgar</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">EdgarAPI</span><span class="p">()</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">edgar</span><span class="o">.</span><span class="n">get_submissions</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Validation error:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">edgar</span><span class="o">.</span><span class="n">get_company_concept</span><span class="p">(</span><span class="s2">&quot;us-gaap&quot;</span><span class="p">,</span> <span class="s2">&quot;InvalidTag&quot;</span><span class="p">,</span> <span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;API error:&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><p>Descriptive error messages help you debug quickly.</p>
+<p>—</p>
+</section>
+<section id="related-resources">
+<h2>Related Resources<a class="headerlink" href="#related-resources" title="Link to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mt-2 sd-mb-0 sd-ml-2 sd-mr-0 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+API Notes</div>
+<p class="sd-card-text">Learn how edgar-sec handles parameter coercion and conversion.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="../resources/notes.html#api-notes"><span class="std std-ref">API behavior notes</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+API Reference</div>
+<p class="sd-card-text">Full documentation for all client methods and models.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="../api/index.html#api-index"><span class="std std-ref">edgar-sec API documentation</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Use Cases</div>
+<p class="sd-card-text">Async pipelines, research workflows, document parsing, and more.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="../resources/use_cases.html#use-cases"><span class="std std-ref">Real-world usage</span></a></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -677,7 +805,7 @@ Error Handling</div>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Basic Usage Examples</p>
       </div>
     </a>
     <a class="right-next"
@@ -685,7 +813,7 @@ Error Handling</div>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Data Visualization Examples</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -710,6 +838,10 @@ Error Handling</div>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-client-features">Advanced Client Features</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caching-and-rate-limiting">Caching and Rate Limiting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concurrent-requests-with-async">Concurrent Requests with Async</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-api-requests">Customizing API Requests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling-and-validation">Error Handling and Validation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-resources">Related Resources</a></li>
 </ul>
   </nav></div>
 

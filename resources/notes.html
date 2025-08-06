@@ -16,18 +16,20 @@
         gtag('js', new Date());
         gtag('config', 'G-HM6ZC88602');
     </script>
-    <meta property="og:title" content="<no title>" />
+    <meta property="og:title" content="Special Notes: Parameter Conversion and Helper Utilities (edgar-sec)" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://nikhilxsunder.github.io/edgar-sec/resources/notes.html" />
 <meta property="og:site_name" content="edgar-sec" />
+<meta property="og:description" content="The Edgar-SEC package uses automatic parameter normalization, CIK resolution helpers, and async-safe conversion tools for consistent and clean API usage. This page summarizes key internal utilities and design patterns. — Parameter Conversion in Edgar-SEC: Edgar-SEC automatically handles conversio..." />
 <meta property="og:image" content="https://nikhilxsunder.github.io/edgar-sec/_static/edgar-sec-logo.png" />
 <meta property="og:image:alt" content="edgar-sec" />
+<meta name="description" content="The Edgar-SEC package uses automatic parameter normalization, CIK resolution helpers, and async-safe conversion tools for consistent and clean API usage. This page summarizes key internal utilities and design patterns. — Parameter Conversion in Edgar-SEC: Edgar-SEC automatically handles conversio..." />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="EDGAR SEC Documentation" />
 <meta property="og:url" content="https://nikhilxsunder.github.io/edgar-sec/" />
 <meta property="og:image:alt" content="EDGAR SEC Logo" />
 
-    <title>&lt;no title&gt; &#8212; edgar-sec</title>
+    <title>Special Notes: Parameter Conversion and Helper Utilities (edgar-sec) &#8212; edgar-sec</title>
   
   
   
@@ -69,10 +71,12 @@
     <link rel="icon" href="../_static/edgar-sec-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Glossary" href="../glossary.html" />
+    <link rel="prev" title="Internal Architecture" href="architecture.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Aug 05, 2025"/>
+    <meta name="docbuild:last-update" content="Aug 06, 2025"/>
   </head>
   
   
@@ -180,16 +184,16 @@
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
-    <no title>
+    Resources
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../glossary.html">
-    <no title>
+    Glossary
   </a>
 </li>
 
@@ -363,10 +367,8 @@
       
       
       
-        
-      
       <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -395,16 +397,16 @@
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
-    <no title>
+    Resources
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../glossary.html">
-    <no title>
+    Glossary
   </a>
 </li>
 
@@ -533,6 +535,26 @@
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions (FAQ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparison.html">Comparison with Other SEC EDGAR Clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Example Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_overview.html">Edgar-SEC API Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Internal Architecture</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Special Notes: Parameter Conversion and Helper Utilities (edgar-sec)</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
       <div class="sidebar-primary-item">
@@ -568,7 +590,10 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">&lt;no title&gt;</span></li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Resources</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Special Notes: Parameter Conversion and Helper Utilities (edgar-sec)</span></li>
   </ul>
 </nav>
 </div>
@@ -585,7 +610,122 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <span class="target" id="api-notes"></span>
+  <section id="special-notes-parameter-conversion-and-helper-utilities-edgar-sec">
+<span id="api-notes"></span><h1>Special Notes: Parameter Conversion and Helper Utilities (edgar-sec)<a class="headerlink" href="#special-notes-parameter-conversion-and-helper-utilities-edgar-sec" title="Link to this heading">#</a></h1>
+<p>The Edgar-SEC package uses <strong>automatic parameter normalization</strong>, <strong>CIK resolution helpers</strong>, and <strong>async-safe conversion tools</strong> for consistent and clean API usage.</p>
+<p>This page summarizes key internal utilities and design patterns.</p>
+<p>—</p>
+<section id="parameter-conversion-in-edgar-sec">
+<h2>Parameter Conversion in Edgar-SEC<a class="headerlink" href="#parameter-conversion-in-edgar-sec" title="Link to this heading">#</a></h2>
+<p>Edgar-SEC <strong>automatically handles conversions</strong> for common parameter types.</p>
+<section id="supported-conversions">
+<h3>Supported Conversions<a class="headerlink" href="#supported-conversions" title="Link to this heading">#</a></h3>
+<ul>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code></a> → <cite>YYYY-MM-DD</cite>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">edgar</span><span class="o">.</span><span class="n">get_submissions</span><span class="p">(</span>
+    <span class="n">cik</span><span class="o">=</span><span class="s2">&quot;0000320193&quot;</span><span class="p">,</span>
+    <span class="n">start</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> → padded CIK:</p>
+<p>Automatically zero-fills short CIKs to 10 digits via internal validation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">edgar</span><span class="o">.</span><span class="n">get_submissions</span><span class="p">(</span><span class="n">cik</span><span class="o">=</span><span class="s2">&quot;320193&quot;</span><span class="p">)</span>  <span class="c1"># Becomes &quot;0000320193&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> → CY####Q# formatted period:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">edgar</span><span class="o">.</span><span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">string_cy_conversion</span><span class="p">(</span><span class="s2">&quot;2022-09-30&quot;</span><span class="p">)</span>  <span class="c1"># -&gt; &quot;CY2022Q3&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> → CY####Q# formatted period:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">edgar</span><span class="o">.</span><span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">datetime_cy_conversion</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span>  <span class="c1"># -&gt; &quot;CY2022Q1&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+</section>
+<section id="helper-methods">
+<h2>Helper Methods<a class="headerlink" href="#helper-methods" title="Link to this heading">#</a></h2>
+<p>Conversion and validation utilities are accessible via:</p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">edgar_sec.EdgarHelpers.get_cik</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">edgar_sec.EdgarHelpers.get_universe</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">edgar_sec.EdgarHelpers.cik_validation</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">edgar_sec.EdgarHelpers.string_cy_conversion</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">edgar_sec.EdgarHelpers.datetime_cy_conversion</span></code></p></li>
+</ul>
+<p>Each has an async equivalent as well (e.g. <cite>get_cik_async</cite>, <cite>datetime_cy_conversion_async</cite>).</p>
+<p>—</p>
+</section>
+<section id="cik-search-and-universe-fetching">
+<h2>CIK Search and Universe Fetching<a class="headerlink" href="#cik-search-and-universe-fetching" title="Link to this heading">#</a></h2>
+<p>Examples:</p>
+<ul>
+<li><p>Search for a company CIK by name or ticker:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">edgar</span><span class="o">.</span><span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">get_cik</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;AAPL&quot;</span><span class="p">)</span>
+<span class="n">edgar</span><span class="o">.</span><span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">get_cik</span><span class="p">(</span><span class="n">search_text</span><span class="o">=</span><span class="s2">&quot;Tesla&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Fetch full company list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">universe</span> <span class="o">=</span> <span class="n">edgar</span><span class="o">.</span><span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">get_universe</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">universe</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">universe</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cik</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>—</p>
+</section>
+<section id="validating-cik-format">
+<h2>Validating CIK Format<a class="headerlink" href="#validating-cik-format" title="Link to this heading">#</a></h2>
+<p>CIKs are zero-padded to 10-digit strings automatically.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">edgar</span><span class="o">.</span><span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">cik_validation</span><span class="p">(</span><span class="s2">&quot;320193&quot;</span><span class="p">)</span>  <span class="c1"># -&gt; &quot;0000320193&quot;</span>
+</pre></div>
+</div>
+<p>Used internally by all client methods.</p>
+<p>—</p>
+</section>
+<section id="calendar-period-utilities">
+<h2>Calendar Period Utilities<a class="headerlink" href="#calendar-period-utilities" title="Link to this heading">#</a></h2>
+<p>For converting reporting periods into SEC-style <cite>CY####Q#</cite> format:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">edgar_sec</span><span class="w"> </span><span class="kn">import</span> <span class="n">EdgarHelpers</span>
+<span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">string_cy_conversion</span><span class="p">(</span><span class="s2">&quot;2023-06-30&quot;</span><span class="p">)</span>     <span class="c1"># -&gt; &quot;CY2023Q2&quot;</span>
+<span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">datetime_cy_conversion</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>  <span class="c1"># -&gt; &quot;CY2023Q2&quot;</span>
+</pre></div>
+</div>
+<p>Validation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">string_cy_validation</span><span class="p">(</span><span class="s2">&quot;CY2022Q3&quot;</span><span class="p">)</span>  <span class="c1"># -&gt; True</span>
+<span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">string_cy_validation</span><span class="p">(</span><span class="s2">&quot;2022Q3&quot;</span><span class="p">)</span>    <span class="c1"># -&gt; False</span>
+</pre></div>
+</div>
+<p>—</p>
+</section>
+<section id="async-conversion-utilities">
+<h2>Async Conversion Utilities<a class="headerlink" href="#async-conversion-utilities" title="Link to this heading">#</a></h2>
+<p>All conversion methods are <cite>async</cite>-safe using <cite>asyncio.to_thread(…)</cite>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">await</span> <span class="n">edgar</span><span class="o">.</span><span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">string_cy_conversion_async</span><span class="p">(</span><span class="s2">&quot;2023-06-30&quot;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">edgar</span><span class="o">.</span><span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">get_cik_async</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s2">&quot;GOOG&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>—</p>
+<section id="related-topics">
+<h3>Related Topics<a class="headerlink" href="#related-topics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>See the full API documentation: <a class="reference internal" href="../api/index.html#api-index"><span class="std std-ref">API Reference</span></a></p></li>
+<li><p>Real-world usage patterns: <a class="reference internal" href="use_cases.html#use-cases"><span class="std std-ref">Example Use Cases</span></a></p></li>
+<li><p>Overview of client capabilities: <a class="reference internal" href="api_overview.html#api-overview"><span class="std std-ref">Edgar-SEC API Overview</span></a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
 
                 </article>
               
@@ -596,6 +736,24 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="architecture.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Internal Architecture</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../glossary.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Glossary</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -614,9 +772,20 @@
     <i class="fa-solid fa-list"></i> On this page
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-conversion-in-edgar-sec">Parameter Conversion in Edgar-SEC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-conversions">Supported Conversions</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#helper-methods">Helper Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cik-search-and-universe-fetching">CIK Search and Universe Fetching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validating-cik-format">Validating CIK Format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calendar-period-utilities">Calendar Period Utilities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#async-conversion-utilities">Async Conversion Utilities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#related-topics">Related Topics</a></li>
+</ul>
+</li>
+</ul>
   </nav></div>
 
   <div class="sidebar-secondary-item">

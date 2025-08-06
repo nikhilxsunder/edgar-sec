@@ -16,18 +16,20 @@
         gtag('js', new Date());
         gtag('config', 'G-HM6ZC88602');
     </script>
-    <meta property="og:title" content="<no title>" />
+    <meta property="og:title" content="Example Use Cases" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://nikhilxsunder.github.io/edgar-sec/resources/use_cases.html" />
 <meta property="og:site_name" content="edgar-sec" />
+<meta property="og:description" content="Edgar-SEC powers SEC filing dashboards, async data pipelines, compliance monitoring, and quantitative research using the official EDGAR® API. Explore how to use Edgar-SEC in production systems, research environments, or data-driven applications: — Filing Dashboard Development: See Example Combine..." />
 <meta property="og:image" content="https://nikhilxsunder.github.io/edgar-sec/_static/edgar-sec-logo.png" />
 <meta property="og:image:alt" content="edgar-sec" />
+<meta name="description" content="Edgar-SEC powers SEC filing dashboards, async data pipelines, compliance monitoring, and quantitative research using the official EDGAR® API. Explore how to use Edgar-SEC in production systems, research environments, or data-driven applications: — Filing Dashboard Development: See Example Combine..." />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="EDGAR SEC Documentation" />
 <meta property="og:url" content="https://nikhilxsunder.github.io/edgar-sec/" />
 <meta property="og:image:alt" content="EDGAR SEC Logo" />
 
-    <title>&lt;no title&gt; &#8212; edgar-sec</title>
+    <title>Example Use Cases &#8212; edgar-sec</title>
   
   
   
@@ -69,10 +71,12 @@
     <link rel="icon" href="../_static/edgar-sec-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Edgar-SEC API Overview" href="api_overview.html" />
+    <link rel="prev" title="Comparison with Other SEC EDGAR Clients" href="comparison.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Aug 05, 2025"/>
+    <meta name="docbuild:last-update" content="Aug 06, 2025"/>
   </head>
   
   
@@ -180,16 +184,16 @@
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
-    <no title>
+    Resources
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../glossary.html">
-    <no title>
+    Glossary
   </a>
 </li>
 
@@ -363,10 +367,8 @@
       
       
       
-        
-      
       <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -395,16 +397,16 @@
 </li>
 
 
-<li class="nav-item ">
+<li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
-    <no title>
+    Resources
   </a>
 </li>
 
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../glossary.html">
-    <no title>
+    Glossary
   </a>
 </li>
 
@@ -533,6 +535,26 @@
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions (FAQ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comparison.html">Comparison with Other SEC EDGAR Clients</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Example Use Cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_overview.html">Edgar-SEC API Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Internal Architecture</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Special Notes: Parameter Conversion and Helper Utilities (edgar-sec)</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
       <div class="sidebar-primary-item">
@@ -568,7 +590,10 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">&lt;no title&gt;</span></li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Resources</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Example Use Cases</span></li>
   </ul>
 </nav>
 </div>
@@ -585,7 +610,127 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <span class="target" id="use-cases"></span>
+  <section id="example-use-cases">
+<span id="use-cases"></span><h1>Example Use Cases<a class="headerlink" href="#example-use-cases" title="Link to this heading">#</a></h1>
+<p>Edgar-SEC powers SEC filing dashboards, async data pipelines, compliance monitoring, and quantitative research using the official EDGAR® API.</p>
+<p>Explore how to use Edgar-SEC in production systems, research environments, or data-driven applications:</p>
+<p>—</p>
+<section id="filing-dashboard-development">
+<h2>Filing Dashboard Development<a class="headerlink" href="#filing-dashboard-development" title="Link to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3" open="open">
+<summary class="sd-summary-title sd-card-header sd-bg-secondary sd-bg-text-secondary">
+<span class="sd-summary-text">See Example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Combine edgar-sec with:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Pandas, Polars, or DuckDB for ETL workflows,</p></li>
+<li><p class="sd-card-text">Plotly, Altair, or Matplotlib for visualizations,</p></li>
+<li><p class="sd-card-text">Dash, Streamlit, or Gradio for deployment.</p></li>
+</ul>
+<p class="sd-card-text">Applications include:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Visualizing 10-K/10-Q form counts over time,</p></li>
+<li><p class="sd-card-text">Monitoring submission patterns by sector,</p></li>
+<li><p class="sd-card-text">Flagging outlier disclosures for review.</p></li>
+</ul>
+</div>
+</details><p>—</p>
+</section>
+<section id="asynchronous-ingestion-pipelines">
+<h2>Asynchronous Ingestion Pipelines<a class="headerlink" href="#asynchronous-ingestion-pipelines" title="Link to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-secondary sd-bg-text-secondary">
+<span class="sd-summary-text">See Example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Use edgar = ed.EdgarAPI().Async to run concurrent submission or concept fetches.</p>
+<p class="sd-card-text">Ideal for:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Daily batch jobs that refresh filings across hundreds of tickers,</p></li>
+<li><p class="sd-card-text">Compliance systems for near real-time EDGAR intake,</p></li>
+<li><p class="sd-card-text">Automating archival of fundamental metrics (XBRL facts).</p></li>
+</ul>
+<p class="sd-card-text">Built-in asyncio, retry logic, and throttling ensure reliability at scale.</p>
+</div>
+</details><p>—</p>
+</section>
+<section id="cik-and-metadata-indexing">
+<h2>CIK and Metadata Indexing<a class="headerlink" href="#cik-and-metadata-indexing" title="Link to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-secondary sd-bg-text-secondary">
+<span class="sd-summary-text">See Example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Use EdgarHelpers.get_cik(…) to build searchable lookup tools or name→CIK mappings.</p>
+<ul class="simple">
+<li><p class="sd-card-text">Index all S&amp;P 500 company CIKs,</p></li>
+<li><p class="sd-card-text">Normalize common entity name aliases,</p></li>
+<li><p class="sd-card-text">Build autocomplete tools for research dashboards.</p></li>
+</ul>
+<p class="sd-card-text">This avoids scraping or manual CSV management.</p>
+</div>
+</details><p>—</p>
+</section>
+<section id="fundamental-disclosure-analysis">
+<h2>Fundamental Disclosure Analysis<a class="headerlink" href="#fundamental-disclosure-analysis" title="Link to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-secondary sd-bg-text-secondary">
+<span class="sd-summary-text">See Example</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Retrieve and structure XBRL data with:</p>
+<ul class="simple">
+<li><p class="sd-card-text">get_company_facts()</p></li>
+<li><p class="sd-card-text">get_company_concepts()</p></li>
+<li><p class="sd-card-text">get_frames()</p></li>
+</ul>
+<p class="sd-card-text">Research workflows include:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Comparing debt-to-equity ratios across firms,</p></li>
+<li><p class="sd-card-text">Tracking reported vs restated earnings over time,</p></li>
+<li><p class="sd-card-text">Building real-time disclosure-based models.</p></li>
+</ul>
+</div>
+</details><p>—</p>
+</section>
+<section id="related-resources">
+<h2>Related Resources<a class="headerlink" href="#related-resources" title="Link to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Full API Documentation</div>
+<p class="sd-card-text">Explore all endpoints, object models, and helper utilities.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="../api/index.html#api-index"><span class="std std-ref">edgar-sec Full API Reference</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Quick Start Guide</div>
+<p class="sd-card-text">Learn how to fetch SEC data in under five lines of code.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="../installation/quickstart.html#quickstart"><span class="std std-ref">Quick Start for edgar-sec</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Parameter Handling</div>
+<p class="sd-card-text">Understand how date, type, and ID conversions work.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="notes.html#api-notes"><span class="std std-ref">Parameter Notes</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Advanced Usage</div>
+<p class="sd-card-text">Async, batching, caching, and retry-enabled ingestion pipelines.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="../installation/advanced_usage.html#advanced-usage"><span class="std std-ref">Advanced Examples</span></a></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
 
                 </article>
               
@@ -596,6 +741,24 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="comparison.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Comparison with Other SEC EDGAR Clients</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="api_overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Edgar-SEC API Overview</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -614,9 +777,13 @@
     <i class="fa-solid fa-list"></i> On this page
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filing-dashboard-development">Filing Dashboard Development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asynchronous-ingestion-pipelines">Asynchronous Ingestion Pipelines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cik-and-metadata-indexing">CIK and Metadata Indexing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamental-disclosure-analysis">Fundamental Disclosure Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-resources">Related Resources</a></li>
 </ul>
-
   </nav></div>
 
   <div class="sidebar-secondary-item">
