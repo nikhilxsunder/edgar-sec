@@ -163,12 +163,12 @@ ogp_site_url = "https://nikhilxsunder.github.io/edgar-sec/"
 ogp_image = "https://nikhilxsunder.github.io/edgar-sec/_static/edgar-sec-logo.png"
 ogp_description_length = 300
 ogp_type = "website"
-ogp_custom_meta_tags = [
+ogp_custom_meta_tags = (
     '<meta property="og:locale" content="en_US" />',
     '<meta property="og:site_name" content="EDGAR SEC Documentation" />',
     '<meta property="og:url" content="https://nikhilxsunder.github.io/edgar-sec/" />',
     '<meta property="og:image:alt" content="EDGAR SEC Logo" />',
-]
+)
 ogp_enable_meta_description = True
 
 # intersphinx

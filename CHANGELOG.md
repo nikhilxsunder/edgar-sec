@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - [CONTRIBUTING.md](https://github.com/nikhilxsunder/edgar-sec/blob/main/CONTRIBUTING.md)
   - [README.md](https://github.com/nikhilxsunder/edgar-sec/blob/main/README.md)
   - [SECURITY.md](https://github.com/nikhilxsunder/edgar-sec/blob/main/SECURITY.md)
+- update-feedstock.yml merged into [main.yml](https://github.com/nikhilxsunder/fedfred/blob/main/.github/workflows/main.yml)
 
 ### Added
 
@@ -69,6 +70,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Deleted type stub files:
   - edgar_data.pyi
   - edgar_sec.pyi
+- Deleted update-feedstock.yml
 
 ## [1.0.1] - 2025-03-21
 
