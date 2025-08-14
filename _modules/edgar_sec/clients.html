@@ -48,7 +48,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=51b770b3"></script>
+    <script src="../../_static/documentation_options.js?v=f5cff4aa"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
@@ -61,7 +61,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Aug 06, 2025"/>
+    <meta name="docbuild:last-update" content="Aug 14, 2025"/>
   </head>
   
   
@@ -933,6 +933,8 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provide either ticker or central_index_key.&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ticker</span><span class="p">:</span>
             <span class="n">central_index_key</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">get_cik</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="n">ticker</span><span class="p">))</span>
+        <span class="k">assert</span> <span class="n">central_index_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="n">central_index_key</span> <span class="o">=</span> <span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">cik_validation</span><span class="p">(</span><span class="n">central_index_key</span><span class="p">)</span>
         <span class="n">url_endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/api/xbrl/companyfacts/CIK</span><span class="si">{</span><span class="n">central_index_key</span><span class="si">}</span><span class="s1">.json&#39;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__edgar_get_request</span><span class="p">(</span><span class="n">url_endpoint</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">CompanyFacts</span><span class="o">.</span><span class="n">to_object</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>

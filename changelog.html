@@ -20,10 +20,10 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://nikhilxsunder.github.io/edgar-sec/changelog.html" />
 <meta property="og:site_name" content="edgar-sec" />
-<meta property="og:description" content="All notable changes to edgar-sec will be documented in this file. The format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Unreleased: 2.0.0-: Changed: Updated pre-commit-config.yaml, Conda/Conda-Forge version now 2.0.0 in both meta.yaml files, Complete overhaul o..." />
+<meta property="og:description" content="All notable changes to edgar-sec will be documented in this file. The format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Unreleased:[2.0.1] - 2025-08-14: Fixed: Minor bug fix- Added CIK validation to EdgarAPI.get_company_facts (sync).. 2.0.0- 2025-08-05: Changed..." />
 <meta property="og:image" content="https://nikhilxsunder.github.io/edgar-sec/_static/edgar-sec-logo.png" />
 <meta property="og:image:alt" content="edgar-sec" />
-<meta name="description" content="All notable changes to edgar-sec will be documented in this file. The format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Unreleased: 2.0.0-: Changed: Updated pre-commit-config.yaml, Conda/Conda-Forge version now 2.0.0 in both meta.yaml files, Complete overhaul o..." />
+<meta name="description" content="All notable changes to edgar-sec will be documented in this file. The format is based on Keep a Changelog, and this project adheres to Semantic Versioning. Unreleased:[2.0.1] - 2025-08-14: Fixed: Minor bug fix- Added CIK validation to EdgarAPI.get_company_facts (sync).. 2.0.0- 2025-08-05: Changed..." />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="EDGAR SEC Documentation" />
 <meta property="og:url" content="https://nikhilxsunder.github.io/edgar-sec/" />
@@ -61,7 +61,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="_static/documentation_options.js?v=51b770b3"></script>
+    <script src="_static/documentation_options.js?v=f5cff4aa"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Aug 06, 2025"/>
+    <meta name="docbuild:last-update" content="Aug 14, 2025"/>
   </head>
   
   
@@ -605,7 +605,20 @@ and this project adheres to <a class="reference external" href="https://semver.o
 <h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v2.0.0...HEAD">Unreleased</a><a class="headerlink" href="#unreleased" title="Link to this heading">#</a></h2>
 </section>
 <section id="id1">
-<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v1.0.1...v2.0.0">2.0.0</a> -<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>[2.0.1] - 2025-08-14<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="fixed">
+<h3>Fixed<a class="headerlink" href="#fixed" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Minor bug fix</p>
+<ul>
+<li><p>Added CIK validation to EdgarAPI.get_company_facts (sync)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="id2">
+<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v1.0.1...v2.0.0">2.0.0</a> - 2025-08-05<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="changed">
 <h3>Changed<a class="headerlink" href="#changed" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -675,8 +688,8 @@ and this project adheres to <a class="reference external" href="https://semver.o
 <li><p>Added security analysis through <a class="reference external" href="https://socket.dev/pypi/package/edgar-sec/overview">Socket</a></p></li>
 </ul>
 </section>
-<section id="fixed">
-<h3>Fixed<a class="headerlink" href="#fixed" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3>Fixed<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Fixed dependency list in <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/scripts/sync_conda_recipe.py">sync_conda_recipe.py</a></p></li>
 <li><p>Fixed return objects in <a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/blob/main/src/edgar_sec/objects.py">objects.py</a></p></li>
@@ -699,19 +712,19 @@ and this project adheres to <a class="reference external" href="https://semver.o
 </ul>
 </section>
 </section>
-<section id="id2">
-<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v1.0.0...v1.0.1">1.0.1</a> - 2025-03-21<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<section id="id3">
-<h3>Fixed<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v1.0.0...v1.0.1">1.0.1</a> - 2025-03-21<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h3>Fixed<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Minor patch for publishing error (Anaconda)</p></li>
 </ul>
 </section>
 </section>
-<section id="id4">
-<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v0.0.2...v1.0.0">1.0.0</a> - 2025-03-21<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<section id="id5">
-<h3>Added<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v0.0.2...v1.0.0">1.0.0</a> - 2025-03-21<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h3>Added<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>EdgarAPI class for interacting with SEC EDGAR API</p></li>
 <li><p>Full async support through EdgarAPI.Async</p></li>
@@ -736,8 +749,8 @@ and this project adheres to <a class="reference external" href="https://semver.o
 <li><p>Anaconda Distribution</p></li>
 </ul>
 </section>
-<section id="id6">
-<h3>Changed<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<section id="id8">
+<h3>Changed<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Updated project structure to use Poetry for dependency management</p></li>
 <li><p>Improved error handling for API requests</p></li>
@@ -745,10 +758,10 @@ and this project adheres to <a class="reference external" href="https://semver.o
 </ul>
 </section>
 </section>
-<section id="id7">
-<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v0.0.1...v0.0.2">0.0.2</a> - 2025-02-10<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
-<section id="id8">
-<h3>Added<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<section id="id9">
+<h2><a class="reference external" href="https://github.com/nikhilxsunder/edgar-sec/compare/v0.0.1...v0.0.2">0.0.2</a> - 2025-02-10<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h3>Added<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Initial project structure</p></li>
 <li><p>Basic EdgarAPI class</p></li>
@@ -759,10 +772,10 @@ and this project adheres to <a class="reference external" href="https://semver.o
 </ul>
 </section>
 </section>
-<section id="id9">
-<h2>[0.0.1] - 2025-02-09<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
-<section id="id10">
-<h3>Added<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<section id="id11">
+<h2>[0.0.1] - 2025-02-09<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<section id="id12">
+<h3>Added<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Project initialization</p></li>
 <li><p>License file</p></li>
@@ -821,28 +834,32 @@ and this project adheres to <a class="reference external" href="https://semver.o
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unreleased">Unreleased</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.0.0 -</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">[2.0.1] - 2025-08-14</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed">Fixed</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.0.0 - 2025-08-05</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changed">Changed</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#added">Added</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed">Fixed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Fixed</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removed">Removed</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.0.1 - 2025-03-21</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Fixed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.0.1 - 2025-03-21</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Fixed</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.0.0 - 2025-03-21</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Added</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Changed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.0.0 - 2025-03-21</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Added</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Changed</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">0.0.2 - 2025-02-10</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Added</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">[0.0.1] - 2025-02-09</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">0.0.2 - 2025-02-10</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Added</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">[0.0.1] - 2025-02-09</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Added</a></li>
 </ul>
 </li>
 </ul>
