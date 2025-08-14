@@ -14,7 +14,7 @@ import sys
 project = 'edgar-sec'
 copyright = '2025, Nikhil Sunder'
 author = 'Nikhil Sunder'
-release = '2.0.0'
+release = '2.0.1'
 
 # -- General configuration ---------------------------------------------------
 extensions = [

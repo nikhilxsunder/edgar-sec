@@ -344,6 +344,8 @@ class EdgarAPI:
             raise ValueError("Provide either ticker or central_index_key.")
         if ticker:
             central_index_key = cast(str, EdgarHelpers.get_cik(ticker=ticker))
+        assert central_index_key is not None
+        central_index_key = EdgarHelpers.cik_validation(central_index_key)
         url_endpoint = f'/api/xbrl/companyfacts/CIK{central_index_key}.json'
         response = self.__edgar_get_request(url_endpoint)
         return CompanyFacts.to_object(response)

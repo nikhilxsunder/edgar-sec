@@ -7,7 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.0.0] -
+## [2.0.1] - 2025-08-14
+
+### Fixed
+
+- Minor bug fix
+  - Added CIK validation to EdgarAPI.get_company_facts (sync)
+
+## [2.0.0] - 2025-08-05
 
 ### Changed
 
