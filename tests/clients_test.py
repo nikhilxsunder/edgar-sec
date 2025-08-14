@@ -604,18 +604,18 @@ class TestEdgarAPI:
             patch("edgar_sec.clients.CompanyFacts.to_object", return_value="company_facts_obj") as mock_to_object:
             result = api.get_company_facts(ticker="DIS")
             mock_get_cik.assert_called_once_with(ticker="DIS")
-            mock_cik_validation.assert_not_called()  # Not called in get_company_facts
+            mock_cik_validation.assert_called_once_with("0001744489")
             mock_get_request.assert_called_once_with("/api/xbrl/companyfacts/CIK0001744489.json")
             mock_to_object.assert_called_once_with(fake_response)
             assert result == "company_facts_obj"
 
         with patch("edgar_sec.clients.EdgarHelpers.get_cik") as mock_get_cik, \
-            patch("edgar_sec.clients.EdgarHelpers.cik_validation") as mock_cik_validation, \
+            patch("edgar_sec.clients.EdgarHelpers.cik_validation", side_effect=lambda x: x) as mock_cik_validation, \
             patch.object(api, "_EdgarAPI__edgar_get_request", return_value=fake_response) as mock_get_request, \
             patch("edgar_sec.clients.CompanyFacts.to_object", return_value="company_facts_obj") as mock_to_object:
             result = api.get_company_facts(central_index_key="0001744489")
             mock_get_cik.assert_not_called()
-            mock_cik_validation.assert_not_called()
+            mock_cik_validation.assert_called_once_with("0001744489")
             mock_get_request.assert_called_once_with("/api/xbrl/companyfacts/CIK0001744489.json")
             mock_to_object.assert_called_once_with(fake_response)
             assert result == "company_facts_obj"
