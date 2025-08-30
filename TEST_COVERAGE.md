@@ -1,6 +1,6 @@
 # Test Coverage Report
 
-Last updated: 2025-08-14
+Last updated: 2025-08-30
 
 ## Coverage Summary
 
@@ -13,7 +13,7 @@ Overall coverage: 100%
 platform linux -- Python 3.11.13, pytest-8.4.1, pluggy-1.6.0
 rootdir: /home/runner/work/edgar-sec/edgar-sec
 configfile: pyproject.toml
-plugins: hypothesis-6.137.1, cov-6.2.1, mock-3.14.1, asyncio-1.1.0, anyio-4.10.0
+plugins: asyncio-1.1.0, mock-3.14.1, anyio-4.10.0, hypothesis-6.137.1, cov-6.2.1
 asyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
 collected 83 items
 
@@ -34,7 +34,7 @@ src/edgar_sec/objects.py       209      0   100%
 ------------------------------------------------
 TOTAL                          581      0   100%
 Coverage XML written to file coverage.xml
-============================== 83 passed in 5.70s ==============================
+============================== 83 passed in 5.79s ==============================
 ```
 
 ## Running Test Coverage Locally
