@@ -1,6 +1,6 @@
 # Test Coverage Report
 
-Last updated: 2025-08-30
+Last updated: 2025-09-16
 
 ## Coverage Summary
 
@@ -34,7 +34,7 @@ src/edgar_sec/objects.py       209      0   100%
 ------------------------------------------------
 TOTAL                          581      0   100%
 Coverage XML written to file coverage.xml
-============================== 83 passed in 5.79s ==============================
+============================== 83 passed in 5.64s ==============================
 ```
 
 ## Running Test Coverage Locally
