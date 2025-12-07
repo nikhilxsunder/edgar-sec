@@ -74,7 +74,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Sep 16, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 07, 2025"/>
   </head>
   
   
@@ -827,10 +827,10 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ticker</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – The ticker symbol of the company. If provided, the CIK will be derived from the ticker.</p></li>
-<li><p><strong>central_index_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>optional</em>) – 10-digit Central Index Key (CIK) of the entity, including leading zeros. A CIK may be obtained at the SEC’s CIK lookup: <a class="reference external" href="https://www.sec.gov/search-filings/cik-lookup">https://www.sec.gov/search-filings/cik-lookup</a></p></li>
-<li><p><strong>taxonomy</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – A non-custom taxonomy identifier (e.g. ‘us-gaap’, ‘ifrs-full’, ‘dei’, or ‘srt’).</p></li>
-<li><p><strong>tag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The specific disclosure concept tag to retrieve, such as ‘AccountsPayableCurrent’ or ‘Assets’.</p></li>
+<li><p><strong>ticker</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – The ticker symbol of the company. If provided, the CIK will be derived from the ticker.</p></li>
+<li><p><strong>central_index_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – 10-digit Central Index Key (CIK) of the entity, including leading zeros. A CIK may be obtained at the SEC’s CIK lookup: <a class="reference external" href="https://www.sec.gov/search-filings/cik-lookup">https://www.sec.gov/search-filings/cik-lookup</a></p></li>
+<li><p><strong>taxonomy</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – A non-custom taxonomy identifier (e.g. ‘us-gaap’, ‘ifrs-full’, ‘dei’, or ‘srt’).</p></li>
+<li><p><strong>tag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The specific disclosure concept tag to retrieve, such as ‘AccountsPayableCurrent’ or ‘Assets’.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -840,7 +840,7 @@
 <dd class="field-odd"><p><a class="reference internal" href="edgar_sec.objects.CompanyConcept.html#edgar_sec.objects.CompanyConcept" title="edgar_sec.objects.CompanyConcept">CompanyConcept</a></p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – If the request fails or the response is not valid JSON format.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If the request fails or the response is not valid JSON format.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>

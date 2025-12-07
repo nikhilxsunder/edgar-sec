@@ -76,7 +76,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Sep 16, 2025"/>
+    <meta name="docbuild:last-update" content="Dec 07, 2025"/>
   </head>
   
   
@@ -621,7 +621,7 @@
 <section id="supported-conversions">
 <h3>Supported Conversions<a class="headerlink" href="#supported-conversions" title="Link to this heading">#</a></h3>
 <ul>
-<li><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code></a> → <cite>YYYY-MM-DD</cite>:</p>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code></a> → <cite>YYYY-MM-DD</cite>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 <span class="n">edgar</span><span class="o">.</span><span class="n">get_submissions</span><span class="p">(</span>
     <span class="n">cik</span><span class="o">=</span><span class="s2">&quot;0000320193&quot;</span><span class="p">,</span>
@@ -630,13 +630,13 @@
 </pre></div>
 </div>
 </li>
-<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> → padded CIK:</p>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> → padded CIK:</p>
 <p>Automatically zero-fills short CIKs to 10 digits via internal validation.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">edgar</span><span class="o">.</span><span class="n">get_submissions</span><span class="p">(</span><span class="n">cik</span><span class="o">=</span><span class="s2">&quot;320193&quot;</span><span class="p">)</span>  <span class="c1"># Becomes &quot;0000320193&quot;</span>
 </pre></div>
 </div>
 </li>
-<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> → CY####Q# formatted period:</p>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> → CY####Q# formatted period:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">edgar</span><span class="o">.</span><span class="n">EdgarHelpers</span><span class="o">.</span><span class="n">string_cy_conversion</span><span class="p">(</span><span class="s2">&quot;2022-09-30&quot;</span><span class="p">)</span>  <span class="c1"># -&gt; &quot;CY2022Q3&quot;</span>
 </pre></div>
 </div>
